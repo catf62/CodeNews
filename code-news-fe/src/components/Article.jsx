@@ -10,6 +10,12 @@ class Article extends Component {
     const keywords = this.props.article.keywords.map((keyword, index) => {
       return <p key={index}>{keyword}</p>
     })
+
+    let month = (this.props.article.date.getMonth() + 1).toString();
+    if (this.props.article.date.getMonth() < 10) {
+      month = ("0" + month).slice(-2);
+    }
+
     return (
       <>
       <h3>{this.props.article.headline}</h3>
@@ -17,7 +23,7 @@ class Article extends Component {
       <p>{this.props.article.content}</p>
       {keywords}
       <img className="Article-Image" src={this.props.article.imageurl}/>
-      <p>{this.props.article.date.getDate()}/{this.props.article.date.getMonth()}/{this.props.article.date.getFullYear()}</p>
+      <p>{this.props.article.date.getDate()}/{month}/{this.props.article.date.getFullYear()}</p>
       </>
     );
   }
