@@ -1,6 +1,7 @@
 package com.codeclan.CodeNewsBE.CodeNewsBE.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Author {
 
     @JsonIgnoreProperties("author")
     @OneToMany(mappedBy = "author")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     private List<Article> articles;
 
     public Author(String name) {
