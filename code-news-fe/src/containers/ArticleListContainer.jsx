@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Header from '../components/Header';
+import ArticleList from '../components/ArticleList';
 
 class ArticleListContainer extends Component {
 
@@ -12,8 +14,8 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"In pants wettingly exciting development, CodeClan Edinburgh has launched a fresh and informative news website, aimed at students, staff and alumni. An intrepid band of E26 students have taken the initiative to build the web application using skills learned at CodeClan.",
           keywords:["News","E26","Students"],
-          imageurl:"https://codeclan.com/",
-          date: new Date(2019, 01, 02)
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
+          date: new Date(2019, 1, 2)
         },
         {
           id: 2,
@@ -21,8 +23,8 @@ class ArticleListContainer extends Component {
           author:"Tony Goncalves",
           content:"Hey everyone, I've organised a social or educational event which will enhance your learning experience. Join me at the big high table for pizza and other unspecified activities at a time and date that I will release to you later!",
           keywords:["Pizza","Social"],
-          imageurl:"https://codeclan.com/events/",
-          date: new Date(2019, 00, 31)
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
+          date: new Date(2019, 1, 31)
         },
         {
           id: 3,
@@ -30,8 +32,8 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"We're about to be released from the nurturing environment of the CodeClan playplen. Please give us interesting projects and pay us all the moneys for them. We will accept no less than three jelly laces and a button per month's employment.",
           keywords:["E26","Employer Partners","Moneys"],
-          imageurl:"https://codeclan.com/for-employers/",
-          date: new Date(2019, 02, 15)
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
+          date: new Date(2019, 2, 15)
         }
       ]
     }
@@ -42,7 +44,10 @@ class ArticleListContainer extends Component {
       <div className='article-list-container'>
       <Header title='CodeNews - Fake news never looked so hacked together...'/>
       <ArticleList articles={this.state.articles} />
+      </div>
     )
   }
 
 }
+
+export default ArticleListContainer;
