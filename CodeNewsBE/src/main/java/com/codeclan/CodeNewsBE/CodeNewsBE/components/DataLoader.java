@@ -33,6 +33,10 @@ public class DataLoader implements ApplicationRunner {
         authorRepository.save(rob);
         Author graeme = new Author("Graeme");
         authorRepository.save(graeme);
+        Author cat = new Author("Cat");
+        authorRepository.save(cat);
+        Author chris = new Author("Chris");
+        authorRepository.save(chris);
 
 
         ArrayList<String> keywords = new ArrayList<>();
@@ -52,6 +56,10 @@ public class DataLoader implements ApplicationRunner {
         Article article4 = new Article("Cat's Haircut!", "Huge news as Cat gets a haircut.",  keywords,"placeholderURL", new Date(2018-12-25), graeme);
         articleRepository.save(article4);
 
+        Article article5 = new Article("Cat's Article!", "This is an article by Cat. It is about stuff.",  keywords,"placeholderURL", new Date(2018-12-25), cat);
+        articleRepository.save(article5);
 
+        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",  keywords,"placeholderURL", new Date(2018-12-25), chris);
+        articleRepository.save(article6);
     }
 }
