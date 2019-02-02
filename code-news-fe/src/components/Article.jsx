@@ -17,7 +17,7 @@ class Article extends Component {
       <p>{this.props.article.content}</p>
       {keywords}
       <img className="Article-Image" src={this.props.article.imageurl}/>
-      <p>{this.props.article.date.getDate()}-{this.props.article.date.getMonth()}-{this.props.article.date.getFullYear()}</p>
+      <p>{this.props.article.date.getDate()}/{this.props.article.date.getMonth()}/{this.props.article.date.getFullYear()}</p>
       </>
     );
   }
