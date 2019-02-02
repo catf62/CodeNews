@@ -11,6 +11,11 @@ class Article extends Component {
       return <p key={index}>{keyword}</p>
     })
 
+    let day = this.props.article.date.getDate().toString();
+    if (this.props.article.date.getDate() < 10) {
+      day = ("0" + day).slice(-2);
+    }
+
     let month = (this.props.article.date.getMonth() + 1).toString();
     if (this.props.article.date.getMonth() < 10) {
       month = ("0" + month).slice(-2);
@@ -23,7 +28,7 @@ class Article extends Component {
       <p>{this.props.article.content}</p>
       {keywords}
       <img className="Article-Image" src={this.props.article.imageurl}/>
-      <p>{this.props.article.date.getDate()}/{month}/{this.props.article.date.getFullYear()}</p>
+      <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
       </>
     );
   }
