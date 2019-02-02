@@ -22,11 +22,6 @@
   color: #61dafb;
 }
 
-.Article-Image{
-  height: 100px;
-  width: 100px;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -34,4 +29,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* added css */
+
+.Article-Image{
+  height: 100px;
+  width: 100px;
 }
