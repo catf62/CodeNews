@@ -10,4 +10,5 @@ class Article extends Component {
   }
 }
 
+
 export default MovieItem;
