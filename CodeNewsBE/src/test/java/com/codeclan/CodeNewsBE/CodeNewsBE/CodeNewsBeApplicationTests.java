@@ -1,6 +1,7 @@
 package com.codeclan.CodeNewsBE.CodeNewsBE;
 
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Author;
+import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.articleRepository.ArticleRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.authorRepository.AuthorRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,9 @@ public class CodeNewsBeApplicationTests {
 
 	@Autowired
 	AuthorRepository authorRepository;
+
+	@Autowired
+	ArticleRepository articleRepository;
 
 	@Test
 	public void contextLoads() {
