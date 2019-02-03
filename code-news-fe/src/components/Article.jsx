@@ -25,7 +25,7 @@ class Article extends Component {
       <div className="Article">
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5 className="Article-Author">By {this.props.article.author}</h5>
-      <p>{this.props.article.content}</p>
+      <p>{this.props.article.blurb}</p>
       <div className="Article-Keywords">
       {keywords}
       </div>
