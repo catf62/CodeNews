@@ -4,8 +4,8 @@ class NavBar extends Component {
 
   render() {
     return (
-    <div className='NavBar'>
-    <button className="NavBar-Button">Admin</button>
+    <div className='Solid-Black-Border NavBar'>
+    <button className="Lighter-Blue-BG Solid-Black-Border-Curved NavBar-Button">Admin</button>
     </div>
   )
   }

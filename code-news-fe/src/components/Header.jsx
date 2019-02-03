@@ -4,7 +4,7 @@ class Header extends Component {
 
   render() {
     return (
-    <div className='Header'>
+    <div className='Darker-Blue-BG Header-Footer'>
     <img className="Header-Image" src="https://codeclan.com/wp-content/uploads/2018/05/logo-long-04-04.png"></img>
     <h1 className="Header-Text">{this.props.title}</h1>
     </div>

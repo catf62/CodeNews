@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import ArticleList from '../components/ArticleList';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import '../styles/LandingPage.css';
 
 class ArticleListContainer extends Component {
 

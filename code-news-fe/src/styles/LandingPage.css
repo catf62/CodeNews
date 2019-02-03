@@ -1,0 +1,53 @@
+.Article-List{
+padding: 2em 0 2em 0;
+}
+
+.Article{
+  background-color: white;
+  border-width: 0.2em !important;
+  margin: 0 2em 2em 2em;
+  box-shadow: 0.25em 0.25em rgb(171, 170, 170);
+}
+
+.Article:hover{
+  border-width: 0.4em;
+  border-color: #51A3CB;
+}
+
+.Article, h3, h5, p, img {
+    margin: 2vw;
+}
+
+.Article-Headline{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.Article-Author{
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.Article-Image{
+  height: 100px;
+  width: 100px;
+}
+
+.Article-Image:hover{
+  height: 300px;
+  width: 300px;
+}
+
+.Article-Keywords{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Keyword {
+padding: 0.3em;
+color: white;
+}
+
+.Keyword:hover{
+  border-color: #51A3CB;
+}
