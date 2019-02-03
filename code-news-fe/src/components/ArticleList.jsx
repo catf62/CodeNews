@@ -21,7 +21,7 @@ class ArticleList extends Component {
       });
       return (
         <div>
-        <ul className='Article-List'>
+        <ul className='Lighter-Blue-BG Article-List'>
         {articleItems}
         </ul>
         </div>

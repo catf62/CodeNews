@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: verdana;
+}
+
+.Darker-Blue-BG{
+  background-color: #51A3CB;
+}
+
+.Medium-Blue-BG{
+  background-color: #66CDFF;
+}
+
+.Lighter-Blue-BG{
+  background-color: #DBF2FF;
+}
+
+.Solid-Black-Border {
+  border-color: black;
+  border-width: 0.1em;
+  border-style: solid;
+}
+
+.Solid-Black-Border-Curved {
+border-style: solid;
+border-width: 0.1em;
+border-color: black;
+border-radius: 0.5em;
+}
+
+.Header-Footer{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 7em;
+}
+
+.Header-Image{
+  width: 25%;
+  margin: 2em 0 2em -0em;
+}
+
+.Header-Text{
+  position: relative;
+  right: 10%;
+  width: 75%;
+  color: white;
+  font-size: 3em;
+  font-weight: 500;
+}
+
+.NavBar{
+  display: flex;
+  justify-content: flex-end;
+  height: 3em;
+}
+
+.NavBar-Button{
+width: 10em;
+height: 2em;
+margin: 0.5em 1em 0.5em 1em;
+font-size: 1em;
+font-weight: 500;
+}
+
+.NavBar-Button:hover{
+  border-width: 0.2em;
+  border-color: #51A3CB;
+}

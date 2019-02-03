@@ -8,7 +8,7 @@ class Article extends Component {
 
   render() {
     const keywords = this.props.article.keywords.map((keyword, index) => {
-      return <p key={index} className="Keyword">{keyword}</p>
+      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Keyword">{keyword}</p>
     })
 
     let day = this.props.article.date.getDate().toString();
@@ -22,7 +22,7 @@ class Article extends Component {
     }
 
     return (
-      <div className="Article">
+      <div className="Solid-Black-Border-Curved Article">
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5 className="Article-Author">By {this.props.article.author}</h5>
       <p>{this.props.article.content}</p>
