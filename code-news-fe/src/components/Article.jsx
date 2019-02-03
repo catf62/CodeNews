@@ -8,7 +8,7 @@ class Article extends Component {
 
   render() {
     const keywords = this.props.article.keywords.map((keyword, index) => {
-      return <p key={index}>{keyword}</p>
+      return <p key={index} className="Keyword">{keyword}</p>
     })
 
     let day = this.props.article.date.getDate().toString();
@@ -26,7 +26,9 @@ class Article extends Component {
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5>By {this.props.article.author}</h5>
       <p>{this.props.article.content}</p>
+      <div className="Article-Keywords">
       {keywords}
+      </div>
       <img className="Article-Image" src={this.props.article.imageurl}/>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
       </div>
