@@ -33,7 +33,106 @@
 
 /* added css */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Header{
+  background-color: #51A3CB;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  height: 7em;
+}
+
+.Header-Image{
+  margin: 2em 0 2em -5em;
+  width: 25vw;
+}
+
+.Header-Text{
+  margin-left: -1em;
+  color: white;
+  font-family: verdana;
+  font-size: 3em;
+  font-weight: 500;
+  width: 75vw;
+}
+
+.NavBar{
+  border-color: black;
+  border-width: 0.1em;
+  border-style: solid;
+  height: 3em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.NavBar-Button{
+background-color: #DBF2FF;
+border-style: solid;
+border-width: 0.1em;
+border-color: black;
+border-radius: 0.5em;
+font-family: verdana;
+font-size: 1em;
+font-weight: 500;
+width: 10em;
+margin: 0.5em 1em 0.5em 1em;
+height: 2em;
+}
+
+.NavBar-Button:hover{
+  border-style: solid;
+  border-width: 0.2em;
+  border-color: #51A3CB;
+  border-radius: 0.5em;
+}
+
+.Article-List{
+background-color: #DBF2FF;
+padding: 2em 0 2em 0;
+}
+
+.Article{
+  background-color: white;
+  border-style: solid;
+  border-width: 0.2em;
+  border-color: black;
+  border-radius: 0.5em;
+  margin: 0 2em 2em 2em;
+  box-shadow: 0.25em 0.25em rgb(171, 170, 170);
+}
+
+.Article:hover{
+  border-style: solid;
+  border-width: 0.2em;
+  border-color: #51A3CB;
+  border-radius: 0.5em;
+}
+
+.Article, h3, h5, p, img {
+    margin: 1em;
+}
+
+.Article-Headline{
+  font-family: verdana;
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+
 .Article-Image{
   height: 100px;
   width: 100px;
+}
+
+.Footer{
+  background-color: #51A3CB;
+  height: 7em;
+  border-top-style: solid;
+  border-top-width: 0.1em;
+  border-top-color: black;
 }

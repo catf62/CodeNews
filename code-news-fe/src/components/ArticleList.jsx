@@ -20,8 +20,8 @@ class ArticleList extends Component {
         );
       });
       return (
-        <div className='article-list'>
-        <ul>
+        <div>
+        <ul className='Article-List'>
         {articleItems}
         </ul>
         </div>

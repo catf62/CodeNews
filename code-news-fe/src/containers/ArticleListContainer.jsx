@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import ArticleList from '../components/ArticleList';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 class ArticleListContainer extends Component {
 
@@ -41,7 +43,7 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"After freaking out reading a stack overflow entry including the words 'First of all, you should know that is is nearly impossible to process react components - this includes sorting them as well.', this reporter realised with the help of some further googling that the array used to make the React elements could be ordered by date, before mapping them into the React elements. This story with it's ancient date-tag was written to test if sorting the array before mapping, resulted in the articles being displayed on a different order on the web page, than here in the diddy data.",
           keywords:["Testing","Googling","React","KeepItSimpleStupid"],
-          imageurl:"https://stackoverflow.com/questions/48764203/how-to-sort-list-of-react-components-based-on-different-properties",
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
           date: new Date(2009, 1, 2)
         },
         {
@@ -50,7 +52,7 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"Having established that my article dated 2009 had shot straight to the top of my list of articles, to make sure this wasn't a fluke, and disatisfied with my super-scientific sample size of 1, I decided to add an article to the array dated in between two of the earlier articles to make sure it ended up somewhere in the middle of the list. It also occured to me in the process of writing this stream of concious waffling, that it would make more sense for the articles to be ordered by newest first rather than oldest. Guess what my next test if going to be! Can't wait > =0!",
           keywords:["Testing","Googling","React","KeepItSimpleStupid"],
-          imageurl:"https://stackoverflow.com/questions/48764203/how-to-sort-list-of-react-components-based-on-different-properties",
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
           date: new Date(2019, 1, 8)
         },
         {
@@ -59,7 +61,7 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"If I've sucessfully flipped from ordered oldest to newest, to ordered newest to oldest, this should be the First article!",
           keywords:["Testing","Googling","React","KeepItSimpleStupid"],
-          imageurl:"https://stackoverflow.com/questions/48764203/how-to-sort-list-of-react-components-based-on-different-properties",
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
           date: new Date(2050, 8, 25)
         },
         {
@@ -68,7 +70,7 @@ class ArticleListContainer extends Component {
           author:"Catriona Ford",
           content:"If I've sucessfully flipped from ordered oldest to newest, to ordered newest to oldest, this should be the Last article!",
           keywords:["Testing","Googling","React","KeepItSimpleStupid"],
-          imageurl:"https://stackoverflow.com/questions/48764203/how-to-sort-list-of-react-components-based-on-different-properties",
+          imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
           date: new Date(1980, 11, 17)
         }
       ]
@@ -78,8 +80,10 @@ class ArticleListContainer extends Component {
   render(){
     return (
       <div className='article-list-container'>
-      <Header title='CodeNews - Fake news never looked so hacked together...'/>
+      <Header title='CodeNews'/>
+      <NavBar/>
       <ArticleList articles={this.state.articles} />
+      <Footer />
       </div>
     )
   }

@@ -22,14 +22,14 @@ class Article extends Component {
     }
 
     return (
-      <>
-      <h3>{this.props.article.headline}</h3>
+      <div className="Article">
+      <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5>By {this.props.article.author}</h5>
       <p>{this.props.article.content}</p>
       {keywords}
       <img className="Article-Image" src={this.props.article.imageurl}/>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
-      </>
+      </div>
     );
   }
 }
