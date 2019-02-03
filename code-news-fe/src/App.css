@@ -115,14 +115,19 @@ padding: 2em 0 2em 0;
 }
 
 .Article, h3, h5, p, img {
-    margin: 1em;
+    margin: 2vw;
 }
 
 .Article-Headline{
   font-family: verdana;
   font-size: 1em;
   font-weight: bold;
+}
 
+.Article-Author{
+  font-family: verdana;
+  font-size: 0.7em;
+  font-weight: bold;
 }
 
 .Article-Image{
