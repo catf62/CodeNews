@@ -37,14 +37,14 @@ border-radius: 0.5em;
 }
 
 .Header-Image{
-  width: 25%;
-  margin: 2em 0 2em -0em;
+height: 90%;
+margin: 0;
 }
 
 .Header-Text{
-  position: relative;
-  right: 10%;
   width: 75%;
+  padding-left: 15%;
+  text-align: justify;
   color: white;
   font-size: 3em;
   font-weight: 500;
