@@ -70,21 +70,21 @@ public class DataLoader implements ApplicationRunner {
 
         Date dateJan = null;
         try {
-            dateJan = sfd.parse("01-01-18");
+            dateJan = sfd.parse("19-01-18");
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         Date dateFeb = null;
         try {
-            dateFeb = sfd.parse("02-02-18");
+            dateFeb = sfd.parse("20-02-18");
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         Date dateMar = null;
         try {
-            dateMar = sfd.parse("03-03-18");
+            dateMar = sfd.parse("15-03-18");
         } catch (ParseException e) {
             e.printStackTrace();
         }

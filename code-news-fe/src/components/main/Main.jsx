@@ -82,7 +82,7 @@ class Main extends Component{
   componentDidMount(){
   let request = new Request()
   request.get('/api/articles').then(data => {
-    console.log("did mount", data._embedded.articles);
+    // console.log("did mount", data._embedded.articles);
     this.setState({articles: data._embedded.articles})
   })
 }
@@ -107,8 +107,8 @@ class Main extends Component{
       <Switch>
       <Route exact path="/" render={(props) => {
         const articles = this.state.articles;
-        console.log("articles", articles);
-        console.log("date", articles[0].id);
+        // console.log("articles", articles);
+        // console.log("date", articles[0]);
         return <ArticleLinkListContainer articles={articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
       }}/>
       <Route exact path="/article/:id" render={(props) => {
