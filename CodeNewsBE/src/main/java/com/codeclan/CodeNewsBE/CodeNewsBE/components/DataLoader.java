@@ -89,24 +89,25 @@ public class DataLoader implements ApplicationRunner {
             e.printStackTrace();
         }
 
+        String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
 
 
-        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"placeholder", dateJan, rob);
+        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,placeholderURL, dateJan, rob);
         articleRepository.save(article1);
 
         Article article2 = new Article("Mad news!", "Small news as local junior developers go on murder spree.",  keywords2,"https://images-na.ssl-images-amazon.com/images/I/8166xCVDGnL._SY355_.jpg", dateFeb, rob);
         articleRepository.save(article2);
 
-        Article article3 = new Article("Rob's Haircut!", "Big news as Rob gets a haircut.",  keywords3,"placeholderURL", dateMar, graeme);
+        Article article3 = new Article("Rob's Haircut!", "Big news as Rob gets a haircut.",  keywords3,"https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497", dateMar, graeme);
         articleRepository.save(article3);
 
-        Article article4 = new Article("Cat's Haircut!", "Huge news as Cat gets a haircut.",  keywords4,"placeholderURL", dateJan, graeme);
+        Article article4 = new Article("Cat's Haircut!", "Huge news as Cat gets a haircut.",  keywords4,placeholderURL, dateJan, graeme);
         articleRepository.save(article4);
 
-        Article article5 = new Article("Cat's Article!", "This is an article by Cat. It is about stuff.",  keywords5,"placeholderURL", dateFeb, cat);
+        Article article5 = new Article("Cat's Article!", "This is an article by Cat. It is about stuff.",  keywords5,placeholderURL, dateFeb, cat);
         articleRepository.save(article5);
 
-        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",  keywords,"placeholderURL", dateMar, chris);
+        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",  keywords,placeholderURL, dateMar, chris);
         articleRepository.save(article6);
     }
 }
