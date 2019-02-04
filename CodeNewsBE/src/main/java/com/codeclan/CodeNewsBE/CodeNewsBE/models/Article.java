@@ -28,14 +28,14 @@ public class Article {
     private String imageUrl;
 
     @Column(name="date")
-    private Date date;
+    private String date;
 
     @JsonIgnoreProperties("articles")
     @ManyToOne
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    public Article(String headline, String content, ArrayList<String> keywords, String imageUrl, Date date, Author author) {
+    public Article(String headline, String content, ArrayList<String> keywords, String imageUrl, String date, Author author) {
         this.headline = headline;
         this.content = content;
         this.keywords = keywords;
@@ -87,11 +87,11 @@ public class Article {
         this.imageUrl = imageUrl;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

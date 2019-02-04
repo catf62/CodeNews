@@ -66,28 +66,33 @@ public class DataLoader implements ApplicationRunner {
         keywords6.add("chairs");
         keywords6.add("feet");
 
-        DateFormat sfd = new SimpleDateFormat("dd-MM-yy");
+//        DateFormat sfd = new SimpleDateFormat("dd-MM-yy");
+//
+//        Date dateJan = null;
+//        try {
+//            dateJan = sfd.parse("19-01-18");
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//
+//        Date dateFeb = null;
+//        try {
+//            dateFeb = sfd.parse("20-02-18");
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+//
+//        Date dateMar = null;
+//        try {
+//            dateMar = sfd.parse("15-03-18");
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 
-        Date dateJan = null;
-        try {
-            dateJan = sfd.parse("19-01-18");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        String dateJan = "15/01/2018";
+        String dateFeb = "15/02/2018";
+        String dateMar = "20/02/2018";
 
-        Date dateFeb = null;
-        try {
-            dateFeb = sfd.parse("20-02-18");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        Date dateMar = null;
-        try {
-            dateMar = sfd.parse("15-03-18");
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
 
