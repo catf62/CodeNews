@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import ArticleLinkListContainer from '../../containers/ArticleLinkListContainer';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ArticleContainer from '../../containers/ArticleContainer'
+import Request from '../helpers/Request.js';
 
 
 class Main extends Component{
