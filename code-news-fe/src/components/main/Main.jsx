@@ -3,6 +3,7 @@ import ArticleLinkListContainer from '../../containers/ArticleLinkListContainer'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ArticleContainer from '../../containers/ArticleContainer';
 import AdminContainer from '../../containers/AdminContainer';
+import NewArticleContainer from '../../containers/NewArticleContainer';
 
 
 class Main extends Component{
@@ -109,7 +110,7 @@ class Main extends Component{
         return <AdminContainer />
       }}/>
       <Route exact path="/admin/article/new" render={(props) => {
-        return <p>this worked for article</p>
+        return <NewArticleContainer/>
       }}/>
       <Route exact path="/admin/author/new" render={(props) => {
         return <p>this worked for author</p>
