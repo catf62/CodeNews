@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import SingleArticle from '../components/single-article-page/SingleArticle'
+import SingleArticle from '../components/single-article-page/SingleArticle';
+import Header from '../components/general/Header';
+import NavBar from '../components/general/NavBar';
+import Footer from '../components/general/Footer';
+import '../styles/SingleArticlePage.css';
 
 class ArticleContainer extends Component{
   constructor(props) {
@@ -11,7 +15,12 @@ class ArticleContainer extends Component{
 
 render(){
   return(
-    <SingleArticle article={this.state.article}/>
+    <div className='article-list-container'>
+      <Header title='odeNews'/>
+      <NavBar/>
+      <SingleArticle article={this.state.article}/>
+      <Footer/>
+    </div>
   )
 }
 
