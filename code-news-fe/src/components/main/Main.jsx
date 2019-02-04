@@ -79,10 +79,22 @@ class Main extends Component{
     this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
   }
 
+  replaceDate(dateString) {
+    const day = parseInt(dateString.slice(0,2));
+    const month = parseInt(dateString.slice(3,5));
+    const year = parseInt(dateString.slice(6,10));
+    const date= new Date(year, month, day);
+    return date;
+  }
+
   componentDidMount(){
   let request = new Request()
   request.get('/api/articles').then(data => {
-    // console.log("did mount", data._embedded.articles);
+    const articleData = data._embedded.articles;
+    for (const art of articleData) {
+      art.datePosted = this.replaceDate(art.datePosted)
+    }
+
     this.setState({articles: data._embedded.articles})
   })
 }
