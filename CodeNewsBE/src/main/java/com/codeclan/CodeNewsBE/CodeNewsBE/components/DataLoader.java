@@ -91,10 +91,10 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"https://en.wikipedia.org/wiki/Spaniel#/media/File:011._Skull_of_Spaniel.JPG", dateJan, rob);
+        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"placeholder", dateJan, rob);
         articleRepository.save(article1);
 
-        Article article2 = new Article("Mad news!", "Small news as local junior developers go on murder spree.",  keywords2,"placeholderURL", dateFeb, rob);
+        Article article2 = new Article("Mad news!", "Small news as local junior developers go on murder spree.",  keywords2,"https://images-na.ssl-images-amazon.com/images/I/8166xCVDGnL._SY355_.jpg", dateFeb, rob);
         articleRepository.save(article2);
 
         Article article3 = new Article("Rob's Haircut!", "Big news as Rob gets a haircut.",  keywords3,"placeholderURL", dateMar, graeme);
