@@ -37,16 +37,19 @@ border-radius: 0.5em;
 }
 
 .Header-Image{
-width: 25%;
+object-fit: cover;
+width: 110px;
+height: 100px;
+padding-left: 35%;
+margin: 0;
 }
 
 .Header-Text{
-  width: 75%;
-  padding-left: 10%;
-  text-align: justify;
+  text-align: left;
   color: white;
   font-size: 5vw;
   font-weight: 500;
+  margin-left: -20px;
 }
 
 .NavBar{

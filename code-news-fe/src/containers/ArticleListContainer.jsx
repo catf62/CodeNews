@@ -81,7 +81,7 @@ class ArticleListContainer extends Component {
   render(){
     return (
       <div className='article-list-container'>
-      <Header title='CodeNews'/>
+      <Header title='odeNews'/>
       <NavBar/>
       <ArticleList articles={this.state.articles} />
       <Footer />

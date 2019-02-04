@@ -1,12 +1,19 @@
 .Article-List{
+background-image: url("https://i.pinimg.com/originals/e0/96/0d/e0960d26aec1c5e4a2a556ac99640533.jpg");
+background-size: 100%;
+background-repeat: round;
 padding: 2em 0 2em 0;
+display: flex;
+flex-wrap: wrap;
 }
 
 .Article{
-  background-color: white;
+  background-image: radial-gradient(white, rgb(214, 237, 247));
   border-width: 0.2em !important;
   margin: 0 2em 2em 2em;
   box-shadow: 0.25em 0.25em rgb(171, 170, 170);
+  width: 20%;
+  min-width: 150px;
 }
 
 .Article:hover{
@@ -14,8 +21,15 @@ padding: 2em 0 2em 0;
   border-color: #51A3CB;
 }
 
-.Article, h3, h5, p, img {
+.Article, h3, h5, p, img, .Article-Keywords {
     margin: 2vw;
+}
+
+.Article:first-child{
+  content: "New!";
+  width: 40%;
+  border-width: 0.6em !important;
+  border-color: rgb(147, 203, 107);
 }
 
 .Article-Headline{
@@ -26,6 +40,10 @@ padding: 2em 0 2em 0;
 .Article-Author{
   font-size: 0.7em;
   font-weight: bold;
+}
+
+.Article-Content{
+  font-size: 0.2em;
 }
 
 .Article-Image{
@@ -44,8 +62,12 @@ padding: 2em 0 2em 0;
 }
 
 .Keyword {
-padding: 0.3em;
-color: white;
+padding: 0.2em;
+margin: 0.2em;
+color: black;
+background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
+background-attachment: fixed;
+font-size: 0.7em;
 }
 
 .Keyword:hover{

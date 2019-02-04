@@ -26,8 +26,6 @@ class Article extends Component {
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5 className="Article-Author">By {this.props.article.author}</h5>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
-      <p>{this.props.article.content}</p>
-      <img className="Article-Image" src={this.props.article.imageurl}/>
       <div className="Article-Keywords">
       {keywords}
       </div>
