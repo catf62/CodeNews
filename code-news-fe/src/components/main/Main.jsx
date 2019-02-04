@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ArticleLinkListContainer from '../../containers/ArticleLinkListContainer';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import ArticleContainer from '../../containers/ArticleContainer'
+import ArticleContainer from '../../containers/ArticleContainer';
+import AdminContainer from '../../containers/AdminContainer';
+import NewArticleContainer from '../../containers/NewArticleContainer';
+import NewAuthorContainer from '../../containers/NewAuthorContainer';
 import Request from '../helpers/Request.js';
-
 
 class Main extends Component{
   constructor(props) {
@@ -126,6 +128,15 @@ class Main extends Component{
       <Route exact path="/article/:id" render={(props) => {
         const id = props.match.params.id
         return <ArticleContainer id={id} article={this.state.currentArticle}/>
+      }}/>
+      <Route exact path="/admin" render={(props) => {
+        return <AdminContainer />
+      }}/>
+      <Route exact path="/admin/article/new" render={(props) => {
+        return <NewArticleContainer/>
+      }}/>
+      <Route exact path="/admin/author/new" render={(props) => {
+        return <NewAuthorContainer/>
       }}/>
       </Switch>
       </Fragment>

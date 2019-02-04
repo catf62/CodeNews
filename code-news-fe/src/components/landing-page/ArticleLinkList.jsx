@@ -23,7 +23,7 @@ class ArticleLinkList extends Component {
       });
       return (
         <div>
-        <ul className='Lighter-Blue-BG Article-List'>
+        <ul className='Lighter-Blue-BG Landing-Page-Article-List'>
         {articleItems}
         </ul>
         </div>

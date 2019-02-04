@@ -1,4 +1,4 @@
-.Article-List{
+.Landing-Page-Article-List{
 background-image: url("https://i.pinimg.com/originals/e0/96/0d/e0960d26aec1c5e4a2a556ac99640533.jpg");
 background-size: 100%;
 background-repeat: round;
@@ -7,7 +7,7 @@ display: flex;
 flex-wrap: wrap;
 }
 
-.Article{
+.Landing-Page-Article{
   background-image: radial-gradient(white, rgb(214, 237, 247));
   border-width: 0.2em !important;
   margin: 0 2em 2em 2em;
@@ -16,52 +16,52 @@ flex-wrap: wrap;
   min-width: 150px;
 }
 
-.Article:hover{
+.Landing-Page-Article:hover{
   border-width: 0.4em;
   border-color: #51A3CB;
 }
 
-.Article, h3, h5, p, img, .Article-Keywords, button {
+.Landing-Page-Article, h3, h5, p, img, .Landing-Page-Article-Keywords, button {
     margin: 2vw;
 }
 
-.Article:first-child{
+.Landing-Page-Article:first-child{
   content: "New!";
   width: 40%;
   border-width: 0.6em !important;
   border-color: rgb(147, 203, 107);
 }
 
-.Article-Headline{
+.Landing-Page-Article-Headline{
   font-size: 1em;
   font-weight: bold;
 }
 
-.Article-Author{
+.Landing-Page-Article-Author{
   font-size: 0.7em;
   font-weight: bold;
 }
 
-.Article-Content{
+.Landing-Page-Article-Content{
   font-size: 0.7em;
 }
 
-.Article-Image{
+.Landing-Page-Article-Image{
   height: 100px;
   width: 100px;
 }
 
-.Article-Image:hover{
+.Landing-Page-Article-Image:hover{
   height: 300px;
   width: 300px;
 }
 
-.Article-Keywords{
+.Landing-Page-Article-Keywords{
   display: flex;
   flex-wrap: wrap;
 }
 
-.Keyword {
+.Landing-Page-Keyword {
 padding: 0.2em;
 margin: 0.2em;
 color: black;
@@ -70,13 +70,13 @@ background-attachment: fixed;
 font-size: 0.7em;
 }
 
-.Read-More-Button {
+.Landing-Page-Read-More-Button {
 color: black;
 background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
 background-attachment: fixed;
 font-size: 0.7em;
 }
 
-.Keyword:hover{
+.Landing-Page-Keyword:hover{
   border-color: #51A3CB;
 }

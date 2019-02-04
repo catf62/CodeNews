@@ -21,7 +21,7 @@ class ArticleLinkListContainer extends Component {
   render(){
     return (
       <div>
-      <Header title='odeNews'/>
+      <Header/>
       <NavBar/>
       <ArticleLinkList articles={this.props.articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
       <Footer />
