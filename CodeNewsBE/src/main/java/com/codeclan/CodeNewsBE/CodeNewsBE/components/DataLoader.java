@@ -44,7 +44,7 @@ public class DataLoader implements ApplicationRunner {
 
         ArrayList<String> keywords = new ArrayList<>();
         keywords.add("Cats");
-        keywords.add("Hello");
+        keywords.add("Piano");
 
         ArrayList<String> keywords2 = new ArrayList<>();
         keywords2.add("dogs");

@@ -14,6 +14,6 @@ public interface EmbedAuthor {
     String getContent();
     ArrayList<String> getKeywords();
     String getImageUrl();
-    Date getDate();
+    String getDatePosted();
     Author getAuthor();
 }
