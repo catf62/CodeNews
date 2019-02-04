@@ -102,4 +102,6 @@ public class Article {
     public void setAuthor(Author author) {
         this.author = author;
     }
+
+
 }
