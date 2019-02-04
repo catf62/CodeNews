@@ -16,7 +16,7 @@ class ArticleLink extends Component {
 
   render() {
     const keywords = this.props.article.keywords.map((keyword, index) => {
-      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Keyword">{keyword}</p>
+      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Landing-Page-Keyword">{keyword}</p>
     })
 
     let day = this.props.article.date.getDate().toString();
@@ -30,16 +30,16 @@ class ArticleLink extends Component {
     }
 
     return (
-      <div className="Solid-Black-Border-Curved Article" id={this.state.id}>
-      <h3 className="Article-Headline">{this.props.article.headline}</h3>
-      <h5 className="Article-Author">By {this.props.article.author}</h5>
-      <p className="Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
+      <div className="Solid-Black-Border-Curved Landing-Page-Article" id={this.state.id}>
+      <h3 className="Landing-Page-Article-Headline">{this.props.article.headline}</h3>
+      <h5 className="Landing-Page-Article-Author">By {this.props.article.author}</h5>
+      <p className="Landing-Page-Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
-      <div className="Article-Keywords">
+      <div className="Landing-Page-Article-Keywords">
       {keywords}
       </div>
       <Link to={'/article/'+this.state.id}>
-      <button className="Solid-Black-Border-Curved Read-More-Button" onClick={this.handleClick}>READ MORE!!!</button>
+      <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button" onClick={this.handleClick}>READ MORE!!!</button>
       </Link>
       </div>
     );
