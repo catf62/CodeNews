@@ -108,6 +108,12 @@ class Main extends Component{
       <Route exact path="/admin" render={(props) => {
         return <AdminContainer />
       }}/>
+      <Route exact path="/admin/article/new" render={(props) => {
+        return <p>this worked for article</p>
+      }}/>
+      <Route exact path="/admin/author/new" render={(props) => {
+        return <p>this worked for author</p>
+      }}/>
       </Switch>
       </Fragment>
       </Router>

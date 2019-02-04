@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
+import { Link } from 'react-router-dom';
 
 class AdminContainer extends Component{
   constructor(props) {
@@ -14,7 +15,12 @@ super(props);
       <Header />
       <NavBar />
       <div>
-      <p>Insert Elements Here</p>
+      <Link to={'/admin/article/new'}>
+      <button>Add New Article</button>
+      </Link>
+      <Link to={'/admin/author/new'}>
+      <button>Add New Author</button>
+      </Link>
       </div>
       <Footer/>
       </div>
