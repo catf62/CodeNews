@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ArticleListContainer from './containers/ArticleListContainer'
+import ArticleLinkListContainer from './containers/ArticleLinkListContainer'
 import './styles/App.css';
 
 class App extends Component {
   render() {
     return (
-      <ArticleListContainer />
+      <ArticleLinkListContainer />
     );
   }
 

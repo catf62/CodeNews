@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import ArticleList from '../components/ArticleList';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
+import Header from '../components/general/Header';
+import ArticleLinkList from '../components/landing-page/ArticleLinkList';
+import NavBar from '../components/general/NavBar';
+import Footer from '../components/general/Footer';
 import '../styles/LandingPage.css';
 
-class ArticleListContainer extends Component {
+class ArticleLinkListContainer extends Component {
 
   constructor(props) {
     super(props)
@@ -83,7 +83,7 @@ class ArticleListContainer extends Component {
       <div className='article-list-container'>
       <Header title='odeNews'/>
       <NavBar/>
-      <ArticleList articles={this.state.articles} />
+      <ArticleLinkList articles={this.state.articles} />
       <Footer />
       </div>
     )
@@ -91,4 +91,4 @@ class ArticleListContainer extends Component {
 
 }
 
-export default ArticleListContainer;
+export default ArticleLinkListContainer;
