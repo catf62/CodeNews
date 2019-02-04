@@ -84,6 +84,7 @@ class Main extends Component{
       for(const article of this.state.articles) {
         if (article.id === id){
           currentArticle = article;
+          break;
         }
       }
       return({currentArticle: currentArticle})

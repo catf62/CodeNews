@@ -38,7 +38,7 @@ class ArticleLink extends Component {
       {keywords}
       </div>
       <Link to={'/article/'+this.state.id}>
-      <button onClick={this.handleClick}>READ MORE!!!</button>
+      <button className="Solid-Black-Border-Curved Read-More-Button" onClick={this.handleClick}>READ MORE!!!</button>
       </Link>
       </div>
     );

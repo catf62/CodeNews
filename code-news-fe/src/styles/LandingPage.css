@@ -21,7 +21,7 @@ flex-wrap: wrap;
   border-color: #51A3CB;
 }
 
-.Article, h3, h5, p, img, .Article-Keywords {
+.Article, h3, h5, p, img, .Article-Keywords, button {
     margin: 2vw;
 }
 
@@ -64,6 +64,13 @@ flex-wrap: wrap;
 .Keyword {
 padding: 0.2em;
 margin: 0.2em;
+color: black;
+background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
+background-attachment: fixed;
+font-size: 0.7em;
+}
+
+.Read-More-Button {
 color: black;
 background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
 background-attachment: fixed;
