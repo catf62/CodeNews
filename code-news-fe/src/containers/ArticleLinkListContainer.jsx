@@ -10,8 +10,12 @@ class ArticleLinkListContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+    };
+    this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
+  }
 
-    }
+  handleArticleLinkClick(id){
+    this.props.handleArticleLinkClick(id);
   }
 
   render(){
@@ -19,7 +23,7 @@ class ArticleLinkListContainer extends Component {
       <div className='article-list-container'>
       <Header title='odeNews'/>
       <NavBar/>
-      <ArticleLinkList articles={this.props.articles} />
+      <ArticleLinkList articles={this.props.articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
       <Footer />
       </div>
     )

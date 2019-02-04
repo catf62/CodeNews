@@ -72,11 +72,23 @@ class Main extends Component{
           imageurl:"https://codeclan.com/wp-content/uploads/2018/12/leaflets-09-1.png",
           date: new Date(1980, 11, 17)
         }
-      ]
+      ],
+      currentArticle: null
     }
+    this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
   }
 
-
+  handleArticleLinkClick(id){
+    this.setState(() => {
+      let currentArticle = null;
+      for(const article of this.state.articles) {
+        if (article.id === id){
+          currentArticle = article;
+        }
+      }
+      return({currentArticle: currentArticle})
+    })
+  }
 
   render(){
     return (
@@ -85,11 +97,11 @@ class Main extends Component{
       <Switch>
       <Route exact path="/" render={(props) => {
         const articles = this.state.articles;
-        return <ArticleLinkListContainer articles={articles}/>
+        return <ArticleLinkListContainer articles={articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
       }}/>
       <Route exact path="/article/:id" render={(props) => {
         const id = props.match.params.id
-        return <ArticleContainer id={id} />
+        return <ArticleContainer id={id} article={this.state.currentArticle}/>
       }}/>
       </Switch>
       </Fragment>

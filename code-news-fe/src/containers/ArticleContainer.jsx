@@ -5,7 +5,7 @@ class ArticleContainer extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      article: null
+      article: props.article
     }
   }
 

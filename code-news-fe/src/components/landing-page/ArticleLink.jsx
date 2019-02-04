@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ArticleLink extends Component {
   constructor(props){
     super(props);
-    this.state = {}
+    this.state = {
+      id: props.id
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(){
+    this.props.handleArticleLinkClick(this.state.id);
   }
 
   render() {
@@ -22,13 +30,16 @@ class ArticleLink extends Component {
     }
 
     return (
-      <div className="Solid-Black-Border-Curved Article">
+      <div className="Solid-Black-Border-Curved Article" id={this.state.id}>
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5 className="Article-Author">By {this.props.article.author}</h5>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
       <div className="Article-Keywords">
       {keywords}
       </div>
+      <Link to={'/article/'+this.state.id}>
+      <button onClick={this.handleClick}>READ MORE!!!</button>
+      </Link>
       </div>
     );
   }
