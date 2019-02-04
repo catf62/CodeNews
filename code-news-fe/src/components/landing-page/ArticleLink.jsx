@@ -33,6 +33,7 @@ class ArticleLink extends Component {
       <div className="Solid-Black-Border-Curved Article" id={this.state.id}>
       <h3 className="Article-Headline">{this.props.article.headline}</h3>
       <h5 className="Article-Author">By {this.props.article.author}</h5>
+      <p className="Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
       <p>{day}/{month}/{this.props.article.date.getFullYear()}</p>
       <div className="Article-Keywords">
       {keywords}
