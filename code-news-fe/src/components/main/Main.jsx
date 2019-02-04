@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import ArticleContainer from '../../containers/ArticleContainer';
 import AdminContainer from '../../containers/AdminContainer';
 import NewArticleContainer from '../../containers/NewArticleContainer';
-
+import NewAuthorContainer from '../../containers/NewAuthorContainer';
 
 class Main extends Component{
   constructor(props) {
@@ -113,7 +113,7 @@ class Main extends Component{
         return <NewArticleContainer/>
       }}/>
       <Route exact path="/admin/author/new" render={(props) => {
-        return <p>this worked for author</p>
+        return <NewAuthorContainer/>
       }}/>
       </Switch>
       </Fragment>
