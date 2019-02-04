@@ -18,10 +18,10 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepository;
 
-    @GetMapping(value = "/keyword/{desiredKeyword}")
-    public List<Article> getArticlesByKeyword (@PathVariable String desiredKeyword) {
-        return articleRepository.getArticlesByKeyword(desiredKeyword);
-    }
+//    @GetMapping(value = "/keyword/{desiredKeyword}")
+//    public List<Article> getArticlesByKeyword (@PathVariable String desiredKeyword) {
+//        return articleRepository.getAllArticlesByKeywordsInclude(desiredKeyword);
+//    }
 
     @GetMapping(value="/bananas")
     public String giveBananas () {

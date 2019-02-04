@@ -15,20 +15,20 @@ public class ArticleRepositoryImpl implements ArticleRepositoryCustom{
     @Autowired
     EntityManager entityManager;
 
-    @Transactional
-    public List<Article> getArticlesByKeyword(String desiredKeyword) {
-        List<Article> result = null;
-
-        Session session = entityManager.unwrap(Session.class);
-        Criteria cr = session.createCriteria(Article.class);
-        cr.add(Restrictions.eq("keywords", desiredKeyword));
-        try {
-            result = cr.list();
-        } catch (Exception ex){
-            ex.printStackTrace();
-        }
-
-        return result;
-    }
+//    @Transactional
+//    public List<Article> getArticlesByKeyword(String desiredKeyword) {
+//        List<Article> result = null;
+//
+//        Session session = entityManager.unwrap(Session.class);
+//        Criteria cr = session.createCriteria(Article.class);
+//        cr.add(Restrictions.eq("keywords", desiredKeyword));
+//        try {
+//            result = cr.list();
+//        } catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//
+//        return result;
+//    }
 
 }

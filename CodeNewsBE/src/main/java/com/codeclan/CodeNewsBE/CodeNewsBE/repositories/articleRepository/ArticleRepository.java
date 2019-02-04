@@ -12,5 +12,7 @@ import java.util.List;
 public interface ArticleRepository extends ArticleRepositoryCustom, JpaRepository<Article, Long> {
 
     List<Article> getAllArticlesByContent(String content);
+//    List<Article> getAllArticlesByKeywordsInclude(String keyword);
+    //TODO: Find articles by keyword. Will need keyword classes.
 
 }

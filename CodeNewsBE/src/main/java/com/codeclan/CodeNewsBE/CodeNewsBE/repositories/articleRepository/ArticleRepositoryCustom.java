@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ArticleRepositoryCustom {
 
-    List<Article> getArticlesByKeyword(String desiredKeyword);
+//    List<Article> getArticlesByKeywordsInclude(String desiredKeyword);
 
 }
