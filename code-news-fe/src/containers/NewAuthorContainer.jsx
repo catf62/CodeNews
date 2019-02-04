@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Header from '../components/general/Header';
+import NavBar from '../components/general/NavBar';
+import Footer from '../components/general/Footer';
 
 class NewAuthorContainer extends Component {
 
@@ -11,11 +14,16 @@ class NewAuthorContainer extends Component {
 
   render(){
     return (
-      <form>
-        <label htmlFor="Name">Author Name</label>
-        <input type="text" value={this.state.name} id="Name"/>
-        <input type="submit" value="Save"/>
-      </form>
+      <div>
+        <Header/>
+        <NavBar/>
+        <form>
+          <label htmlFor="Name">Author Name</label>
+          <input type="text" value={this.state.name} id="Name"/>
+          <input type="submit" value="Save"/>
+        </form>
+        <Footer/>
+      </div>
     )
   }
 }
