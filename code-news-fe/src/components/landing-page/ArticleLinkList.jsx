@@ -13,6 +13,8 @@ class ArticleLinkList extends Component {
     this.props.handleArticleLinkClick(id);
   }
 
+  //TODO: change 'date to datePosted here to fix the sorting'
+
   render() {
     const unorderedArticleItems = this.props.articles;
     unorderedArticleItems.sort((article1, article2) => article2.date - article1.date);
