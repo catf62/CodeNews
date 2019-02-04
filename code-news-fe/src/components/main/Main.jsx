@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import ArticleLinkListContainer from '../../containers/ArticleLinkListContainer';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import ArticleContainer from '../../containers/ArticleContainer'
+import ArticleContainer from '../../containers/ArticleContainer';
+import AdminContainer from '../../containers/AdminContainer';
 
 
 class Main extends Component{
@@ -103,6 +104,9 @@ class Main extends Component{
       <Route exact path="/article/:id" render={(props) => {
         const id = props.match.params.id
         return <ArticleContainer id={id} article={this.state.currentArticle}/>
+      }}/>
+      <Route exact path="/admin" render={(props) => {
+        return <AdminContainer />
       }}/>
       </Switch>
       </Fragment>

@@ -16,7 +16,7 @@ class ArticleContainer extends Component{
 render(){
   return(
     <div>
-      <Header title='odeNews'/>
+      <Header />
       <NavBar/>
       <SingleArticle article={this.state.article}/>
       <Footer/>
