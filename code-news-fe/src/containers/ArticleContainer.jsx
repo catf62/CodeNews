@@ -15,7 +15,7 @@ class ArticleContainer extends Component{
 
 render(){
   return(
-    <div className='article-list-container'>
+    <div>
       <Header title='odeNews'/>
       <NavBar/>
       <SingleArticle article={this.state.article}/>

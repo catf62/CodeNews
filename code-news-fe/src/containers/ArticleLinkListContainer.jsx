@@ -20,7 +20,7 @@ class ArticleLinkListContainer extends Component {
 
   render(){
     return (
-      <div className='article-list-container'>
+      <div>
       <Header title='odeNews'/>
       <NavBar/>
       <ArticleLinkList articles={this.props.articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
