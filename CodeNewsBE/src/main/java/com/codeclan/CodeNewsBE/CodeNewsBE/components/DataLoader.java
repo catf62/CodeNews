@@ -91,7 +91,7 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"placeholderURL", dateJan, rob);
+        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"https://en.wikipedia.org/wiki/Spaniel#/media/File:011._Skull_of_Spaniel.JPG", dateJan, rob);
         articleRepository.save(article1);
 
         Article article2 = new Article("Mad news!", "Small news as local junior developers go on murder spree.",  keywords2,"placeholderURL", dateFeb, rob);
@@ -106,7 +106,7 @@ public class DataLoader implements ApplicationRunner {
         Article article5 = new Article("Cat's Article!", "This is an article by Cat. It is about stuff.",  keywords5,"placeholderURL", dateFeb, cat);
         articleRepository.save(article5);
 
-        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",  keywords,"placeholderURL", new Date(2013-12-25), chris);
+        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",  keywords,"placeholderURL", dateMar, chris);
         articleRepository.save(article6);
     }
 }
