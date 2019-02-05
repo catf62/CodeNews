@@ -1,6 +1,7 @@
 package com.codeclan.CodeNewsBE.CodeNewsBE.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,8 +22,10 @@ public class Article {
     @Column(name="content")
     private String content;
 
-    @Column(name="keywords")
-    private ArrayList<String> keywords;
+    @JsonIgnoreProperties("article")
+    @OneToMany(mappedBy = "article")
+    @Cascade(org.hibernate.annotations.CascadeType.DELETE)
+    private List<Keyword> keywords;
 
     @Column(name="imageUrl")
     private String imageUrl;
@@ -35,10 +38,10 @@ public class Article {
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    public Article(String headline, String content, ArrayList<String> keywords, String imageUrl, String datePosted, Author author) {
+    public Article(String headline, String content, String imageUrl, String datePosted, Author author) {
         this.headline = headline;
         this.content = content;
-        this.keywords = keywords;
+        this.keywords = new ArrayList<>();
         this.imageUrl = imageUrl;
         this.datePosted = datePosted;
         this.author = author;
@@ -71,11 +74,11 @@ public class Article {
         this.content = content;
     }
 
-    public ArrayList<String> getKeywords() {
+    public List<Keyword> getKeywords() {
         return keywords;
     }
 
-    public void setKeywords(ArrayList<String> keywords) {
+    public void setKeywords(ArrayList<Keyword> keywords) {
         this.keywords = keywords;
     }
 
@@ -103,5 +106,8 @@ public class Article {
         this.author = author;
     }
 
+    public void addKeyword(Keyword keyword){
+        this.keywords.add(keyword);
+    }
 
 }
