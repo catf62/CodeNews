@@ -11,7 +11,7 @@ class SingleArticle extends Component {
   }
 
   render(){
-    const keywords = this.state.article.keywords.map((keyword, index) => {
+    const keywords = this.props.article.keywords.map((keyword, index) => {
       return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Single-Article-Page-Keyword">{keyword.word}</p>
     })
 
@@ -21,7 +21,7 @@ class SingleArticle extends Component {
         <h5 className="Single-Article-Page-Article-Author">By {this.state.article.author}</h5>
         <p className="Single-Article-Page-Article-Content">{this.state.article.content}</p>
         <img className="Single-Article-Page-Article-Image" src={this.state.article.imageurl}/>
-        <p>{this.state.article.date.getDate()}/{this.state.article.date.getMonth()}/{this.state.article.date.getFullYear()}</p>
+        <p>{this.state.article.datePosted.getDate()}/{this.state.article.datePosted.getMonth()}/{this.state.article.datePosted.getFullYear()}</p>
         <div className="Single-Article-Page-Article-Keywords">
           {keywords}
         </div>
