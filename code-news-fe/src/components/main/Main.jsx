@@ -17,7 +17,8 @@ class Main extends Component{
     super(props);
     this.state = {
       articles: [],
-      currentArticle: null
+      currentArticle: null,
+      authors: []
     }
     this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
   }
@@ -37,8 +38,10 @@ class Main extends Component{
     for (const art of articleData) {
       art.datePosted = this.replaceDate(art.datePosted)
     }
-
     this.setState({articles: data._embedded.articles})
+  })
+  request.get('/api/authors').then(data => {
+    this.setState({authors: data._embedded.authors})
   })
 }
 
@@ -78,7 +81,7 @@ class Main extends Component{
             return <NewArticleContainer/>
           }}/>
           <Route exact path="/admin/author/new" render={(props) => {
-            return <NewAuthorContainer/>
+            return <NewAuthorContainer authors={this.state.authors}/>
           }}/>
           <Route exact path="/article/:id/edit" render={(props) => {
             return <EditArticleContainer article={this.state.currentArticle}/>

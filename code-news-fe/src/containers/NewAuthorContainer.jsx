@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
+import AuthorsListContainer from './AuthorsListContainer';
 
 class NewAuthorContainer extends Component {
 
@@ -23,6 +24,7 @@ class NewAuthorContainer extends Component {
   render(){
     return (
       <div>
+      <AuthorsListContainer authors={this.props.authors}/>
         <form>
           <label htmlFor="Name">Author Name</label>
           <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
