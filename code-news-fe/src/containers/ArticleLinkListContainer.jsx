@@ -21,10 +21,7 @@ class ArticleLinkListContainer extends Component {
   render(){
     return (
       <div>
-      <Header/>
-      <NavBar/>
       <ArticleLinkList articles={this.props.articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
-      <Footer />
       </div>
     )
   }
