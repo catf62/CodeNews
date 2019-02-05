@@ -12,8 +12,6 @@ super(props);
   render(){
     return(
       <div>
-      <Header />
-      <NavBar />
       <div>
       <Link to={'/admin/article/new'}>
       <button>Add New Article</button>
@@ -22,7 +20,6 @@ super(props);
       <button>Add New Author</button>
       </Link>
       </div>
-      <Footer/>
       </div>
     )
   }

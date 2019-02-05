@@ -63,8 +63,6 @@ class NewArticleContainer extends Component {
   render(){
     return (
       <div>
-        <Header/>
-        <NavBar/>
         <form>
           <label htmlFor="Headline">Headline</label>
           <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
@@ -80,7 +78,6 @@ class NewArticleContainer extends Component {
           <input type="text" id="Keywords"/>
           <input type="submit" value="Save"/>
         </form>
-        <Footer/>
       </div>
     )
   }

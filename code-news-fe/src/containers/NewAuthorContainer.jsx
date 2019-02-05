@@ -23,14 +23,11 @@ class NewAuthorContainer extends Component {
   render(){
     return (
       <div>
-        <Header/>
-        <NavBar/>
         <form>
           <label htmlFor="Name">Author Name</label>
           <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
           <input type="submit" value="Save"/>
         </form>
-        <Footer/>
       </div>
     )
   }
