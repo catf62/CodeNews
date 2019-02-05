@@ -14,7 +14,7 @@ class EditArticleContainer extends Component {
       author: props.article.author.name,
       content: props.article.content,
       imageurl: props.article.imageUrl,
-      keywords: props.article.keywords
+      keywords: this.formatKeyWords()
     }
 
     this.headlineKeyUp = this.headlineKeyUp.bind(this);
@@ -22,6 +22,7 @@ class EditArticleContainer extends Component {
     this.authorKeyUp = this.authorKeyUp.bind(this);
     this.contentKeyUp = this.contentKeyUp.bind(this);
     this.imageurlKeyUp = this.imageurlKeyUp.bind(this);
+    this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
   }
 
   replaceDate() {
@@ -75,6 +76,21 @@ class EditArticleContainer extends Component {
   });
   }
 
+  formatKeyWords(){
+    let formattedKeyWords = ""
+    for (const keyWord of this.props.article.keywords){
+      formattedKeyWords += keyWord.word + ","
+    }
+    return formattedKeyWords
+  }
+
+  keywordsKeyUp (event){
+    console.log(this.state);
+  this.setState ({
+      keywords: event.target.value
+    })
+  }
+
 
   render(){
     return (
@@ -92,7 +108,7 @@ class EditArticleContainer extends Component {
           <label htmlFor="Image url">Image url</label>
           <input onChange={this.imageurlKeyUp} type="text" id="Image url" value={this.state.imageurl}/>
           <label htmlFor="Keywords">Keywords</label>
-          <input type="text" id="Keywords"
+          <input onChange= {this.keywordsKeyUp} type="text" id="Keywords"
           value={this.state.keywords}/>
           <input type="submit" value="Save"/>
         </form>
