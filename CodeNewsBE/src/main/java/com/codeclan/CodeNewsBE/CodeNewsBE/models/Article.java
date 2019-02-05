@@ -19,6 +19,7 @@ public class Article {
     @Column(name="headline")
     private String headline;
 
+    @Lob
     @Column(name="content")
     private String content;
 
