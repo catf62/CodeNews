@@ -6,10 +6,11 @@ import AdminContainer from '../../containers/AdminContainer';
 import NewArticleContainer from '../../containers/NewArticleContainer';
 import NewAuthorContainer from '../../containers/NewAuthorContainer';
 import Request from '../helpers/Request.js';
-import Header from'../general/Header.jsx';
-import NavBar from'../general/NavBar.jsx';
-import Footer from'../general/Footer.jsx';
-import EditArticleContainer from'../../containers/EditArticleContainer.jsx';
+import Header from '../general/Header.jsx';
+import NavBar from '../general/NavBar.jsx';
+import Footer from '../general/Footer.jsx';
+import EditArticleContainer from '../../containers/EditArticleContainer.jsx';
+import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx'
 
 class Main extends Component{
   constructor(props) {
@@ -81,6 +82,9 @@ class Main extends Component{
           }}/>
           <Route exact path="/article/:id/edit" render={(props) => {
             return <EditArticleContainer article={this.state.currentArticle}/>
+          }}/>
+          <Route exact path="/article/:id/delete" render={(props) => {
+            return <DeleteArticleContainer article={this.state.currentArticle}/>
           }}/>
           </Switch>
         </Fragment>
