@@ -9,6 +9,7 @@ import Request from '../helpers/Request.js';
 import Header from'../general/Header.jsx';
 import NavBar from'../general/NavBar.jsx';
 import Footer from'../general/Footer.jsx';
+import EditArticleContainer from'../../containers/EditArticleContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -63,8 +64,6 @@ class Main extends Component{
           <Switch>
           <Route exact path="/" render={(props) => {
             const articles = this.state.articles;
-            // console.log("articles", articles);
-            // console.log("date", articles[0]);
             return <ArticleLinkListContainer articles={articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
           }}/>
           <Route exact path="/article/:id" render={(props) => {
@@ -79,6 +78,9 @@ class Main extends Component{
           }}/>
           <Route exact path="/admin/author/new" render={(props) => {
             return <NewAuthorContainer/>
+          }}/>
+          <Route exact path="/article/:id/edit" render={(props) => {
+            return <EditArticleContainer article={this.state.currentArticle}/>
           }}/>
           </Switch>
         </Fragment>

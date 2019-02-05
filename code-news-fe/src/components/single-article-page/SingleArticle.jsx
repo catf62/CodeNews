@@ -35,6 +35,9 @@ class SingleArticle extends Component {
         <div className="Single-Article-Page-Article-Keywords">
           {displayedKeywords}
         </div>
+        <Link to={'/article/'+this.state.article.id+'/edit'}>
+        <button className="Button">Edit</button>
+        </Link>
       </div>
     )
   }
