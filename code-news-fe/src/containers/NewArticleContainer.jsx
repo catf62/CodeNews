@@ -24,6 +24,7 @@ class NewArticleContainer extends Component {
     this.contentKeyUp = this.contentKeyUp.bind(this);
     this.imageurlKeyUp = this.imageurlKeyUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
   }
 
   handleSubmit(event){
@@ -79,6 +80,14 @@ class NewArticleContainer extends Component {
   });
   }
 
+  keywordsKeyUp (event){
+    console.log(this.state);
+    const keywordsArray = event.target.value.split(",");
+    this.setState ({
+        keywords: keywordsArray
+      })
+      console.log(keywordsArray);
+    }
 
   render(){
     return (
@@ -95,7 +104,7 @@ class NewArticleContainer extends Component {
           <label htmlFor="Image url">Image url</label>
           <input onKeyUp={this.imageurlKeyUp} type="text" id="Image url"/>
           <label htmlFor="Keywords">Keywords</label>
-          <input type="text" id="Keywords"/>
+          <input onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
           <input type="submit" value="Save"/>
         </form>
       </div>
