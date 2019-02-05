@@ -17,7 +17,7 @@ class ArticleLinkList extends Component {
 
   render() {
     const unorderedArticleItems = this.props.articles;
-    unorderedArticleItems.sort((article1, article2) => article2.date - article1.date);
+    unorderedArticleItems.sort((article1, article2) => article2.datePosted - article1.datePosted);
     const articleItems = unorderedArticleItems.map((article) => {
         return (
           <ArticleLink article={article} key={article.id} id={article.id} handleArticleLinkClick={this.handleArticleLinkClick}/>

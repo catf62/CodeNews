@@ -10,6 +10,14 @@ class NewAuthorContainer extends Component {
     this.state = {
       name: ""
     }
+    this.nameKeyUp = this.nameKeyUp.bind(this);
+  }
+
+  nameKeyUp(event) {
+    console.log(this.state);
+  this.setState({
+    name: event.target.value
+  });
   }
 
   render(){
@@ -19,7 +27,7 @@ class NewAuthorContainer extends Component {
         <NavBar/>
         <form>
           <label htmlFor="Name">Author Name</label>
-          <input type="text" value={this.state.name} id="Name"/>
+          <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
           <input type="submit" value="Save"/>
         </form>
         <Footer/>
