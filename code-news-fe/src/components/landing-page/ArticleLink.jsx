@@ -16,7 +16,7 @@ class ArticleLink extends Component {
 
   render() {
     const keywords = this.props.article.keywords.map((keyword, index) => {
-      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Landing-Page-Keyword">{keyword}</p>
+      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Landing-Page-Keyword">{keyword.word}</p>
     })
 
     let day = this.props.article.datePosted.getDate().toString();

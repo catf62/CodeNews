@@ -12,7 +12,7 @@ class SingleArticle extends Component {
 
   render(){
     const keywords = this.state.article.keywords.map((keyword, index) => {
-      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Single-Article-Page-Keyword">{keyword}</p>
+      return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Single-Article-Page-Keyword">{keyword.word}</p>
     })
 
   return (

@@ -33,10 +33,7 @@ public class CodeNewsBeApplicationTests {
 	public void setUp() {
 		author = new Author("steve");
 		authorRepository.save(author);
-		ArrayList<String> keywords = new ArrayList<>();
-		keywords.add("Cats");
-		keywords.add("Hello");
-		Article article = new Article("Crazy news!", "Big news as local junior developers go on murder spree.",  keywords,"placeholderURL", "01/01/2018", author);
+		Article article = new Article("Crazy news!", "Big news as local junior developers go on murder spree.","placeholderURL", "01/01/2018", author);
 		articleRepository.save(article);
 	}
 
