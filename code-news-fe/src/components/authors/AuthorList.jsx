@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Author from './Author';
 
 class AuthorList extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class AuthorList extends Component {
 
   render(){
     const authors = this.props.authors.map((author, index) => {
-      return <p key={index}>{author.name}</p>
+      return <Author key={index} author={author} />
     })
 
     return(

@@ -25,6 +25,8 @@ class NewAuthorContainer extends Component {
     return (
       <div>
       <AuthorsListContainer authors={this.props.authors}/>
+
+      <p>Add New Author: </p>
         <form>
           <label htmlFor="Name">Author Name</label>
           <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
