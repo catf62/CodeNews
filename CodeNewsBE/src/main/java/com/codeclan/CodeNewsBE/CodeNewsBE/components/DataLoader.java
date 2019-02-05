@@ -47,54 +47,7 @@ public class DataLoader implements ApplicationRunner {
         authorRepository.save(cat);
         Author chris = new Author("Chris", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
         authorRepository.save(chris);
-
-//
-//        ArrayList<String> keywords = new ArrayList<>();
-//        keywords.add("Cats");
-//        keywords.add("Piano");
-//
-//        ArrayList<String> keywords2 = new ArrayList<>();
-//        keywords2.add("dogs");
-//        keywords2.add("goodbye");
-//
-//        ArrayList<String> keywords3 = new ArrayList<>();
-//        keywords3.add("Cats");
-//        keywords3.add("cheese");
-//
-//        ArrayList<String> keywords4 = new ArrayList<>();
-//        keywords4.add("robins");
-//        keywords4.add("sheep");
-//
-//        ArrayList<String> keywords5 = new ArrayList<>();
-//        keywords5.add("monkey");
-//        keywords5.add("robins");
-//
-//        ArrayList<String> keywords6 = new ArrayList<>();
-//        keywords6.add("chairs");
-//        keywords6.add("feet");
-
-//        DateFormat sfd = new SimpleDateFormat("dd-MM-yy");
-//
-//        Date dateJan = null;
-//        try {
-//            dateJan = sfd.parse("19-01-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Date dateFeb = null;
-//        try {
-//            dateFeb = sfd.parse("20-02-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Date dateMar = null;
-//        try {
-//            dateMar = sfd.parse("15-03-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
+        
 
         String dateJan = "15/01/2018";
         String dateFeb = "15/02/2018";
