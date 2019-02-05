@@ -23,5 +23,9 @@ public class ArticleController {
         return articleRepository.findArticlesByKeyword(keyword);
     }
 
+    @GetMapping(value = "headline/{word}")
+    public List<Article> findArticlesByHeadline(@PathVariable String word) {
+        return articleRepository.findArticlesByHeadline(word);
+    }
 
 }

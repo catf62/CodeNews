@@ -7,5 +7,6 @@ import java.util.List;
 public interface ArticleRepositoryCustom {
 
     List<Article> findArticlesByKeyword(String searchedWord);
+    List<Article> findArticlesByHeadline(String searchedWord);
 
 }

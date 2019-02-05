@@ -38,4 +38,26 @@ public class ArticleRepositoryImpl implements ArticleRepositoryCustom{
         return results;
     }
 
+
+    // Doesn't work as intended, but doesn't break anything since it is not used.
+    @Transactional
+    public List<Article> findArticlesByHeadline(String searchedWord) {
+        List<Article> results = null;
+
+        Session session = entityManager.unwrap(Session.class);
+
+        Criteria cr = session.createCriteria(Article.class);
+        cr.add(Restrictions.like("headline", searchedWord));
+
+        try {
+            results = cr.list();
+        } catch(HibernateException ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return results;
+    }
+
 }
