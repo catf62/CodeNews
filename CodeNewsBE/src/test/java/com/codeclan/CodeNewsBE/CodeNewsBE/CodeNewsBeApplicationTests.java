@@ -31,7 +31,7 @@ public class CodeNewsBeApplicationTests {
 
 	@Before
 	public void setUp() {
-		author = new Author("steve");
+		author = new Author("steve", "dave", "string", "url");
 		authorRepository.save(author);
 		Article article = new Article("Crazy news!", "Big news as local junior developers go on murder spree.","placeholderURL", "01/01/2018", author);
 		articleRepository.save(article);

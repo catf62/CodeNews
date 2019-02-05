@@ -11,7 +11,7 @@ public class AuthorTest {
 
     @Before
     public void before(){
-        author = new Author("Steve");
+        author = new Author("Steve", "head", "biography", "image");
     }
 
     @Test

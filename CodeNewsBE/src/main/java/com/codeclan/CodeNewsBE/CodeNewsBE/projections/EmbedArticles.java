@@ -10,5 +10,8 @@ import java.util.List;
 public interface EmbedArticles {
     Long getId();
     String getName();
+    String getBiography();
+    String getPosition();
+    String getImageUrl();
     List<Article> getArticles();
 }

@@ -1,9 +1,11 @@
 package com.codeclan.CodeNewsBE.CodeNewsBE.components;
 
 import com.codeclan.CodeNewsBE.CodeNewsBE.controllers.AuthorController;
+import com.codeclan.CodeNewsBE.CodeNewsBE.models.Admin;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Article;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Author;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Keyword;
+import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.adminRepositories.AdminRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.articleRepository.ArticleRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.authorRepository.AuthorRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.keywordRepository.KeywordRepository;
@@ -30,6 +32,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     KeywordRepository keywordRepository;
 
+    @Autowired
+    AdminRepository adminRepository;
+
 
     public DataLoader(){
 
@@ -37,70 +42,26 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Author rob = new Author("Rob");
+        String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
+
+        Author rob = new Author("Rob", "Head boy", "good at being a champion", placeholderURL);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme");
+        Author graeme = new Author("Graeme", "upside down", "average person", placeholderURL );
         authorRepository.save(graeme);
-        Author cat = new Author("Cat");
+        Author cat = new Author("Cat", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
-        Author chris = new Author("Chris");
+        Author chris = new Author("Chris", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
         authorRepository.save(chris);
 
-//
-//        ArrayList<String> keywords = new ArrayList<>();
-//        keywords.add("Cats");
-//        keywords.add("Piano");
-//
-//        ArrayList<String> keywords2 = new ArrayList<>();
-//        keywords2.add("dogs");
-//        keywords2.add("goodbye");
-//
-//        ArrayList<String> keywords3 = new ArrayList<>();
-//        keywords3.add("Cats");
-//        keywords3.add("cheese");
-//
-//        ArrayList<String> keywords4 = new ArrayList<>();
-//        keywords4.add("robins");
-//        keywords4.add("sheep");
-//
-//        ArrayList<String> keywords5 = new ArrayList<>();
-//        keywords5.add("monkey");
-//        keywords5.add("robins");
-//
-//        ArrayList<String> keywords6 = new ArrayList<>();
-//        keywords6.add("chairs");
-//        keywords6.add("feet");
-
-//        DateFormat sfd = new SimpleDateFormat("dd-MM-yy");
-//
-//        Date dateJan = null;
-//        try {
-//            dateJan = sfd.parse("19-01-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Date dateFeb = null;
-//        try {
-//            dateFeb = sfd.parse("20-02-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        Date dateMar = null;
-//        try {
-//            dateMar = sfd.parse("15-03-18");
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
 
         String dateJan = "15/01/2018";
         String dateFeb = "15/02/2018";
         String dateMar = "20/02/2018";
 
 
-        String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
 
+        Admin admin = new Admin("Rob Wilson", "codeclan1234");
+        adminRepository.save(admin);
 
         Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.", placeholderURL, dateJan, rob);
 
