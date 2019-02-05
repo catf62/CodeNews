@@ -1,9 +1,11 @@
 package com.codeclan.CodeNewsBE.CodeNewsBE.components;
 
 import com.codeclan.CodeNewsBE.CodeNewsBE.controllers.AuthorController;
+import com.codeclan.CodeNewsBE.CodeNewsBE.models.Admin;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Article;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Author;
 import com.codeclan.CodeNewsBE.CodeNewsBE.models.Keyword;
+import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.adminRepositories.AdminRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.articleRepository.ArticleRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.authorRepository.AuthorRepository;
 import com.codeclan.CodeNewsBE.CodeNewsBE.repositories.keywordRepository.KeywordRepository;
@@ -30,6 +32,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     KeywordRepository keywordRepository;
 
+    @Autowired
+    AdminRepository adminRepository;
+
 
     public DataLoader(){
 
@@ -55,7 +60,8 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-
+        Admin admin = new Admin("Rob Wilson", "codeclan1234");
+        adminRepository.save(admin);
 
         Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.", placeholderURL, dateJan, rob);
 
