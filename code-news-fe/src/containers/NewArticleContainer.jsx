@@ -16,7 +16,17 @@ class NewArticleContainer extends Component {
       imageurl: "",
       keywords: []
     }
+
+    this.headlineKeyUp = this.headlineKeyUp.bind(this);
   }
+
+  headlineKeyUp(event) {
+    console.log(this.state);
+  this.setState({
+    headline: event.target.value
+  });
+  }
+
 
   render(){
     return (
@@ -25,17 +35,17 @@ class NewArticleContainer extends Component {
         <NavBar/>
         <form>
           <label htmlFor="Headline">Headline</label>
-          <input type="text" value={this.state.headline} id="Headline"/>
+          <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
           <label htmlFor="Date">Date</label>
-          <input type="date" value={this.state.date} id="Date"/>
+          <input type="date" id="Date"/>
           <label htmlFor="Author">Author</label>
-          <input type="text" value={this.state.author} id="Author"/>
+          <input type="text" id="Author"/>
           <label htmlFor="Content">Content</label>
-          <input type="text" value={this.state.content} id="Content"/>
+          <input type="text" id="Content"/>
           <label htmlFor="Image url">Image url</label>
-          <input type="text" value={this.state.imageurl} id="Image url"/>
+          <input type="text" id="Image url"/>
           <label htmlFor="Keywords">Keywords</label>
-          <input type="text" value={this.state.keywords} id="Keywords"/>
+          <input type="text" id="Keywords"/>
           <input type="submit" value="Save"/>
         </form>
         <Footer/>
