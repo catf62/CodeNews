@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
+import Request from '../components/helpers/Request.js'
 
 
 class NewArticleContainer extends Component {
@@ -22,6 +23,25 @@ class NewArticleContainer extends Component {
     this.authorKeyUp = this.authorKeyUp.bind(this);
     this.contentKeyUp = this.contentKeyUp.bind(this);
     this.imageurlKeyUp = this.imageurlKeyUp.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    const newArticle = {
+      headline: this.state.headline,
+      date: this.state.date,
+      author: this.state.author,
+      content: this.state.content,
+      imageUrl: this.state.imageurl
+    }
+
+    const request = new Request();
+    request.post('/api/articles', newArticle)
+    .then (() => {
+      window.location = '/'
+    })
+
   }
 
   headlineKeyUp(event) {
@@ -63,7 +83,7 @@ class NewArticleContainer extends Component {
   render(){
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="Headline">Headline</label>
           <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
           <label htmlFor="Date">Date</label>
