@@ -1,34 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class SingleArticle extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      article: props.article
-    }
+const SingleArticle = (props) => {
 
-  }
-
-  render(){
-    const keywords = this.props.article.keywords.map((keyword, index) => {
+    const displayedKeywords =
+     props.article.keywords.map((keyword, index) => {
       return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Single-Article-Page-Keyword">{keyword.word}</p>
     })
 
   return (
       <div className="Solid-Black-Border-Curved Single-Article-Page-Article">
-        <h3 className="Single-Article-Page-Article-Headline">{this.state.article.headline}</h3>
-        <h5 className="Single-Article-Page-Article-Author">By {this.state.article.author}</h5>
-        <p className="Single-Article-Page-Article-Content">{this.state.article.content}</p>
-        <img className="Single-Article-Page-Article-Image" src={this.state.article.imageurl}/>
-        <p>{this.state.article.datePosted.getDate()}/{this.state.article.datePosted.getMonth()}/{this.state.article.datePosted.getFullYear()}</p>
+        <h3 className="Single-Article-Page-Article-Headline">{props.article.headline}</h3>
+        <h5 className="Single-Article-Page-Article-Author">By {props.article.author.name}</h5>
+        <p className="Single-Article-Page-Article-Content">{props.article.content}</p>
+        <img className="Single-Article-Page-Article-Image" src={props.article.imageurl}/>
+        <p>{props.article.datePosted.getDate()}/{props.article.datePosted.getMonth()}/{props.article.datePosted.getFullYear()}</p>
         <div className="Single-Article-Page-Article-Keywords">
-          {keywords}
+          {displayedKeywords}
         </div>
-
       </div>
     )
-  }
 }
+
 
 export default SingleArticle;
