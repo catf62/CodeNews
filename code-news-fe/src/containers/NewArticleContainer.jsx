@@ -10,6 +10,7 @@ class NewArticleContainer extends Component {
     super(props);
     this.state = {
       headline: "",
+      date: "",
       author: "",
       content: "",
       imageurl: "",
@@ -25,6 +26,8 @@ class NewArticleContainer extends Component {
         <form>
           <label htmlFor="Headline">Headline</label>
           <input type="text" value={this.state.headline} id="Headline"/>
+          <label htmlFor="Date">Date</label>
+          <input type="date" value={this.state.date} id="Date"/>
           <label htmlFor="Author">Author</label>
           <input type="text" value={this.state.author} id="Author"/>
           <label htmlFor="Content">Content</label>
