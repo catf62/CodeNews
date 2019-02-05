@@ -37,13 +37,15 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        Author rob = new Author("Rob");
+        String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
+
+        Author rob = new Author("Rob", "Head boy", "good at being a champion", placeholderURL);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme");
+        Author graeme = new Author("Graeme", "upside down", "average person", placeholderURL );
         authorRepository.save(graeme);
-        Author cat = new Author("Cat");
+        Author cat = new Author("Cat", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
-        Author chris = new Author("Chris");
+        Author chris = new Author("Chris", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
         authorRepository.save(chris);
 
 //
@@ -99,7 +101,7 @@ public class DataLoader implements ApplicationRunner {
         String dateMar = "20/02/2018";
 
 
-        String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
+
 
 
         Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.", placeholderURL, dateJan, rob);
