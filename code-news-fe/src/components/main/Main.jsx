@@ -19,7 +19,8 @@ class Main extends Component{
 
   replaceDate(dateString) {
     const day = parseInt(dateString.slice(0,2));
-    const month = parseInt(dateString.slice(3,5));
+    //minus 1 to month as the date datatype counts month from 0 - 11.
+    const month = parseInt(dateString.slice(3,5)) -1;
     const year = parseInt(dateString.slice(6,10));
     const date= new Date(year, month, day);
     return date;
@@ -34,6 +35,7 @@ class Main extends Component{
     }
 
     this.setState({articles: data._embedded.articles})
+
   })
 }
 
