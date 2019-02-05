@@ -47,7 +47,7 @@ public class DataLoader implements ApplicationRunner {
         authorRepository.save(cat);
         Author chris = new Author("Chris", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
         authorRepository.save(chris);
-        
+
 
         String dateJan = "15/01/2018";
         String dateFeb = "15/02/2018";
