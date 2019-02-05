@@ -5,12 +5,17 @@ class AuthorsListContainer extends Component {
   constructor(props) {
     super(props)
     this.state= {}
+    this.handleAuthorSelect = this.handleAuthorSelect.bind(this);
+  }
+
+  handleAuthorSelect(id){
+    this.props.handleAuthorLinkClick(id);
   }
 
   render(){
     console.log(this.props.authors);
     return(
-      <AuthorList authors={this.props.authors}/>
+      <AuthorList authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
     )
   }
 }

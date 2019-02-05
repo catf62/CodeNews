@@ -12,6 +12,7 @@ class NewAuthorContainer extends Component {
       name: ""
     }
     this.nameKeyUp = this.nameKeyUp.bind(this);
+    this.handleAuthorSelect = this.handleAuthorSelect.bind(this);
   }
 
   nameKeyUp(event) {
@@ -21,10 +22,14 @@ class NewAuthorContainer extends Component {
   });
   }
 
+  handleAuthorSelect(id){
+    this.props.handleAuthorLinkClick(id);
+  }
+
   render(){
     return (
       <div>
-      <AuthorsListContainer authors={this.props.authors}/>
+      <AuthorsListContainer authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
 
       <p>Add New Author: </p>
         <form>

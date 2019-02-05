@@ -10,7 +10,9 @@ import Header from '../general/Header.jsx';
 import NavBar from '../general/NavBar.jsx';
 import Footer from '../general/Footer.jsx';
 import EditArticleContainer from '../../containers/EditArticleContainer.jsx';
-import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx'
+import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx';
+import DeleteAuthorContainer from '../../containers/DeleteArticleContainer.jsx';
+import EditAuthorContainer from '../../containers/DeleteArticleContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -18,9 +20,11 @@ class Main extends Component{
     this.state = {
       articles: [],
       currentArticle: null,
-      authors: []
+      authors: [],
+      currentAuthor: null
     }
     this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
+    this.handleAuthorLinkClick = this.handleAuthorLinkClick.bind(this);
   }
 
   replaceDate(dateString) {
@@ -58,6 +62,19 @@ class Main extends Component{
     })
   }
 
+  handleAuthorLinkClick(id){
+    this.setState(() => {
+      let currentAuthor = null;
+      for(const author of this.state.authors) {
+        if (author.id === id){
+          currentAuthor = author;
+          break;
+        }
+      }
+      return({currentAuthor: currentAuthor})
+    })
+  }
+
   render(){
     return (
         <Router>
@@ -81,13 +98,19 @@ class Main extends Component{
             return <NewArticleContainer/>
           }}/>
           <Route exact path="/admin/author/new" render={(props) => {
-            return <NewAuthorContainer authors={this.state.authors}/>
+            return <NewAuthorContainer authors={this.state.authors} handleAuthorLinkClick={this.handleAuthorLinkClick}/>
           }}/>
           <Route exact path="/article/:id/edit" render={(props) => {
             return <EditArticleContainer article={this.state.currentArticle}/>
           }}/>
           <Route exact path="/article/:id/delete" render={(props) => {
             return <DeleteArticleContainer article={this.state.currentArticle}/>
+          }}/>
+          <Route exact path="/author/:id/delete" render={(props) => {
+            return <DeleteAuthorContainer article={this.state.currentAuthor}/>
+          }}/>
+          <Route exact path="/author/:id/edit" render={(props) => {
+            return <EditAuthorContainer article={this.state.currentAuthor}/>
           }}/>
           </Switch>
         </Fragment>
