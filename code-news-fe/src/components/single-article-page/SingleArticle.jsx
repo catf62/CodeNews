@@ -38,6 +38,9 @@ class SingleArticle extends Component {
         <Link to={'/article/'+this.state.article.id+'/edit'}>
         <button className="Button">Edit</button>
         </Link>
+        <Link to={'/article/'+this.state.article.id+'/delete'}>
+        <button className="Button">Delete</button>
+        </Link>
       </div>
     )
   }
