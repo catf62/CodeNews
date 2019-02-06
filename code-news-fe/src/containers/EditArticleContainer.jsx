@@ -28,6 +28,7 @@ class EditArticleContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateKeywords = this.updateKeywords.bind(this);
     this.dateForDatabase = this.dateForDatabase.bind(this);
+    this.postKeywords = this.postKeywords.bind(this);
 
   }
 
@@ -46,7 +47,7 @@ class EditArticleContainer extends Component {
       .then(data => {
         const articlePath = data._links.self.href;
         const keywordsArray = this.state.keywords;
-        // this.updateKeywords(keywordsArray, articlePath);
+        this.updateKeywords(keywordsArray, articlePath);
       })
       // .then (() => {
       //   window.location = '/'
@@ -56,12 +57,35 @@ class EditArticleContainer extends Component {
 
   updateKeywords(keyWordsArray, articlePath) {
     const request = new Request();
+    request.get('/api/articles/' + this.state.id + '/keywords')
+      .then((data) => {
+        console.log("data from req: ", data);
+        const oldKeywords = data._embedded.keywords;
+        const oldKeywordIds = oldKeywords.map((keyword) => {
+          return keyword._links.self.href.split('keywords/')[1];
+        })
+        console.log("links: ", oldKeywordIds);
+        oldKeywordIds.forEach((oldId) => {
+          request.delete('/api/keywords/' + oldId);
+        })
+        return data;
+      })
+      .then((data) => {
+        this.postKeywords(keyWordsArray, articlePath);
+      })
+    // console.log("keyWordsArray from handleSubmit: ", keyWordsArray);
+    // console.log("keyWordsFromProps: ", this.props.article.keywords);
+    // console.log("keyWordIds: ", keywordIds);
+  }
+
+  postKeywords(keyWordsArray, articlePath) {
+    const request = new Request();
     keyWordsArray.forEach((keyword) => {
       const keywordObj = {
         word: keyword,
         article: articlePath
       }
-      request.put('/api/keywords', keywordObj)
+      request.post('/api/keywords', keywordObj)
     })
   }
 
