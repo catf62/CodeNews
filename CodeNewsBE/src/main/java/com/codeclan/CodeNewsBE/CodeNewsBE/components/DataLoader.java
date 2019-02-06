@@ -55,9 +55,9 @@ public class DataLoader implements ApplicationRunner {
         authorRepository.save(alex);
 
 
-        String dateJan = "15/01/2018";
-        String dateFeb = "15/02/2018";
-        String dateMar = "20/02/2018";
+        String dateJan = "15/01/2019";
+        String dateFeb = "02/02/2019";
+        String dateMar = "20/02/2019";
 
         String article1Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Short-nvqow625m2mbh8vcfbylfjwq682060tgq6t8m2eptu.jpg";
         String article1Headline = "Five year interest-free government loan offers Scottish businesses new digital skills";
@@ -156,6 +156,25 @@ public class DataLoader implements ApplicationRunner {
 
         String blogUrl = "https://media.licdn.com/dms/image/C4D03AQHoIovZ_f1yuw/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=_Kfr3J_3r6Y0wJx267iLVA7YPco68-huPGGe7bn-mdY";
 
+        String blog2Headline = "CodeClan Weeks 9, 10, and the Christmas Break";
+        String blog2Content = "The past couple of weeks at CodeClan have been a little different. On the Thursday of week 8 we " +
+                "were given our groups for the JavaScript group project, as well as a selection of briefs. I was placed with two " +
+                "other members of my cohort, one of whom I had pair programmed with before. We were given an hour and a half to " +
+                "choose our brief. We settled on creating an educational app, and after longer discussion and consideration of learning " +
+                "techniques and motivations we decided to present it in the context of a flash card game." +
+                "As a group we were very keen to structure our approach. Having decided on our initial plan we constructed a MoSCoW board " +
+                "(an abbreviation from Must have, Should have, Could have, and Won't have), and a Kanban board (a workflow visualisation too " +
+                "from Agile methodology). We then proceeded to work on wireframe diagrams using the visualisation of the finished app to " +
+                "drive our feature development through user experience considerations. Implementing these features required data for the " +
+                "cards, which lead us to a long api search and the start of the idea that our code should be generalisable; that is to say it " +
+                "should be able to take data on any subject from a range of api’s and render a set of cards with that data for a user to work " +
+                "with. With this in mind work progressed on the app. We spoke about the aspects of code we most wanted to improve with, and as a " +
+                "result I took the initial lead in the front end aspects of the website while my teammates worked together on the back end. " +
+                "By Monday we had put together a basic front end and a functional back end, and were working on coupling the two together. To do " +
+                "this we worked as a group, ‘mob’ programming with one ‘driver’ and two ‘navigators’. This approach allowed the team to work at a " +
+                "high level of efficiency, as we found that the ‘driver’ would use the opportunity of typing to take a ‘brain break’ while the " +
+                "navigators collaborated to solve the problems required by the code.";
+
 
         Article article1 = new Article(article1Headline, article1Content, article1Url, dateJan, rob);
 
@@ -179,6 +198,8 @@ public class DataLoader implements ApplicationRunner {
         Article blog1 = new Article(blogHeadline, blogContent, blogUrl, "01/02/2019", alex);
         articleRepository.save(blog1);
 
+        Article blog2 = new Article(blog2Headline, blog2Content, blogUrl, "01/01/2019", alex);
+        articleRepository.save(blog2);
 
 
 
@@ -196,6 +217,8 @@ public class DataLoader implements ApplicationRunner {
         Keyword keyword12 = new Keyword("Computers", article6);
         Keyword blogWord1 = new Keyword("Viking", blog1);
         Keyword blogWord2 = new Keyword("Lush", blog1);
+        Keyword blogWord3 = new Keyword("Viking", blog2);
+        Keyword blogWord4 = new Keyword("Lush", blog2);
 
         keywordRepository.save(keyword1);
         keywordRepository.save(keyword2);
@@ -211,6 +234,8 @@ public class DataLoader implements ApplicationRunner {
         keywordRepository.save(keyword12);
         keywordRepository.save(blogWord1);
         keywordRepository.save(blogWord2);
+        keywordRepository.save(blogWord3);
+        keywordRepository.save(blogWord4);
 
 
         Admin admin = new Admin("Rob Wilson", "codeclan1234");
