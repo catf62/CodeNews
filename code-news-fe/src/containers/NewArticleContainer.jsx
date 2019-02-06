@@ -41,7 +41,7 @@ class NewArticleContainer extends Component {
     request.post('/api/articles', newArticle)
     .then((response) => {
       // request.get('/api/articles/:id')
-      console.log(newArticle);
+      console.log(response.body);
     })
     // .then (() => {
     //   window.location = '/'
