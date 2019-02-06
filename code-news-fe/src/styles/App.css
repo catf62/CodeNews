@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: verdana;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .Darker-Blue-BG{
@@ -22,12 +22,12 @@
   border-style: solid;
 }
 
-.Solid-Black-Border-Curved {
-border-style: solid;
-border-width: 0.1em;
-border-color: black;
-border-radius: 0.5em;
-}
+/* .Solid-Black-Border-Curved {
+  border-style: solid;
+  border-width: 0.1em;
+  border-color: black;
+  border-radius: 0.5em;
+} */
 
 .Header-Footer{
   display: flex;

@@ -1,27 +1,26 @@
 .Landing-Page-Article-List{
   background-image: url("../styles/blue_green_background_image.png");
-  /* https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/EbyCIUQPl/videoblocks-explosion-of-blue-powder-on-black-background-3d-animation-of-particles-as-colorful-background-or-overlays-for-effects-burst-of-colorful-paint-powder-for-bright-presentation-like-holi-festival-1_rtgfeuk3um_thumbnail-full05.png */
-/* background-image: url("https://i.pinimg.com/originals/e0/96/0d/e0960d26aec1c5e4a2a556ac99640533.jpg"); */
-background-size: 100%;
-background-repeat: round;
-padding: 2em 0 2em 0;
-display: flex;
-flex-wrap: wrap;
+  background-size: 100%;
+  background-repeat: round;
+  padding: 2em 0 2em 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .Landing-Page-Article{
-  background-image: radial-gradient(white, rgb(214, 237, 247));
-  border-width: 0.2em !important;
+  background-color: white;
+  /* background-image: radial-gradient(white, rgb(214, 237, 247)); */
+  /* border-width: 0.2em !important; */
   margin: 0 2em 2em 2em;
-  box-shadow: 0.25em 0.25em rgb(171, 170, 170);
+  /* box-shadow: 0.25em 0.25em rgb(171, 170, 170); */
   width: 20%;
   min-width: 150px;
 }
 
-.Landing-Page-Article:hover{
+/* .Landing-Page-Article:hover{
   border-width: 0.4em;
   border-color: #51A3CB;
-}
+} */
 
 .Landing-Page-Article, h3, h5, p, img, .Landing-Page-Article-Keywords, button {
     margin: 2vw;
@@ -30,18 +29,31 @@ flex-wrap: wrap;
 .Landing-Page-Article:first-child{
   content: "New!";
   width: 40%;
-  border-width: 0.6em !important;
-  border-color: rgb(147, 203, 107);
+  /* border-width: 0.6em !important; */
+  /* border-color: rgb(147, 203, 107); */
 }
 
 .Landing-Page-Article-Headline{
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .Landing-Page-Article-Author{
   font-size: 0.7em;
+  font-weight: 200;
+  width: 70%;
+  text-align: left;
+}
+
+.Landing-Page-Article-Date{
+  font-size: 0.6em;
   font-weight: bold;
+  width: 30%;
+  text-align: left;
+}
+
+.Landing-Page-Date-Author-Flex{
+  display: flex;
 }
 
 .Landing-Page-Article-Content{
