@@ -107,7 +107,8 @@ class Main extends Component{
             return <EditArticleContainer id={id} authors={this.state.authors}/>
           }}/>
           <Route exact path="/articles/:id/delete" render={(props) => {
-            return <DeleteArticleContainer article={this.state.currentArticle}/>
+            const id = props.match.params.id;
+            return <DeleteArticleContainer id={id} article={this.state.currentArticle}/>
           }}/>
           <Route exact path="/authors/:id/delete" render={(props) => {
             return <DeleteAuthorContainer author={this.state.currentAuthor}/>
