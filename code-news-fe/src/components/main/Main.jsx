@@ -96,22 +96,23 @@ class Main extends Component{
           <Route exact path="/admin" render={(props) => {
             return <AdminContainer />
           }}/>
-          <Route exact path="/admin/article/new" render={(props) => {
+          <Route exact path="/admin/articles/new" render={(props) => {
             return <NewArticleContainer authors={this.state.authors}/>
           }}/>
-          <Route exact path="/admin/author/new" render={(props) => {
+          <Route exact path="/admin/authors/new" render={(props) => {
             return <NewAuthorContainer authors={this.state.authors} handleAuthorLinkClick={this.handleAuthorLinkClick}/>
           }}/>
-          <Route exact path="/article/:id/edit" render={(props) => {
-            return <EditArticleContainer article={this.state.currentArticle} authors={this.state.authors}/>
+          <Route exact path="/articles/:id/edit" render={(props) => {
+            const id = props.match.params.id;
+            return <EditArticleContainer id={id} authors={this.state.authors}/>
           }}/>
-          <Route exact path="/article/:id/delete" render={(props) => {
+          <Route exact path="/articles/:id/delete" render={(props) => {
             return <DeleteArticleContainer article={this.state.currentArticle}/>
           }}/>
-          <Route exact path="/author/:id/delete" render={(props) => {
+          <Route exact path="/authors/:id/delete" render={(props) => {
             return <DeleteAuthorContainer author={this.state.currentAuthor}/>
           }}/>
-          <Route exact path="/author/:id/edit" render={(props) => {
+          <Route exact path="/authors/:id/edit" render={(props) => {
             return <EditAuthorContainer author={this.state.currentAuthor}/>
           }}/>
           </Switch>

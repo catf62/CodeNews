@@ -15,7 +15,7 @@ class DeleteAuthorContainer extends Component{
     const request = new Request();
     request.delete('/api/authors/'+this.state.author.id, this.state.author)
       .then (() => {
-        window.location = 'admin/author/new'
+        window.location = 'admin/authors/new'
       })
   }
 
@@ -26,7 +26,7 @@ render(){
     <Link to={"/"}>
     <button className="Button" onClick={this.handleAuthorDelete}>Confirm</button>
     </Link>
-    <Link to={"/author/" + this.state.author.id}>
+    <Link to={"/authors/" + this.state.author.id}>
     <button className="Button">Cancel</button>
     </Link>
     </div>

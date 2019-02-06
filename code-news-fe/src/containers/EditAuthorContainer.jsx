@@ -36,7 +36,7 @@ class EditAuthorContainer extends Component {
     const request = new Request();
     request.put('/api/authors/'+this.state.id, newAuthor)
       .then (() => {
-        window.location = '/admin/author/new'
+        window.location = '/admin/authors/new'
       })
   }
 

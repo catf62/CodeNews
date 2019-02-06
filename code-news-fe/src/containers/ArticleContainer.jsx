@@ -41,7 +41,7 @@ class ArticleContainer extends Component{
 render(){
   return(
     <div>
-    <SingleArticle article={this.state.article} author={this.state.author} keywords={this.state.keywords}/>
+    <SingleArticle id={this.props.id} article={this.state.article} author={this.state.author} keywords={this.state.keywords}/>
     </div>
   )
 }

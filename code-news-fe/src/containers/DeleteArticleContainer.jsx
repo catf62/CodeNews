@@ -26,7 +26,7 @@ render(){
     <Link to={"/"}>
     <button className="Button" onClick={this.handleArticleDelete}>Confirm</button>
     </Link>
-    <Link to={"/article/" + this.state.article.id}>
+    <Link to={"/articles/" + this.state.article.id}>
     <button className="Button">Cancel</button>
     </Link>
     </div>

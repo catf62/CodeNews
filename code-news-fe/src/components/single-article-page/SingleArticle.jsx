@@ -18,10 +18,10 @@ const SingleArticle = (props) => {
         <div className="Single-Article-Page-Article-Keywords">
           {displayedKeywords}
         </div>
-        <Link to={'/article/'+props.article.id+'/edit'}>
+        <Link to={'/articles/'+props.id+'/edit'}>
         <button className="Button">Edit</button>
         </Link>
-        <Link to={'/article/'+props.article.id+'/delete'}>
+        <Link to={'/articles/'+props.id+'/delete'}>
         <button className="Button">Delete</button>
         </Link>
       </div>

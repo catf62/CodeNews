@@ -13,10 +13,10 @@ super(props);
     return(
       <div>
       <div>
-      <Link to={'/admin/article/new'}>
+      <Link to={'/admin/articles/new'}>
       <button>Add New Article</button>
       </Link>
-      <Link to={'/admin/author/new'}>
+      <Link to={'/admin/authors/new'}>
       <button>Manage Authors</button>
       </Link>
       </div>
