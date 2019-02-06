@@ -43,15 +43,16 @@ public class DataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
+        String alexUrl = "https://media.licdn.com/dms/image/C4D03AQHoIovZ_f1yuw/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=_Kfr3J_3r6Y0wJx267iLVA7YPco68-huPGGe7bn-mdY";
 
         Author rob = new Author("Robert Augustus Wilson", "Head boy", "good at being a champion", placeholderURL);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme Topaz Congreve", "upside down", "average person", placeholderURL );
+        Author graeme = new Author("Graeme Topaz Congreve",  "ace in your face london, mad top champion of winning", "average person", placeholderURL );
         authorRepository.save(graeme);
-        Author cat = new Author("Cat Aloysius Ford", "Head Girl", "world champion cartographer", placeholderURL);
+        Author cat = new Author("Cat Ford", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
-        Author chris = new Author("Christopher St.John Forsyth Milligin", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
-        authorRepository.save(chris);
+        Author alex = new Author("Alexander St.John Aloysius Clements", "CodeClan Student", "CodeClan student with a degree in Astrophysics, experience of self-employment and growing a successful business.", alexUrl);
+        authorRepository.save(alex);
 
 
         String dateJan = "15/01/2018";
@@ -134,15 +135,36 @@ public class DataLoader implements ApplicationRunner {
                 "In addition, he’ll support an expanding curriculum, which now offers a growing range of short and bespoke training courses " +
                 "which enables companies to up-skill, re-skill and train staff in a broad range of digital skills.";
 
+        String blogHeadline = "CodeClan Week 14";
+        String blogContent = "Our final week of teaching has been a veritable whirlwind of new material. On Monday we were " +
+                "brought back into the world of JavaScript with a bump. First up was the introduction of ReactJS, a framework " +
+                "which massively simplifies the building of a JavaScript web app by the use of annotations (specific labels in " +
+                "the code prefaced with the @-symbol) so long as the code is written following certain conventions. With this " +
+                "new tool we were able to write over the space of a couple of days several new apps which would formerly have " +
+                "taken us considerably longer. Tuesday saw us introducing API links to our apps. There the usual pattern of CodeClan " +
+                "learning would have slowed down to make way for a set of consolidation exercises, but this week has been different. " +
+                "On Wednesday we were launched into a lab to build a game from one of a set of briefs. The problem was stimulating, but " +
+                "ReactJS changes the way a program is structured due to it’s constraints on the data flow. This lead to a deal of confusion " +
+                "about where particular parts of the logic should be placed, and while we all achieved the MVP (Minimum Viable Product) " +
+                "level of the brief the lab was more challenging than expected. Perhaps in deference to this we were allowed a break from " +
+                "homework, with instructions to rest and prepare for the following day’s work. To my mind this was the most exciting day " +
+                "of the week, and something I had been looking forward to from the start: the ability to build multiplayer apps. Using a " +
+                "library called socket.io we were able to write both the server and client-side apps, with the two communicating via a very " +
+                "PubSub-like system. While the naming was different the structure was much the same, with information being published on a " +
+                "certain channel by one of the apps and subscribed to by another. The lab for the afternoon was hefty enough to have taken " +
+                "up a full day slot, and although my group didn’t finish it we did learn a lot about the way the system should work.";
+
+        String blogUrl = "https://media.licdn.com/dms/image/C4D03AQHoIovZ_f1yuw/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=_Kfr3J_3r6Y0wJx267iLVA7YPco68-huPGGe7bn-mdY";
+
 
         Article article1 = new Article(article1Headline, article1Content, article1Url, dateJan, rob);
 
         articleRepository.save(article1);
 
-        Article article2 = new Article(article2Headline, article2Content, article2Url, dateFeb, graeme);
+        Article article2 = new Article(article2Headline, article2Content, article2Url, dateFeb, rob);
         articleRepository.save(article2);
 
-        Article article3 = new Article(article3Headline, article3Content, article3Url, dateMar, chris);
+        Article article3 = new Article(article3Headline, article3Content, article3Url, dateMar, alex);
         articleRepository.save(article3);
 
         Article article4 = new Article(article4Headline, article4Content, article4Url, dateJan, graeme);
@@ -151,8 +173,11 @@ public class DataLoader implements ApplicationRunner {
         Article article5 = new Article(article5Headline, article5Content, article5Url, dateFeb, cat);
         articleRepository.save(article5);
 
-        Article article6 = new Article(article6Headline, article6Content,article6Url, dateMar, chris);
+        Article article6 = new Article(article6Headline, article6Content,article6Url, dateMar, cat);
         articleRepository.save(article6);
+
+        Article blog1 = new Article(blogHeadline, blogContent, blogUrl, "01/02/2019", alex);
+        articleRepository.save(blog1);
 
 
 
@@ -169,6 +194,8 @@ public class DataLoader implements ApplicationRunner {
         Keyword keyword10 = new Keyword("Awards", article5);
         Keyword keyword11 = new Keyword("Commercial", article6);
         Keyword keyword12 = new Keyword("Computers", article6);
+        Keyword blogWord1 = new Keyword("Viking", blog1);
+        Keyword blogWord2 = new Keyword("Lush", blog1);
 
         keywordRepository.save(keyword1);
         keywordRepository.save(keyword2);
@@ -182,6 +209,8 @@ public class DataLoader implements ApplicationRunner {
         keywordRepository.save(keyword10);
         keywordRepository.save(keyword11);
         keywordRepository.save(keyword12);
+        keywordRepository.save(blogWord1);
+        keywordRepository.save(blogWord2);
 
 
         Admin admin = new Admin("Rob Wilson", "codeclan1234");
