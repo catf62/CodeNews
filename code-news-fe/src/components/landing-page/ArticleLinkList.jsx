@@ -6,21 +6,14 @@ class ArticleLinkList extends Component {
   constructor(props){
     super(props);
     this.state = {};
-    this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
     }
-
-  handleArticleLinkClick(id){
-    this.props.handleArticleLinkClick(id);
-  }
-
-  //TODO: change 'date to datePosted here to fix the sorting'
 
   render() {
     const unorderedArticleItems = this.props.articles;
     unorderedArticleItems.sort((article1, article2) => article2.datePosted - article1.datePosted);
     const articleItems = unorderedArticleItems.map((article) => {
         return (
-          <ArticleLink article={article} key={article.id} id={article.id} handleArticleLinkClick={this.handleArticleLinkClick}/>
+          <ArticleLink article={article} key={article.id} id={article.id}/>
         );
       });
       return (

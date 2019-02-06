@@ -11,17 +11,12 @@ class ArticleLinkListContainer extends Component {
     super(props)
     this.state = {
     };
-    this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
-  }
-
-  handleArticleLinkClick(id){
-    this.props.handleArticleLinkClick(id);
   }
 
   render(){
     return (
       <div>
-      <ArticleLinkList articles={this.props.articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
+      <ArticleLinkList articles={this.props.articles}/>
       </div>
     )
   }

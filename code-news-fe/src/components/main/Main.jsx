@@ -13,6 +13,7 @@ import EditArticleContainer from '../../containers/EditArticleContainer.jsx';
 import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx';
 import DeleteAuthorContainer from '../../containers/DeleteAuthorContainer.jsx';
 import EditAuthorContainer from '../../containers/EditAuthorContainer.jsx';
+import KeywordSearchContainer from '../../containers/KeywordSearchContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -57,7 +58,12 @@ class Main extends Component{
           <Switch>
           <Route exact path="/" render={(props) => {
             const articles = this.state.articles;
-            return <ArticleLinkListContainer articles={articles}/>
+            return (
+              <>
+              <KeywordSearchContainer/>
+              <ArticleLinkListContainer articles={articles}/>
+              </>
+            )
           }}/>
           <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;

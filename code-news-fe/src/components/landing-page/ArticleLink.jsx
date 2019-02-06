@@ -14,6 +14,8 @@ class ArticleLink extends Component {
       return <p key={index} className="Medium-Blue-BG Solid-Black-Border-Curved Landing-Page-Keyword">{keyword.word}</p>
     })
 
+    console.log(this.props.article);
+
     let day = this.props.article.datePosted.getDate().toString();
     if (this.props.article.datePosted.getDate() < 10) {
       day = ("0" + day).slice(-2);
