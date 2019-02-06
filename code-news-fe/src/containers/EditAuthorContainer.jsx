@@ -11,7 +11,7 @@ class EditAuthorContainer extends Component {
     this.state = {
       name: props.author.name,
       position: props.author.position,
-      bio: props.author.bio,
+      bio: props.author.biography,
       imageUrl: props.author.imageUrl
     }
     this.nameKeyUp = this.nameKeyUp.bind(this);
@@ -60,16 +60,16 @@ class EditAuthorContainer extends Component {
       <p>Edit Author: </p>
         <form>
           <label htmlFor="Name">Author Name</label>
-          <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
+          <input value={this.state.name} onChange={this.nameKeyUp} type="text" id="Name"/>
 
           <label htmlFor="Position">Position</label>
-          <input onKeyUp={this.positionKeyUp} type="text" id="Position"/>
+          <input value={this.state.position} onChange={this.positionKeyUp} type="text" id="Position"/>
 
           <label htmlFor="Bio">Bio</label>
-          <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
+          <input value={this.state.bio} onChange={this.bioKeyUp} type="text" id="Bio"/>
 
           <label htmlFor="ImageUrl">Image url</label>
-          <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
+          <input value={this.state.imageUrl} onChange={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
 
           <input type="submit" value="Save"/>
         </form>
