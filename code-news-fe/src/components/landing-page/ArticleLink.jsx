@@ -7,11 +7,6 @@ class ArticleLink extends Component {
     this.state = {
       id: props.id
     }
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(){
-    this.props.handleArticleLinkClick(this.state.id);
   }
 
   render() {
@@ -41,7 +36,7 @@ class ArticleLink extends Component {
       <p className="Landing-Page-Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
 
       <Link to={'/articles/'+this.state.id}>
-      <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button" onClick={this.handleClick}>Read More</button>
+      <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button">Read More</button>
       </Link>
       </div>
     );

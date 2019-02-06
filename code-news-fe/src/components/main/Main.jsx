@@ -19,12 +19,8 @@ class Main extends Component{
     super(props);
     this.state = {
       articles: [],
-      currentArticle: null,
       authors: [],
-      currentAuthor: null
     }
-    this.handleArticleLinkClick = this.handleArticleLinkClick.bind(this);
-    this.handleAuthorLinkClick = this.handleAuthorLinkClick.bind(this);
   }
 
   replaceDate(dateString) {
@@ -51,32 +47,6 @@ class Main extends Component{
   })
 }
 
-  handleArticleLinkClick(id){
-    this.setState(() => {
-      let currentArticle = null;
-      for(const article of this.state.articles) {
-        if (article.id === id){
-          currentArticle = article;
-          break;
-        }
-      }
-      return({currentArticle: currentArticle})
-    })
-  }
-
-  handleAuthorLinkClick(id){
-    this.setState(() => {
-      let currentAuthor = null;
-      for(const author of this.state.authors) {
-        if (author.id === id){
-          currentAuthor = author;
-          break;
-        }
-      }
-      return({currentAuthor: currentAuthor})
-    })
-  }
-
   render(){
     return (
         <Router>
@@ -87,7 +57,7 @@ class Main extends Component{
           <Switch>
           <Route exact path="/" render={(props) => {
             const articles = this.state.articles;
-            return <ArticleLinkListContainer articles={articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
+            return <ArticleLinkListContainer articles={articles}/>
           }}/>
           <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
@@ -100,7 +70,7 @@ class Main extends Component{
             return <NewArticleContainer authors={this.state.authors}/>
           }}/>
           <Route exact path="/admin/authors/new" render={(props) => {
-            return <NewAuthorContainer authors={this.state.authors} handleAuthorLinkClick={this.handleAuthorLinkClick}/>
+            return <NewAuthorContainer authors={this.state.authors}/>
           }}/>
           <Route exact path="/articles/:id/edit" render={(props) => {
             const id = props.match.params.id;

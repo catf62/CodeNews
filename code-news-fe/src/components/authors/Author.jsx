@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Author = (props) => {
 
-  function handleAuthorSelect(){
-    props.handleAuthorLinkClick(props.author.id)
-  }
-
   return(
     <div>
     <p>{props.author.name}</p>
@@ -14,10 +10,10 @@ const Author = (props) => {
     <p>{props.author.biography}</p>
     <img src={props.author.imageUrl}></img>
     <Link to={'/authors/'+props.author.id+'/edit'}>
-    <button onClick={handleAuthorSelect}>Edit</button>
+    <button>Edit</button>
     </Link>
     <Link to={'/authors/'+props.author.id+'/delete'}>
-    <button onClick={handleAuthorSelect}>Delete</button>
+    <button>Delete</button>
     </Link>
     </div>
   )
