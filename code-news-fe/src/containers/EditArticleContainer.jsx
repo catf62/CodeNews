@@ -49,10 +49,9 @@ class EditArticleContainer extends Component {
         const keywordsArray = this.state.keywords;
         this.updateKeywords(keywordsArray, articlePath);
       })
-      // .then (() => {
-      //   window.location = '/'
-      // })
-
+      .then (() => {
+        window.location = '/'
+      })
   }
 
   updateKeywords(keyWordsArray, articlePath) {

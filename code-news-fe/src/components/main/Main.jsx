@@ -91,7 +91,7 @@ class Main extends Component{
           }}/>
           <Route exact path="/article/:id" render={(props) => {
             const id = props.match.params.id;
-            return <ArticleContainer id={id} article={this.state.currentArticle}/>
+            return <ArticleContainer id={id}/>
           }}/>
           <Route exact path="/admin" render={(props) => {
             return <AdminContainer />
