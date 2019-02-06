@@ -40,7 +40,8 @@
 
 .Landing-Page-Article-Headline{
   font-size: 2em;
-  font-weight: bold;
+  font-weight: bolder;
+  color: navy;
 }
 
 .Landing-Page-Article-Author{

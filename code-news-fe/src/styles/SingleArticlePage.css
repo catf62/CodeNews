@@ -1,10 +1,18 @@
 .Single-Article-Page-Article{
-  background-image: radial-gradient(white, rgb(214, 237, 247));
-  border-width: 0.2em !important;
-  margin: 0 2em 2em 0em;
-  box-shadow: 0.25em 0.25em rgb(171, 170, 170);
-  width: 90%;
-  min-width: 150px;
+  background-image: url("../styles/blue_green_background_image.png");
+  background-size: 100%;
+  background-repeat: round;
+  padding: 2em 0 2em 0;
+  width: 100%;
+  text-align: center;
+}
+
+.Single-Article-Box {
+  background-color: white;
+  width: 92%;
+  padding: 2em 1em 2em 1em;
+  margin: 2em 2em 2em 2em;
+  height: 100%;
 }
 
 .Single-Article-Page-Article:hover{
@@ -16,42 +24,81 @@
     margin: 1vw, 2vw, 0vw, 2vw;
 }
 
+.Single-Article-Headline-And-Image-Box{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
 .Single-Article-Page-Article-Headline{
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 4em;
+  color: navy;
+  font-weight: bolder;
+  width: 60%;
+  font-stretch: condensed;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.Single-Article-Page-Article-Image{
+  width: 50%;
+  object-fit: cover;
+}
+
+.Single-Article-Page-Author-And-Date-Box{
+  display: flex;
+  width: 50%;
 }
 
 .Single-Article-Page-Article-Author{
+  font-size: 1em;
+  font-weight: 200;
+  width: 70%;
+  text-align: left;
+}
+
+.Single-Article-Page-Article-Date{
   font-size: 0.7em;
   font-weight: bold;
+  width: 30%;
+  text-align: left;
 }
 
 .Single-Article-Page-Article-Content{
   font-size: 0.7em;
-}
-
-.Single-Article-Page-Article-Image{
-  height: 100px;
-  width: 100px;
-}
-
-.Single-Article-Page-Article-Image:hover{
-  height: 300px;
-  width: 300px;
+  width: 100%;
+  text-align: justify;
 }
 
 .Single-Article-Page-Article-Keywords{
+  font-size: 1em;
+  font-weight: 200;
   display: flex;
   flex-wrap: wrap;
+  font-style: italic;
+  padding: 0.3em;
+  color: black;
 }
 
-.Single-Article-Page-Keyword {
-padding: 0.2em;
-margin: 0.2em;
-color: black;
-background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
-background-attachment: fixed;
-font-size: 0.7em;
+.Single-Article-Page-Keyword-Box{
+  background-color: navy;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  height: 20px;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  color: white;
+}
+
+.Single-Article-Page-Button {
+  color: white;
+  background-color: black;
+  font-size: 0.7em;
+  border-radius: 5px;
+  width: 80px;
+  height: 20px;
+  text-align: center;
 }
 
 .Single-Article-Page-Keyword:hover{
