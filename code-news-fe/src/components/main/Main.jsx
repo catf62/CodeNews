@@ -89,7 +89,7 @@ class Main extends Component{
             const articles = this.state.articles;
             return <ArticleLinkListContainer articles={articles} handleArticleLinkClick={this.handleArticleLinkClick}/>
           }}/>
-          <Route exact path="/article/:id" render={(props) => {
+          <Route exact path="/articles/:id" render={(props) => {
             const id = props.match.params.id;
             return <ArticleContainer id={id}/>
           }}/>
