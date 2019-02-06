@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
+import Request from '../components/helpers/Request.js'
 
 
 class EditArticleContainer extends Component {
@@ -9,6 +10,7 @@ class EditArticleContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: props.article.id,
       headline: props.article.headline,
       date: this.replaceDate(),
       author: props.article.author.id,
@@ -23,6 +25,43 @@ class EditArticleContainer extends Component {
     this.contentKeyUp = this.contentKeyUp.bind(this);
     this.imageurlKeyUp = this.imageurlKeyUp.bind(this);
     this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateKeywords = this.updateKeywords.bind(this);
+
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    const newArticle = {
+      headline: this.state.headline,
+      date: this.state.date,
+      author: this.state.author,
+      content: this.state.content,
+      imageUrl: this.state.imageurl
+    }
+
+    const request = new Request();
+    request.put('/api/articles/'+this.state.id, newArticle)
+      .then(data => {
+        const articlePath = data._links.self.href;
+        const keywordsArray = this.state.keywords;
+        // this.updateKeywords(keywordsArray, articlePath);
+      })
+      // .then (() => {
+      //   window.location = '/'
+      // })
+
+  }
+
+  updateKeywords(keyWordsArray, articlePath) {
+    const request = new Request();
+    keyWordsArray.forEach((keyword) => {
+      const keywordObj = {
+        word: keyword,
+        article: articlePath
+      }
+      request.put('/api/keywords', keywordObj)
+    })
   }
 
   replaceDate() {
@@ -58,7 +97,7 @@ class EditArticleContainer extends Component {
   authorKeyUp(event) {
     console.log(this.state);
   this.setState({
-    author: event.target.value
+    author: "/api/authors/" + event.target.value
   });
   }
 
@@ -84,12 +123,15 @@ class EditArticleContainer extends Component {
     return formattedKeyWords
   }
 
+
   keywordsKeyUp (event){
     console.log(this.state);
-  this.setState ({
-      keywords: event.target.value
-    })
-  }
+    const keywordsArray = event.target.value.split(",");
+    this.setState ({
+        keywords: keywordsArray
+      })
+      console.log(keywordsArray);
+    }
 
 
   render(){
@@ -107,7 +149,7 @@ class EditArticleContainer extends Component {
 
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="Headline">Headline</label>
           <input onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
           <label htmlFor="Date">Date</label>
