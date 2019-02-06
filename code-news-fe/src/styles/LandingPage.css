@@ -11,10 +11,11 @@
   background-color: white;
   /* background-image: radial-gradient(white, rgb(214, 237, 247)); */
   /* border-width: 0.2em !important; */
-  margin: 0 2em 2em 2em;
+  margin: 0em 0em 2em 2em;
   /* box-shadow: 0.25em 0.25em rgb(171, 170, 170); */
   width: 20%;
   min-width: 150px;
+  padding: 0.5vw;
 }
 
 /* .Landing-Page-Article:hover{
@@ -27,16 +28,38 @@
     padding: 1.5vw, 2vw, 1.5vw, 2vw;
 }
 
+.Landing-Page-Article-Healdine-And-Image-Box{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.Landing-Page-Article-Image{
+  display: none;
+}
+
+.Landing-Page-Article:first-child img{
+  display: flex;
+  width: 50%;
+  object-fit: cover;
+  height: 200px;
+}
+
 .Landing-Page-Article:first-child{
   content: "New!";
-  width: 40%;
+  width: 43.5%;
   /* border-width: 0.6em !important; */
   /* border-color: rgb(147, 203, 107); */
+  padding: 2vw;
+  font-size: 1.25em;
 }
 
 .Landing-Page-Article:first-child h3{
+  padding-top: 1vw;
   color: red;
 }
+
 
 .Landing-Page-Article-Headline{
   font-size: 2em;
@@ -55,7 +78,7 @@
   font-size: 0.6em;
   font-weight: bold;
   width: 30%;
-  text-align: left;
+  text-align: right;
 }
 
 .Landing-Page-Date-Author-Flex{
@@ -71,10 +94,6 @@
   width: 100px;
 }
 
-.Landing-Page-Article-Image:hover{
-  height: 300px;
-  width: 300px;
-}
 
 .Landing-Page-Article-Keywords{
   display: flex;

@@ -31,15 +31,18 @@ class ArticleLink extends Component {
 
     return (
       <div className="Solid-Black-Border-Curved Landing-Page-Article" id={this.state.id}>
-      <h3 className="Landing-Page-Article-Headline">{this.props.article.headline}</h3>
+      <div className="Landing-Page-Article-Healdine-And-Image-Box">
+        <h3 className="Landing-Page-Article-Headline">{this.props.article.headline}</h3>
+        <img className="Landing-Page-Article-Image" src={this.props.article.imageUrl}/>
+      </div>
 
       <div className="Landing-Page-Date-Author-Flex">
         <h5 className="Landing-Page-Article-Author ">By {this.props.article.author.name}</h5>
         <p className="Landing-Page-Article-Date ">{day}/{month}/{this.props.article.datePosted.getFullYear()}</p>
       </div>
-
+      <br></br>
       <p className="Landing-Page-Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
-
+      <br></br>
       <Link to={'/article/'+this.state.id}>
       <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button" onClick={this.handleClick}>Read More</button>
       </Link>

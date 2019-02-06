@@ -52,8 +52,14 @@ margin: 0;
   margin-left: -20px;
 }
 
+.Footer-Text{
+  text-align: center;
+  width: 100%;
+  font-size: 0.5em;
+}
+
 .NavBar{
-  /* background-image: url("../styles/blue_green_background_image.png"); */
+  /* background-image: url("../styles/nav_bar_background.png"); */
   background-color: black;
   display: flex;
   justify-content: flex-end;
