@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Request from '../components/helpers/Request.js';
 
 class DeleteAuthorContainer extends Component{
   constructor(props) {
@@ -7,6 +8,15 @@ class DeleteAuthorContainer extends Component{
     this.state={
       author: props.author
     }
+    this.handleAuthorDelete = this.handleAuthorDelete.bind(this);
+  }
+
+  handleAuthorDelete(){
+    const request = new Request();
+    request.delete('/api/authors/'+this.state.author.id, this.state.author)
+      .then (() => {
+        window.location = 'admin/author/new'
+      })
   }
 
 render(){
@@ -14,7 +24,7 @@ render(){
     <div>
     <p>Are you sure you want to delete author "{this.state.author.name}"?</p>
     <Link to={"/"}>
-    <button className="Button">Confirm</button>
+    <button className="Button" onClick={this.handleAuthorDelete}>Confirm</button>
     </Link>
     <Link to={"/author/" + this.state.author.id}>
     <button className="Button">Cancel</button>
