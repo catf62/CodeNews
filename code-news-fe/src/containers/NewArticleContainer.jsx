@@ -3,6 +3,7 @@ import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
+import '../styles/AddNewArticle.css';
 
 
 class NewArticleContainer extends Component {
@@ -113,24 +114,37 @@ class NewArticleContainer extends Component {
     })
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="Headline">Headline</label>
-          <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
-          <label htmlFor="Date">Date</label>
-          <input onChange={this.dateOnChange} type="date" id="Date"/>
-
-          <label htmlFor="Author">Author</label>
-          <select onChange={this.authorKeyUp} id="Author">{options}</select>
-
-          <label htmlFor="Content">Content</label>
-          <input onKeyUp={this.contentKeyUp}  type="text" id="Content"/>
-          <label htmlFor="Image url">Image url</label>
-          <input onKeyUp={this.imageurlKeyUp} type="text" id="Image url"/>
-          <label htmlFor="Keywords">Keywords</label>
-          <input onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
-          <input type="submit" value="Save"/>
-        </form>
+      <div className="New-Article-Box">
+        <div className="Form-Wrapper">
+          <form className="New-Article-Form" onSubmit={this.handleSubmit}>
+            <label htmlFor="Headline">Headline:</label>
+            <br></br>
+            <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
+            <br></br>
+            <label htmlFor="Date">Date:</label>
+            <br></br>
+            <input onChange={this.dateOnChange} type="date" id="Date"/>
+            <br></br>
+            <label htmlFor="Author">Author     </label>
+            <br></br>
+            <select onChange={this.authorKeyUp} id="Author">{options}</select>
+            <br></br>
+            <label htmlFor="Content">Content     </label>
+            <br></br>
+            <input onKeyUp={this.contentKeyUp}  type="text" id="Content"/>
+            <br></br>
+            <label htmlFor="Image url">Image url     </label>
+            <br></br>
+            <input onKeyUp={this.imageurlKeyUp} type="text" id="Image url"/>
+            <br></br>
+            <label htmlFor="Keywords">Keywords     </label>
+            <br></br>
+            <input onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
+            <br></br>
+            <br></br>
+            <input type="submit" value="Save"/>
+          </form>
+        </div>
       </div>
     )
   }
