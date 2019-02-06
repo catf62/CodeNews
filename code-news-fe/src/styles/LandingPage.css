@@ -23,7 +23,8 @@
 } */
 
 .Landing-Page-Article, h3, h5, p, img, .Landing-Page-Article-Keywords, button {
-    margin: 2vw;
+    margin: 1.5vw, 2vw, 1.5vw, 2vw;
+    padding: 1.5vw, 2vw, 1.5vw, 2vw;
 }
 
 .Landing-Page-Article:first-child{
@@ -31,6 +32,10 @@
   width: 40%;
   /* border-width: 0.6em !important; */
   /* border-color: rgb(147, 203, 107); */
+}
+
+.Landing-Page-Article:first-child h3{
+  color: red;
 }
 
 .Landing-Page-Article-Headline{
@@ -85,10 +90,12 @@ font-size: 0.7em;
 }
 
 .Landing-Page-Read-More-Button {
-color: black;
-background-image: linear-gradient(to left, rgb(230, 64, 238), rgb(254, 251, 0));
-background-attachment: fixed;
+color: white;
+background-color: black;
 font-size: 0.7em;
+border-radius: 5px;
+width: 80px;
+height: 20px;
 }
 
 .Landing-Page-Keyword:hover{

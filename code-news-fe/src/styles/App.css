@@ -46,27 +46,40 @@ margin: 0;
 
 .Header-Text{
   text-align: left;
-  color: white;
-  font-size: 5vw;
-  font-weight: 500;
+  color: black;
+  font-size: 7vw;
+  font-weight: 700;
   margin-left: -20px;
 }
 
 .NavBar{
+  /* background-image: url("../styles/blue_green_background_image.png"); */
+  background-color: black;
   display: flex;
   justify-content: flex-end;
   height: 3em;
+  width: 100%;
+  border-top-color: #4286f4;
+  border-bottom-color: #4286f4;
+  border-width: 0.5px;
 }
 
 .NavBar-Button{
+background-color: black;
+color: white;
 width: 10em;
-height: 2em;
-margin: 0.5em 1em 0.5em 1em;
+height: 3em;
+margin: 0em 0em 0em 0em;
 font-size: 1em;
 font-weight: 500;
+border-top-color: black;
+border-left-color: #4286f4;
+border-right-color: #4286f4;
+border-bottom-color: #4286f4;
+border-width: 0.5px;
 }
 
 .NavBar-Button:hover{
   border-width: 0.2em;
-  border-color: #51A3CB;
+  border-color: #4286f4;
 }

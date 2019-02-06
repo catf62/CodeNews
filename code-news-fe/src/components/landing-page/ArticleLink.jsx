@@ -40,11 +40,8 @@ class ArticleLink extends Component {
 
       <p className="Landing-Page-Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>
 
-      <div className="Landing-Page-Article-Keywords">
-      {keywords}
-      </div>
       <Link to={'/article/'+this.state.id}>
-      <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button" onClick={this.handleClick}>READ MORE!!!</button>
+      <button className="Solid-Black-Border-Curved Landing-Page-Read-More-Button" onClick={this.handleClick}>Read More</button>
       </Link>
       </div>
     );
