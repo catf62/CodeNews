@@ -79,7 +79,7 @@ class NewArticleContainer extends Component {
   authorKeyUp(event) {
     console.log(this.state);
   this.setState({
-    author: event.target.value
+    author: "/api/authors/" + event.target.value
   });
   }
 
