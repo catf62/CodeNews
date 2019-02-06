@@ -27,6 +27,7 @@ class EditArticleContainer extends Component {
     this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateKeywords = this.updateKeywords.bind(this);
+    this.dateForDatabase = this.dateForDatabase.bind(this);
 
   }
 
@@ -34,7 +35,7 @@ class EditArticleContainer extends Component {
     event.preventDefault();
     const newArticle = {
       headline: this.state.headline,
-      date: this.state.date,
+      date: this.dateForDatabase(this.state.date),
       author: this.state.author,
       content: this.state.content,
       imageUrl: this.state.imageurl
@@ -88,10 +89,14 @@ class EditArticleContainer extends Component {
   }
 
   dateOnChange(event) {
-    const capturedDate = event.target.value;
     this.setState({
-      date: capturedDate.slice(8, 10) + "/" + capturedDate.slice(5, 7) + "/" + capturedDate.slice(0, 4)
+      date: event.target.value
     });
+    }
+
+  dateForDatabase(date) {
+    let capturedDate = date.slice(8, 10) + "/" + date.slice(5, 7) + "/" + date.slice(0, 4);
+    return capturedDate;
     }
 
   authorKeyUp(event) {
@@ -152,6 +157,7 @@ class EditArticleContainer extends Component {
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="Headline">Headline</label>
           <input onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
+
           <label htmlFor="Date">Date</label>
           <input onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
 
