@@ -1,8 +1,12 @@
 import React, {Component} from 'react';
 
-class DeleteAuthorContainer {
+class DeleteAuthorContainer extends Component{
   constructor(props) {
     super(props)
+  }
+
+  render(){
+    return null
   }
 }
 

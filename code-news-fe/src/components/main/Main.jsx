@@ -11,8 +11,8 @@ import NavBar from '../general/NavBar.jsx';
 import Footer from '../general/Footer.jsx';
 import EditArticleContainer from '../../containers/EditArticleContainer.jsx';
 import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx';
-import DeleteAuthorContainer from '../../containers/DeleteArticleContainer.jsx';
-import EditAuthorContainer from '../../containers/DeleteArticleContainer.jsx';
+import DeleteAuthorContainer from '../../containers/DeleteAuthorContainer.jsx';
+import EditAuthorContainer from '../../containers/EditAuthorContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -109,10 +109,10 @@ class Main extends Component{
             return <DeleteArticleContainer article={this.state.currentArticle}/>
           }}/>
           <Route exact path="/author/:id/delete" render={(props) => {
-            return <DeleteAuthorContainer article={this.state.currentAuthor}/>
+            return <DeleteAuthorContainer author={this.state.currentAuthor}/>
           }}/>
           <Route exact path="/author/:id/edit" render={(props) => {
-            return <EditAuthorContainer article={this.state.currentAuthor}/>
+            return <EditAuthorContainer author={this.state.currentAuthor}/>
           }}/>
           </Switch>
         </Fragment>
