@@ -17,7 +17,7 @@ super(props);
       <button>Add New Article</button>
       </Link>
       <Link to={'/admin/author/new'}>
-      <button>Add New Author</button>
+      <button>Manage Authors</button>
       </Link>
       </div>
       </div>
