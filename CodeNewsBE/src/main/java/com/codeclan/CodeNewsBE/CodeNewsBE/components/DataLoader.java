@@ -82,7 +82,17 @@ public class DataLoader implements ApplicationRunner {
         Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",placeholderURL, dateMar, chris);
         articleRepository.save(article6);
 
-        String content = "Last May, we launched a new initiative to help our students get hands-on work experience while giving back to their community. Our instructors created a two-week placement that allows st, Last May, we launched a new initiative to help our students get hands-on work experience while giving back to their community. Our instructors created a two-week placement that allows st, Last May, we launched a new initiative to help our students get hands-on work experience while giving back to their community. Our instructors created a two-week placement that allows st";
+        String content = "Last May, we launched a new initiative to help our students get hands-on work experience while" +
+                " giving back to their community. Our instructors created a two-week placement that allows st, Last May, " +
+                "we launched a new initiative to help our students get hands-on work experience while giving back to their " +
+                "community. Our instructors created a two-week placement that allows st, Last May, we launched a new " +
+                "initiative to help our students get hands-on work experience while giving back to their community. Our " +
+                "instructors created a two-week placement that allows st" + "Last May, we launched a new initiative to help our students get hands-on work experience while" +
+                " giving back to their community. Our instructors created a two-week placement that allows st, Last May, " +
+                "we launched a new initiative to help our students get hands-on work experience while giving back to their " +
+                "community. Our instructors created a two-week placement that allows st, Last May, we launched a new " +
+                "initiative to help our students get hands-on work experience while giving back to their community. Our " +
+                "instructors created a two-week placement that allows st";
 
         String codeClanUrl = "https://codeclan.com/wp-content/uploads/elementor/thumbs/One-cherry-CC-800x450-o2trw5rgbwnp8rd8qt6cptoz41x8fq8actu12oapts.jpg";
 
@@ -115,8 +125,6 @@ public class DataLoader implements ApplicationRunner {
         keywordRepository.save(keyword11);
         keywordRepository.save(keyword12);
     }
-
-
 
 
 }
