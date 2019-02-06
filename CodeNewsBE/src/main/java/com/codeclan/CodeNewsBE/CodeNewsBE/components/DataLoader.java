@@ -44,13 +44,13 @@ public class DataLoader implements ApplicationRunner {
 
         String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
 
-        Author rob = new Author("Rob", "Head boy", "good at being a champion", placeholderURL);
+        Author rob = new Author("Robert Augustus Wilson", "Head boy", "good at being a champion", placeholderURL);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme", "upside down", "average person", placeholderURL );
+        Author graeme = new Author("Graeme Topaz Congreve", "upside down", "average person", placeholderURL );
         authorRepository.save(graeme);
-        Author cat = new Author("Cat", "Head Girl", "world champion cartographer", placeholderURL);
+        Author cat = new Author("Cat Aloysius Ford", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
-        Author chris = new Author("Chris", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
+        Author chris = new Author("Christopher St.John Forsyth Milligin", "Head man", "ace in your face london, mad top champion of winning", placeholderURL);
         authorRepository.save(chris);
 
 
@@ -58,31 +58,36 @@ public class DataLoader implements ApplicationRunner {
         String dateFeb = "15/02/2018";
         String dateMar = "20/02/2018";
 
+        String article1Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Short-nvqow625m2mbh8vcfbylfjwq682060tgq6t8m2eptu.jpg";
+        String article1Headline = "Five year interest-free government loan offers Scottish businesses new digital skills";
+        String article1Content = "Small and Medium Enterprises in Scotland can now access a whole range of training from " +
+                "CodeClan, thanks to the Scottish government’s Digital Development Loan, which allows businesses to borrow " +
+                "from £5,000 – £50,000, interest free, over a period of up to five years." +
+                "Our growing programme of short courses, bespoke courses, flagship 16-week Professional Software Development " +
+                "(PSD) course and soon to be launched Data Analytics course, are all eligible for the loan, enabling companies " +
+                "across Scotland to develop their staff and provide them with valuable new technical skills to improve economic " +
+                "productivity and enable growth. " +
+                "The Digital Development Loan also opens up new opportunities for organisations to sponsor employees through our " +
+                "PSD and Data Analytics courses. Enabling business owners to retain intelligence and avoid losing staff members, " +
+                "who may be at risk of redundancy or looking for new career paths within their organisation.";
 
+        String article2Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Inverness-banner-nzqg42i4483af68z4y40meifp04hqo9scolw79tqb8.jpg";
+        String article2Headline = "Highlands here we come!";
+        String article2Content = "At CodeClan, we’ve been busy bridging the digital skills gap along the Forth and the Clyde. " +
+                "Our CEO Melinda Matthews-Clarkson explains why the Ness is next! " +
+                "When CodeClan was founded back in 2015, our mission was simple: help to close Scotland’s digital skills gap." +
+                "We started training our first cohort of students in Edinburgh and we were complemented by an industry that was already " +
+                "attempting to address the gap from traditional sources of talent like universities and colleges." +
+                "As Scotland’s first (and only) accredited digital skills academy, CodeClan brought something new to the table, transforming " +
+                "careers and lives through our immersive, industry-focused training." +
+                "We’re rolling out a new 12-week programme that’s been tailored to the needs of the Highlands’ emerging digital" +
+                " sector. Our focus is on full-stack web development skills. Students on our new course will go through programming " +
+                "fundamentals – including test-driven development (TDD), object-oriented programming (OOP) and databases (SQL) – before " +
+                "taking the plunge into JavaScript and web frameworks.";
 
-        Admin admin = new Admin("Rob Wilson", "codeclan1234");
-        adminRepository.save(admin);
-
-        Article article1 = new Article("Crazy news!", "Big news as local junior developers go on murder spree.", placeholderURL, dateJan, rob);
-
-        articleRepository.save(article1);
-
-        Article article2 = new Article("Mad news!", "Small news as local junior developers go on murder spree.","https://images-na.ssl-images-amazon.com/images/I/8166xCVDGnL._SY355_.jpg", dateFeb, rob);
-        articleRepository.save(article2);
-
-        Article article3 = new Article("Rob's Haircut!", "Big news as Rob gets a haircut.","https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497", dateMar, graeme);
-        articleRepository.save(article3);
-
-        Article article4 = new Article("Cat's Haircut!", "Huge news as Cat gets a haircut.",placeholderURL, dateJan, graeme);
-        articleRepository.save(article4);
-
-        Article article5 = new Article("Cat's Article!", "This is an article by Cat. It is about stuff.",placeholderURL, dateFeb, cat);
-        articleRepository.save(article5);
-
-        Article article6 = new Article("Chris's Article!", "Huge news as Chris does an article.",placeholderURL, dateMar, chris);
-        articleRepository.save(article6);
-
-        String content = "Last May, we launched a new initiative to help our students get hands-on work experience while" +
+        String article3Headline = "An app to put charity shops on the map";
+        String article3Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/One-cherry-CC-800x450-o2trw5rgbwnp8rd8qt6cptoz41x8fq8actu12oapts.jpg";
+        String article3Content = "Last May, we launched a new initiative to help our students get hands-on work experience while" +
                 " giving back to their community. Our instructors created a two-week placement that allows st, Last May, " +
                 "we launched a new initiative to help our students get hands-on work experience while giving back to their " +
                 "community. Our instructors created a two-week placement that allows st, Last May, we launched a new " +
@@ -94,23 +99,76 @@ public class DataLoader implements ApplicationRunner {
                 "initiative to help our students get hands-on work experience while giving back to their community. Our " +
                 "instructors created a two-week placement that allows st";
 
-        String codeClanUrl = "https://codeclan.com/wp-content/uploads/elementor/thumbs/One-cherry-CC-800x450-o2trw5rgbwnp8rd8qt6cptoz41x8fq8actu12oapts.jpg";
+        String article4Headline = "CodeClan announces partnership with GitHub";
+        String article4Content = "There were scenes of delight in streets of Edinburgh as CodeClan announced that" +
+                "all of its students would now be guaranteed jobs with GitHub upon graduation. A CodeClan spokesperson " +
+                "said, 'this deal makes neither financial or practical sense, but we've got them to agree to it anyway'." +
+                "Upon graduation, all students will now be bound and gagged and put into a shipping container and sent off" +
+                "to San Francisco, when asked why the students couldn't travel to their new vocations in a more conventional " +
+                "way, the same spokesman replied that it was 'none' of our business.";
+        String article4Url = "https://github.githubassets.com/images/modules/logos_page/Octocat.png";
 
-        Article article7 = new Article("An app to put charity shops on the map", content, codeClanUrl, "19/19/2999", rob);
-        articleRepository.save(article7);
 
-        Keyword keyword1 = new Keyword("cat", article1);
-        Keyword keyword2 = new Keyword("dog", article1);
-        Keyword keyword3 = new Keyword("wolf", article2);
-        Keyword keyword4 = new Keyword("mouse", article2);
-        Keyword keyword5 = new Keyword("cat", article3);
-        Keyword keyword6 = new Keyword("wolf", article3);
-        Keyword keyword7 = new Keyword("cheese", article4);
-        Keyword keyword8 = new Keyword("records", article5);
-        Keyword keyword9 = new Keyword("cat", article5);
-        Keyword keyword10 = new Keyword("pirate", article5);
-        Keyword keyword11 = new Keyword("ship", article6);
-        Keyword keyword12 = new Keyword("records", article6);
+        String article5Headline = "Our 2018 stats are here and we couldn’t be more thrilled";
+        String article5Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/CC-team-2018-2-o0r69dw3hz891ahp8ndmavwf4p0e6pbgpiy8p6t6ps.jpg";
+        String article5Content = "We had six cohorts of students graduating in Glasgow and nine in Edinburgh, and we’re " +
+                "looking forward to starting with Cohorts E28 and G11 in January 2019. A significant part of growth this year " +
+                "was our rollout of staff sponsorship opportunities for employers." +
+                "We also celebrated the 500th graduate from our Professional Software Development course, Iona Macbeth." +
+                " With a career background in Communications, she has now started her first job in Scotland’s digital technology industry." +
+                "205 more CodeClan graduates are out there, working in tech across Scotland and beyond. Their roles include software development, " +
+                "testing, support engineering, product management and more." +
+                "We won the award for Best Education/Training provider at the ScotlandIS Digital Tech Awards 2018. The Digital " +
+                "Technologies Awards celebrate Scotland’s digital industry. And the team were over the moon to pick up this " +
+                "award for the second year in a row!" +
+                "We sponsored or hosted 16 coding events, clubs and workshops with the aim of supporting and encouraging young " +
+                "and underrepresented people to get involved in tech and further education in digital. Events included 10 codebar" +
+                " workshops, 5 Coder Dojo clubs and the Girl Guides.";
+
+        String article6Headline = "Welcome to our Commercial Director";
+        String article6Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Brian-Baglow-740x416-nybwzx690nr4t3frxc2hw3xh3mvcn4v38g195dr7sw.jpg";
+        String article6Content = "In August, CodeClan’s leadership team appointed Brian Baglow as our new Commercial Director. He’ll assist our organisation" +
+                " to fulfil our goal of creating a new digital talent pipeline, to help Scotland’s industry and economy thrive." +
+                "Brian’s role will ensure that CodeClan is working with companies across all of the key industrial sectors, throughout Scotland " +
+                "to help address the shortage of digitally skilled staff." +
+                "In addition, he’ll support an expanding curriculum, which now offers a growing range of short and bespoke training courses " +
+                "which enables companies to up-skill, re-skill and train staff in a broad range of digital skills.";
+
+
+        Article article1 = new Article(article1Headline, article1Content, article1Url, dateJan, rob);
+
+        articleRepository.save(article1);
+
+        Article article2 = new Article(article2Headline, article2Content, article2Url, dateFeb, graeme);
+        articleRepository.save(article2);
+
+        Article article3 = new Article(article3Headline, article3Content, article3Url, dateMar, chris);
+        articleRepository.save(article3);
+
+        Article article4 = new Article(article4Headline, article4Content, article4Url, dateJan, graeme);
+        articleRepository.save(article4);
+
+        Article article5 = new Article(article5Headline, article5Content, article5Url, dateFeb, cat);
+        articleRepository.save(article5);
+
+        Article article6 = new Article(article6Headline, article6Content,article6Url, dateMar, chris);
+        articleRepository.save(article6);
+
+
+
+
+        Keyword keyword1 = new Keyword("Enterprise", article1);
+        Keyword keyword2 = new Keyword("Development", article1);
+        Keyword keyword3 = new Keyword("Highlands", article2);
+        Keyword keyword4 = new Keyword("Computers", article2);
+        Keyword keyword5 = new Keyword("Charity", article3);
+        Keyword keyword6 = new Keyword("JavaScript", article3);
+        Keyword keyword7 = new Keyword("GitHub", article4);
+        Keyword keyword8 = new Keyword("Stats", article5);
+        Keyword keyword9 = new Keyword("2018", article5);
+        Keyword keyword10 = new Keyword("Awards", article5);
+        Keyword keyword11 = new Keyword("Commercial", article6);
+        Keyword keyword12 = new Keyword("Computers", article6);
 
         keywordRepository.save(keyword1);
         keywordRepository.save(keyword2);
@@ -124,6 +182,10 @@ public class DataLoader implements ApplicationRunner {
         keywordRepository.save(keyword10);
         keywordRepository.save(keyword11);
         keywordRepository.save(keyword12);
+
+
+        Admin admin = new Admin("Rob Wilson", "codeclan1234");
+        adminRepository.save(admin);
     }
 
 
