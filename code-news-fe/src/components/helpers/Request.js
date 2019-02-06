@@ -18,7 +18,8 @@ class Request {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)
-    });
+    })
+      .then(res => res.json());
   }
 
   put(url, payload) {
@@ -27,6 +28,7 @@ class Request {
       body: JSON.stringify(payload),
       headers: { 'Content-Type': 'application/json'}
     })
+      .then(res => res.json());
   };
 }
 

@@ -25,6 +25,7 @@ class NewArticleContainer extends Component {
     this.imageurlKeyUp = this.imageurlKeyUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
+    this.postKeywords = this.postKeywords.bind(this);
   }
 
   handleSubmit(event){
@@ -39,14 +40,26 @@ class NewArticleContainer extends Component {
 
     const request = new Request();
     request.post('/api/articles', newArticle)
-    .then((response) => {
-      // request.get('/api/articles/:id')
-      console.log(response.body);
-    })
-    // .then (() => {
-    //   window.location = '/'
-    // })
+      .then(data => {
+        const articlePath = data._links.self.href;
+        const keywordsArray = this.state.keywords;
+        this.postKeywords(keywordsArray, articlePath);
+      })
+      // .then (() => {
+      //   window.location = '/'
+      // })
 
+  }
+
+  postKeywords(keyWordsArray, articlePath) {
+    const request = new Request();
+    keyWordsArray.forEach((keyword) => {
+      const keywordObj = {
+        word: keyword,
+        article: articlePath
+      }
+      request.post('/api/keywords', keywordObj)
+    })
   }
 
   headlineKeyUp(event) {
