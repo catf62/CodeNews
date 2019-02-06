@@ -107,6 +107,11 @@ class NewArticleContainer extends Component {
     }
 
   render(){
+
+    const options = this.props.authors.map((author , index) => {
+      return <option key={index} value={author.id} >{author.name}</option>
+    })
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -114,8 +119,10 @@ class NewArticleContainer extends Component {
           <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
           <label htmlFor="Date">Date</label>
           <input onChange={this.dateOnChange} type="date" id="Date"/>
+
           <label htmlFor="Author">Author</label>
-          <input onKeyUp={this.authorKeyUp} type="text" id="Author"/>
+          <select onChange={this.authorKeyUp} id="Author">{options}</select>
+
           <label htmlFor="Content">Content</label>
           <input onKeyUp={this.contentKeyUp}  type="text" id="Content"/>
           <label htmlFor="Image url">Image url</label>
