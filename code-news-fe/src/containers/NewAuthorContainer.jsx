@@ -35,7 +35,7 @@ class NewAuthorContainer extends Component {
     const request = new Request();
     request.post('/api/authors', newAuthor)
       .then (() => {
-        window.location = '/admin/author/new'
+        window.location = '/admin/authors/new'
       })
   }
 

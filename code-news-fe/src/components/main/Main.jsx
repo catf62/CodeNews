@@ -108,13 +108,15 @@ class Main extends Component{
           }}/>
           <Route exact path="/articles/:id/delete" render={(props) => {
             const id = props.match.params.id;
-            return <DeleteArticleContainer id={id} article={this.state.currentArticle}/>
+            return <DeleteArticleContainer id={id}/>
           }}/>
           <Route exact path="/authors/:id/delete" render={(props) => {
-            return <DeleteAuthorContainer author={this.state.currentAuthor}/>
+            const id = props.match.params.id;
+            return <DeleteAuthorContainer id={id}/>
           }}/>
           <Route exact path="/authors/:id/edit" render={(props) => {
-            return <EditAuthorContainer author={this.state.currentAuthor}/>
+            const id = props.match.params.id;
+            return <EditAuthorContainer id={id}/>
           }}/>
           </Switch>
         </Fragment>

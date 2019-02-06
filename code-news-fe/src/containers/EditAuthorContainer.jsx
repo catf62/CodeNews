@@ -10,11 +10,11 @@ class EditAuthorContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.author.id,
-      name: props.author.name,
-      position: props.author.position,
-      bio: props.author.biography,
-      imageUrl: props.author.imageUrl
+      id: "",
+      name: "",
+      position: "",
+      bio: "",
+      imageUrl: ""
     }
     this.nameKeyUp = this.nameKeyUp.bind(this);
     this.positionKeyUp = this.positionKeyUp.bind(this);
@@ -23,6 +23,24 @@ class EditAuthorContainer extends Component {
     this.handleAuthorSelect = this.handleAuthorSelect.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentWillMount(){
+    let request = new Request();
+
+    request.get('/api/authors/'+this.props.id)
+    .then(data => {
+      this.setState(
+        {
+          id: this.props.id,
+          name: data.name,
+          position: data.position,
+          bio: data.biography,
+          imageUrl: data.imageUrl
+      }
+      )
+    }
+  )
+}
 
   handleSubmit(event){
     event.preventDefault();

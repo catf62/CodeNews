@@ -112,6 +112,8 @@ class NewArticleContainer extends Component {
       return <option key={index} value={author.id} >{author.name}</option>
     })
 
+    options.unshift(<option key="-1" selected="true" disabled="true" >Please select an author...</option>)
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
