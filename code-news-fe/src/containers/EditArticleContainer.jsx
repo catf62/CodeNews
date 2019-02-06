@@ -183,7 +183,7 @@ class EditArticleContainer extends Component {
     const options = this.props.authors.map((author , index) => {
       let option = null
       if (author.id === this.state.author) {
-        option = <option key={index} value={author.id} >{author.name}</option>
+        option = <option selected="true" key={index} value={author.id} >{author.name}</option>
       } else if (author.id !== this.state.author)
       {
         option = <option key={index}  value={author.id} >{author.name}</option>
