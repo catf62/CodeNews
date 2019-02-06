@@ -44,10 +44,12 @@ public class DataLoader implements ApplicationRunner {
 
         String placeholderURL = "https://cdn.shopify.com/s/files/1/1184/9194/products/literary-rubber-duck-1322-p.jpeg?v=1457991497";
         String alexUrl = "https://media.licdn.com/dms/image/C4D03AQHoIovZ_f1yuw/profile-displayphoto-shrink_800_800/0?e=1554940800&v=beta&t=_Kfr3J_3r6Y0wJx267iLVA7YPco68-huPGGe7bn-mdY";
+        String robUrl = "https://avatars3.githubusercontent.com/u/42409919?s=460&v=4";
+        String graemeUrl = "http://bransonswildworld.com/wp-content/uploads/2015/07/axolotl.jpg";
 
-        Author rob = new Author("Robert Augustus Wilson", "Head boy", "good at being a champion", placeholderURL);
+        Author rob = new Author("Robert Augustus Wilson", "Head boy", "good at being a champion", robUrl);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme Topaz Congreve",  "ace in your face london, mad top champion of winning", "average person", placeholderURL );
+        Author graeme = new Author("Graeme Topaz Congreve",   "average person", "ace in your face london, mad top champion of winning", graemeUrl );
         authorRepository.save(graeme);
         Author cat = new Author("Cat Ford", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
@@ -103,8 +105,8 @@ public class DataLoader implements ApplicationRunner {
         String article4Headline = "CodeClan announces partnership with GitHub";
         String article4Content = "There were scenes of delight in streets of Edinburgh as CodeClan announced that" +
                 "all of its students would now be guaranteed jobs with GitHub upon graduation. A CodeClan spokesperson " +
-                "said, 'this deal makes neither financial or practical sense, but we've got them to agree to it anyway'." +
-                "Upon graduation, all students will now be bound and gagged and put into a shipping container and sent off" +
+                "said, 'this deal makes neither financial or practical sense, but we've got them to agree to it anyway'. " +
+                "Upon graduation, all students will now be bound and gagged and put into a shipping container and sent off " +
                 "to San Francisco, when asked why the students couldn't travel to their new vocations in a more conventional " +
                 "way, the same spokesman replied that it was 'none' of our business.";
         String article4Url = "https://github.githubassets.com/images/modules/logos_page/Octocat.png";
