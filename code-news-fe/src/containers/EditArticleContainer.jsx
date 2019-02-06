@@ -3,6 +3,7 @@ import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
+import '../styles/AddNewArticle.css';
 
 
 class EditArticleContainer extends Component {
@@ -177,27 +178,39 @@ class EditArticleContainer extends Component {
     })
 
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="New-Article-Box">
+        <div className="Form-Wrapper">
+        <form className="New-Article-Form" onSubmit={this.handleSubmit}>
           <label htmlFor="Headline">Headline</label>
+          <br></br>
           <input onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
-
+          <br></br>
           <label htmlFor="Date">Date</label>
+          <br></br>
           <input onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
-
+          <br></br>
           <label htmlFor="Author">Author</label>
+          <br></br>
           <select onChange={this.authorKeyUp} id="Author">{options}</select>
-
+          <br></br>
           <label htmlFor="Content">Content</label>
+          <br></br>
           <input onChange={this.contentKeyUp}  type="text" id="Content"
           value={this.state.content}/>
+          <br></br>
           <label htmlFor="Image url">Image url</label>
+          <br></br>
           <input onChange={this.imageurlKeyUp} type="text" id="Image url" value={this.state.imageurl}/>
+          <br></br>
           <label htmlFor="Keywords">Keywords</label>
+          <br></br>
           <input onChange= {this.keywordsKeyUp} type="text" id="Keywords"
           value={this.state.keywords}/>
+          <br></br>
+          <br></br>
           <input type="submit" value="Save"/>
         </form>
+        </div>
       </div>
     )
   }

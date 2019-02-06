@@ -4,6 +4,7 @@ import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 import AuthorsListContainer from './AuthorsListContainer';
 import Request from '../components/helpers/Request.js';
+import '../styles/AddNewArticle.css';
 
 class NewAuthorContainer extends Component {
 
@@ -34,37 +35,37 @@ class NewAuthorContainer extends Component {
 
     const request = new Request();
     request.post('/api/authors', newAuthor)
-      .then (() => {
-        window.location = '/admin/author/new'
-      })
+    .then (() => {
+      window.location = '/admin/author/new'
+    })
   }
 
   nameKeyUp(event) {
     console.log(this.state);
-  this.setState({
-    name: event.target.value
-  });
+    this.setState({
+      name: event.target.value
+    });
   }
 
   positionKeyUp(event) {
     console.log(this.state);
-  this.setState({
-    position: event.target.value
-  });
+    this.setState({
+      position: event.target.value
+    });
   }
 
   bioKeyUp(event) {
     console.log(this.state);
-  this.setState({
-    bio: event.target.value
-  });
+    this.setState({
+      bio: event.target.value
+    });
   }
 
   imageUrlKeyUp(event) {
     console.log(this.state);
-  this.setState({
-    imageUrl: event.target.value
-  });
+    this.setState({
+      imageUrl: event.target.value
+    });
   }
 
   handleAuthorSelect(id){
@@ -73,25 +74,33 @@ class NewAuthorContainer extends Component {
 
   render(){
     return (
-      <div>
+      <div className="New-Article-Box">
+      <div className="Form-Wrapper">
+
       <AuthorsListContainer authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
 
       <p>Add New Author: </p>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="Name">Author Name</label>
-          <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
-
-          <label htmlFor="Position">Position</label>
-          <input onKeyUp={this.positionKeyUp} type="text" id="Position"/>
-
-          <label htmlFor="Bio">Bio</label>
-          <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
-
-          <label htmlFor="ImageUrl">Image url</label>
-          <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
-
-          <input type="submit" value="Save"/>
-        </form>
+      <form onSubmit={this.handleSubmit}>
+      <label htmlFor="Name">Author Name</label>
+      <br></br>
+      <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
+      <br></br>
+      <label htmlFor="Position">Position</label>
+      <br></br>
+      <input onKeyUp={this.positionKeyUp} type="text" id="Position"/>
+      <br></br>
+      <label htmlFor="Bio">Bio</label>
+      <br></br>
+      <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
+      <br></br>
+      <label htmlFor="ImageUrl">Image url</label>
+      <br></br>
+      <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
+      <br></br>
+      <br></br>
+      <input type="submit" value="Save"/>
+      </form>
+      </div>
       </div>
     )
   }
