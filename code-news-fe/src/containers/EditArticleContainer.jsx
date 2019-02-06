@@ -27,7 +27,7 @@ class EditArticleContainer extends Component {
     this.keywordsKeyUp = this.keywordsKeyUp.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateKeywords = this.updateKeywords.bind(this);
-
+    this.postKeywords = this.postKeywords.bind(this);
   }
 
   handleSubmit(event){
@@ -66,10 +66,25 @@ class EditArticleContainer extends Component {
         oldKeywordIds.forEach((oldId) => {
           request.delete('/api/keywords/' + oldId);
         })
+        return data;
+      })
+      .then((data) => {
+        this.postKeywords(keyWordsArray, articlePath);
       })
     // console.log("keyWordsArray from handleSubmit: ", keyWordsArray);
     // console.log("keyWordsFromProps: ", this.props.article.keywords);
     // console.log("keyWordIds: ", keywordIds);
+  }
+
+  postKeywords(keyWordsArray, articlePath) {
+    const request = new Request();
+    keyWordsArray.forEach((keyword) => {
+      const keywordObj = {
+        word: keyword,
+        article: articlePath
+      }
+      request.post('/api/keywords', keywordObj)
+    })
   }
 
   replaceDate() {
