@@ -1,5 +1,7 @@
 .Landing-Page-Article-List{
-background-image: url("https://i.pinimg.com/originals/e0/96/0d/e0960d26aec1c5e4a2a556ac99640533.jpg");
+  background-image: url("../styles/blue_green_background_image.png");
+  /* https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/EbyCIUQPl/videoblocks-explosion-of-blue-powder-on-black-background-3d-animation-of-particles-as-colorful-background-or-overlays-for-effects-burst-of-colorful-paint-powder-for-bright-presentation-like-holi-festival-1_rtgfeuk3um_thumbnail-full05.png */
+/* background-image: url("https://i.pinimg.com/originals/e0/96/0d/e0960d26aec1c5e4a2a556ac99640533.jpg"); */
 background-size: 100%;
 background-repeat: round;
 padding: 2em 0 2em 0;
