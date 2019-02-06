@@ -3,6 +3,7 @@ import Header from '../components/general/Header';
 import NavBar from '../components/general/NavBar';
 import Footer from '../components/general/Footer';
 import AuthorsListContainer from './AuthorsListContainer';
+import Request from '../components/helpers/Request.js';
 
 class NewAuthorContainer extends Component {
 
@@ -19,6 +20,23 @@ class NewAuthorContainer extends Component {
     this.bioKeyUp = this.bioKeyUp.bind(this);
     this.imageUrlKeyUp = this.imageUrlKeyUp.bind(this);
     this.handleAuthorSelect = this.handleAuthorSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    const newAuthor = {
+      name: this.state.name,
+      position: this.state.position,
+      biography: this.state.bio,
+      imageUrl: this.state.imageUrl
+    }
+
+    const request = new Request();
+    request.post('/api/authors', newAuthor)
+      .then (() => {
+        window.location = '/admin/author/new'
+      })
   }
 
   nameKeyUp(event) {
@@ -59,7 +77,7 @@ class NewAuthorContainer extends Component {
       <AuthorsListContainer authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
 
       <p>Add New Author: </p>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label htmlFor="Name">Author Name</label>
           <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
 
@@ -70,7 +88,7 @@ class NewAuthorContainer extends Component {
           <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
 
           <label htmlFor="ImageUrl">Image url</label>
-          <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>  
+          <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
 
           <input type="submit" value="Save"/>
         </form>
