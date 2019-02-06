@@ -21,14 +21,30 @@ class DeleteArticleContainer extends Component{
 
 render(){
   return(
-    <div>
+    <div className="New-Article-Box">
+    <div className="Form-Wrapper">
+    <div className="New-Article-Form">
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <p>Are you sure you want to delete article "{this.state.article.headline}"?</p>
+    <br></br>
+    <br></br>
     <Link to={"/"}>
-    <button className="Button" onClick={this.handleArticleDelete}>Confirm</button>
+    <button className="Delete-Page-Button" onClick={this.handleArticleDelete}>Confirm</button>
     </Link>
     <Link to={"/article/" + this.state.article.id}>
-    <button className="Button">Cancel</button>
+    <button className="Delete-Page-Button">Cancel</button>
     </Link>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    </div>
+    </div>
     </div>
   )
 }
