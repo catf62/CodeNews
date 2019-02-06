@@ -45,9 +45,9 @@ class NewArticleContainer extends Component {
         const keywordsArray = this.state.keywords;
         this.postKeywords(keywordsArray, articlePath);
       })
-      // .then (() => {
-      //   window.location = '/'
-      // })
+      .then (() => {
+        window.location = '/'
+      })
 
   }
 
