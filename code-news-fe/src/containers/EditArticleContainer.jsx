@@ -11,7 +11,7 @@ class EditArticleContainer extends Component {
     this.state = {
       headline: props.article.headline,
       date: this.replaceDate(),
-      author: props.article.author.name,
+      author: props.article.author.id,
       content: props.article.content,
       imageurl: props.article.imageUrl,
       keywords: this.formatKeyWords()
@@ -93,6 +93,18 @@ class EditArticleContainer extends Component {
 
 
   render(){
+
+    const options = this.props.authors.map((author , index) => {
+      let option = null
+      if (author.id === this.state.author) {
+        option = <option key={index} selected value={author.id} >{author.name}</option>
+      } else if (author.id !== this.state.author)
+      {
+        option = <option key={index}  value={author.id} >{author.name}</option>
+      }
+      return option;
+    })
+
     return (
       <div>
         <form>
@@ -100,8 +112,10 @@ class EditArticleContainer extends Component {
           <input onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
           <label htmlFor="Date">Date</label>
           <input onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
+
           <label htmlFor="Author">Author</label>
-          <input onChange={this.authorKeyUp} type="text" id="Author" value={this.state.author}/>
+          <select onChange={this.authorKeyUp} id="Author">{options}</select>
+
           <label htmlFor="Content">Content</label>
           <input onChange={this.contentKeyUp}  type="text" id="Content"
           value={this.state.content}/>
