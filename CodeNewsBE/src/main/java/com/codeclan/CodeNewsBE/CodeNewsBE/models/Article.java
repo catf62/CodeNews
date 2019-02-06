@@ -2,6 +2,7 @@ package com.codeclan.CodeNewsBE.CodeNewsBE.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,6 +21,7 @@ public class Article {
     private String headline;
 
     @Lob
+    @Type(type = "org.hibernate.type.TextType")
     @Column(name="content")
     private String content;
 
