@@ -68,10 +68,10 @@ class NewAuthorContainer extends Component {
 
   render(){
     return (
-      <div>
+      <div className="Author-List-And-New_Form">
         <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
 
-        <div className="Form-Wrapper">
+        <div className="Form-Wrapper" >
           <p className="Edit-Author-Title">Add New Author: </p>
           <form className="New-Article-Form" onSubmit={this.handleSubmit}>
           <label htmlFor="Name">Author Name</label>

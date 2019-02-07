@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Author = (props) => {
 
   return(
-    <div Author-Box>
+    <div className="Author-Box">
     <p>{props.author.name}</p>
     <p>{props.author.position}</p>
     <p>{props.author.biography}</p>
