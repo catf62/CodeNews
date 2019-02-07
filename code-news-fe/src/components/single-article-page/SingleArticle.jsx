@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const SingleArticle = (props) => {
 
-  render(){
     const displayedKeywords =
     props.keywords.map((keyword, index) => {
       return <p key={index} className="Single-Article-Page-Keyword-Box">{keyword}</p>
@@ -39,8 +38,8 @@ const SingleArticle = (props) => {
         </div>
       </div>
     )
-  }
 }
+
 
 
 export default SingleArticle;
