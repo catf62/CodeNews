@@ -6,18 +6,29 @@ class DeleteArticleContainer extends Component{
   constructor(props) {
     super(props);
     this.state={
-      article: props.article
+      article: {}
     }
     this.handleArticleDelete = this.handleArticleDelete.bind(this);
   }
 
-  handleArticleDelete(){
-    const request = new Request();
-    request.delete('/api/articles/'+this.state.article.id, this.state.article)
-      .then (() => {
-        window.location = '/'
-      })
-  }
+  componentWillMount(){
+    let request = new Request();
+    request.get('/api/articles/'+this.props.id)
+    .then(data => {
+      this.setState(
+        {article: data}
+      )
+    }
+  )
+}
+
+handleArticleDelete(){
+  const request = new Request();
+  request.delete('/api/articles/'+this.props.id, this.state.article)
+  .then (() => {
+    window.location = '/'
+  })
+}
 
 render(){
   return(
@@ -36,7 +47,7 @@ render(){
     <Link to={"/"}>
     <button className="Delete-Page-Button" onClick={this.handleArticleDelete}>Confirm</button>
     </Link>
-    <Link to={"/article/" + this.state.article.id}>
+    <Link to={"/articles/" + this.props.id}>
     <button className="Delete-Page-Button">Cancel</button>
     </Link>
     <br></br>

@@ -5,15 +5,15 @@ class NavBar extends Component {
 
   render() {
     return (
-    <div className='Solid-Black-Border NavBar'>
-    <Link to={'/admin'}>
-    <button className="Lighter-Blue-BG Solid-Black-Border-Curved NavBar-Button">Admin</button>
-    </Link>
-    <Link to={'/'}>
-    <button className="Lighter-Blue-BG Solid-Black-Border-Curved NavBar-Button">Home</button>
-    </Link>
-    </div>
-  )
+      <div className='Solid-Black-Border NavBar'>
+      <Link to={'/admin'}>
+      <button className="Lighter-Blue-BG Solid-Black-Border-Curved NavBar-Button">Admin</button>
+      </Link>
+      <Link to={'/'}>
+      <button className="Lighter-Blue-BG Solid-Black-Border-Curved NavBar-Button">Home</button>
+      </Link>
+      </div>
+    )
   }
 
 }

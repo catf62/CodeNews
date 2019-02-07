@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import AuthorsListContainer from './AuthorsListContainer';
 import Request from '../components/helpers/Request.js';
 import '../styles/AddNewArticle.css';
@@ -36,33 +33,29 @@ class NewAuthorContainer extends Component {
     const request = new Request();
     request.post('/api/authors', newAuthor)
     .then (() => {
-      window.location = '/admin/author/new'
+      window.location = '/admin/authors/new'
     })
   }
 
   nameKeyUp(event) {
-    console.log(this.state);
     this.setState({
       name: event.target.value
     });
   }
 
   positionKeyUp(event) {
-    console.log(this.state);
     this.setState({
       position: event.target.value
     });
   }
 
   bioKeyUp(event) {
-    console.log(this.state);
     this.setState({
       bio: event.target.value
     });
   }
 
   imageUrlKeyUp(event) {
-    console.log(this.state);
     this.setState({
       imageUrl: event.target.value
     });
@@ -78,7 +71,6 @@ class NewAuthorContainer extends Component {
       <div className="Form-Wrapper">
 
       <AuthorsListContainer authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
-
       <p>Add New Author: </p>
       <form onSubmit={this.handleSubmit}>
       <label htmlFor="Name">Author Name</label>

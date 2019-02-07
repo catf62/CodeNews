@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
 import '../styles/AddNewArticle.css';
 
@@ -11,13 +8,13 @@ class EditArticleContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: props.article.id,
-      headline: props.article.headline,
-      date: this.replaceDate(),
-      author: props.article.author.id,
-      content: props.article.content,
-      imageurl: props.article.imageUrl,
-      keywords: this.formatKeyWords()
+      id: "",
+      headline: "",
+      date: "",
+      author: "",
+      content: "",
+      imageurl: "",
+      keywords: ""
     }
 
     this.headlineKeyUp = this.headlineKeyUp.bind(this);
@@ -33,151 +30,149 @@ class EditArticleContainer extends Component {
 
   }
 
-  handleSubmit(event){
-    event.preventDefault();
-    const newArticle = {
-      headline: this.state.headline,
-      date: this.dateForDatabase(this.state.date),
-      author: this.state.author,
-      content: this.state.content,
-      imageUrl: this.state.imageurl
+  componentWillMount(){
+    let request = new Request();
+
+    request.get('/api/articles/'+this.props.id)
+    .then(data => {
+      const dateObject = data.date;
+      this.setState(
+        { id: this.props.id,
+          headline: data.headline,
+          date: this.replaceDate(dateObject),
+          author: data._embedded.author.id,
+          content: data.content,
+          imageurl: data.imageUrl,
+        }
+      )
     }
+  )
 
-    const request = new Request();
-    request.put('/api/articles/'+this.state.id, newArticle)
-      .then(data => {
-        const articlePath = data._links.self.href;
-        const keywordsArray = this.state.keywords;
-        this.updateKeywords(keywordsArray, articlePath);
-      })
-      // .then (() => {
-      //   window.location = '/'
-      // })
+  request.get('/api/articles/'+this.props.id+'/keywords').then(data => {
+    const keywords = data._embedded.keywords.map((keyword) => {
+      return keyword.word+','
+    }).join();
 
+    this.setState(
+      { keywords: keywords}
+    )
+  })
+}
+
+handleSubmit(event){
+  event.preventDefault();
+  const newArticle = {
+    headline: this.state.headline,
+    date: this.dateForDatabase(this.state.date),
+    author: "/api/authors/" + this.state.author,
+    content: this.state.content,
+    imageUrl: this.state.imageurl
   }
 
-  updateKeywords(keyWordsArray, articlePath) {
-    const request = new Request();
-    request.get('/api/articles/' + this.state.id + '/keywords')
-      .then((data) => {
-        console.log("data from req: ", data);
-        const oldKeywords = data._embedded.keywords;
-        const oldKeywordIds = oldKeywords.map((keyword) => {
-          return keyword._links.self.href.split('keywords/')[1];
-        })
-        console.log("links: ", oldKeywordIds);
-        oldKeywordIds.forEach((oldId) => {
-          request.delete('/api/keywords/' + oldId);
-        })
-        return data;
-      })
-      .then((data) => {
-        this.postKeywords(keyWordsArray, articlePath);
-      })
-    // console.log("keyWordsArray from handleSubmit: ", keyWordsArray);
-    // console.log("keyWordsFromProps: ", this.props.article.keywords);
-    // console.log("keyWordIds: ", keywordIds);
-  }
+  const request = new Request();
+  request.put('/api/articles/'+this.props.id, newArticle)
+  .then(data => {
+    const articlePath = data._links.self.href;
+    const keywordsArray = this.state.keywords;
+    this.updateKeywords(keywordsArray, articlePath);
+  })
+  .then (() => {
+    window.location = '/'
+  })
+}
 
-  postKeywords(keyWordsArray, articlePath) {
-    const request = new Request();
-    keyWordsArray.forEach((keyword) => {
-      const keywordObj = {
-        word: keyword,
-        article: articlePath
-      }
-      request.post('/api/keywords', keywordObj)
+updateKeywords(keyWordsArray, articlePath) {
+  const request = new Request();
+  request.get('/api/articles/' + this.state.id + '/keywords')
+  .then((data) => {
+    const oldKeywords = data._embedded.keywords;
+    const oldKeywordIds = oldKeywords.map((keyword) => {
+      return keyword._links.self.href.split('keywords/')[1];
     })
-  }
+    oldKeywordIds.forEach((oldId) => {
+      request.delete('/api/keywords/' + oldId);
+    })
+    return data;
+  })
+  .then((data) => {
+    this.postKeywords(keyWordsArray, articlePath);
+  })
+}
 
-  replaceDate() {
-    const year = this.props.article.datePosted.getFullYear()
-
-    let day = this.props.article.datePosted.getDate().toString();
-    if (this.props.article.datePosted.getDate() < 10) {
-      day = ("0" + day).slice(-2);
+postKeywords(keyWordsArray, articlePath) {
+  const request = new Request();
+  keyWordsArray.forEach((keyword) => {
+    const keywordObj = {
+      word: keyword,
+      article: articlePath
     }
+    request.post('/api/keywords', keywordObj)
+  })
+}
 
-    let month = (this.props.article.datePosted.getMonth() + 1).toString();
-    if (this.props.article.datePosted.getMonth() < 10) {
-      month = ("0" + month).slice(-2);
-    }
-    const date = year+'-'+month+'-'+day;
-    return date;
-  }
+replaceDate(dateObject) {
+  const year = dateObject.slice(6, 10);
 
-  headlineKeyUp(event) {
-    console.log(this.state);
+  let day = dateObject.slice(0, 2);
+
+  let month = dateObject.slice(3, 5);
+
+  const date = year+'-'+month+'-'+day;
+  return date;
+}
+
+headlineKeyUp(event) {
   this.setState({
     headline: event.target.value
   });
-  }
+}
 
-  dateOnChange(event) {
-    this.setState({
-      date: event.target.value
-    });
-    }
-
-  dateForDatabase(date) {
-    let capturedDate = date.slice(8, 10) + "/" + date.slice(5, 7) + "/" + date.slice(0, 4);
-    return capturedDate;
-    }
-
-  authorKeyUp(event) {
-    console.log(this.state);
+dateOnChange(event) {
   this.setState({
-    author: "/api/authors/" + event.target.value
+    date: event.target.value
   });
-  }
+}
 
-  contentKeyUp(event) {
-    console.log(this.state);
+dateForDatabase(date) {
+  let capturedDate = date.slice(8, 10) + "/" + date.slice(5, 7) + "/" + date.slice(0, 4);
+  return capturedDate;
+}
+
+authorKeyUp(event) {
+  this.setState({
+    author: event.target.value
+  });
+}
+
+contentKeyUp(event) {
   this.setState({
     content: event.target.value
   });
-  }
+}
 
-  imageurlKeyUp(event) {
-    console.log(this.state);
+imageurlKeyUp(event) {
   this.setState({
     imageurl: event.target.value
   });
-  }
+}
 
-  formatKeyWords(){
-    let formattedKeyWords = ""
-    for (const keyWord of this.props.article.keywords){
-      formattedKeyWords += keyWord.word + ","
-    }
-    return formattedKeyWords
-  }
-
-
-  keywordsKeyUp (event){
-    console.log(this.state);
-    const keywordsArray = event.target.value.split(",");
-    this.setState ({
-        keywords: keywordsArray
-      })
-      console.log(keywordsArray);
-    }
+keywordsKeyUp (event){
+  const keywordsArray = event.target.value.split(",");
+  this.setState ({
+    keywords: keywordsArray
+  })
+  console.log(keywordsArray);
+}
 
 
-  render(){
+render(){
 
-    const options = this.props.authors.map((author , index) => {
-      let option = null
-      if (author.id === this.state.author) {
-        option = <option key={index} selected value={author.id} >{author.name}</option>
-      } else if (author.id !== this.state.author)
-      {
-        option = <option key={index}  value={author.id} >{author.name}</option>
-      }
-      return option;
-    })
+  const options = this.props.authors.map((author , index) => {
+    return <option key={index}  value={author.id} >{author.name}</option>
+  })
 
     return (
+
       <div className="New-Article-Box">
         <div className="Form-Wrapper">
         <form className="New-Article-Form" onSubmit={this.handleSubmit}>
@@ -191,7 +186,7 @@ class EditArticleContainer extends Component {
           <br></br>
           <label htmlFor="Author">Author</label>
           <br></br>
-          <select onChange={this.authorKeyUp} id="Author">{options}</select>
+          <select onChange={this.authorKeyUp} value={this.state.author} id="Author">{options}</select>
           <br></br>
           <label htmlFor="Content">Content</label>
           <br></br>

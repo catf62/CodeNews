@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
 import '../styles/AddNewArticle.css';
 
@@ -41,14 +38,14 @@ class NewArticleContainer extends Component {
 
     const request = new Request();
     request.post('/api/articles', newArticle)
-      .then(data => {
-        const articlePath = data._links.self.href;
-        const keywordsArray = this.state.keywords;
-        this.postKeywords(keywordsArray, articlePath);
-      })
-      .then (() => {
-        window.location = '/'
-      })
+    .then(data => {
+      const articlePath = data._links.self.href;
+      const keywordsArray = this.state.keywords;
+      this.postKeywords(keywordsArray, articlePath);
+    })
+    .then (() => {
+      window.location = '/'
+    })
 
   }
 
@@ -64,10 +61,9 @@ class NewArticleContainer extends Component {
   }
 
   headlineKeyUp(event) {
-    console.log(this.state);
-  this.setState({
-    headline: event.target.value
-  });
+    this.setState({
+      headline: event.target.value
+    });
   }
 
   dateOnChange(event) {
@@ -75,43 +71,40 @@ class NewArticleContainer extends Component {
     this.setState({
       date: capturedDate.slice(8, 10) + "/" + capturedDate.slice(5, 7) + "/" + capturedDate.slice(0, 4)
     });
-    }
+  }
 
   authorKeyUp(event) {
-    console.log(this.state);
-  this.setState({
-    author: "/api/authors/" + event.target.value
-  });
+    this.setState({
+      author: "/api/authors/" + event.target.value
+    });
   }
 
   contentKeyUp(event) {
-    console.log(this.state);
-  this.setState({
-    content: event.target.value
-  });
+    this.setState({
+      content: event.target.value
+    });
   }
 
   imageurlKeyUp(event) {
-    console.log(this.state);
-  this.setState({
-    imageurl: event.target.value
-  });
+    this.setState({
+      imageurl: event.target.value
+    });
   }
 
   keywordsKeyUp (event){
-    console.log(this.state);
     const keywordsArray = event.target.value.split(",");
     this.setState ({
-        keywords: keywordsArray
-      })
-      console.log(keywordsArray);
-    }
+      keywords: keywordsArray
+    })
+  }
 
   render(){
 
     const options = this.props.authors.map((author , index) => {
       return <option key={index} value={author.id} >{author.name}</option>
     })
+
+    options.unshift(<option key="-1" value="default" disabled={true} >Please select an author...</option>)
 
     return (
       <div className="New-Article-Box">
@@ -127,7 +120,7 @@ class NewArticleContainer extends Component {
             <br></br>
             <label htmlFor="Author">Author     </label>
             <br></br>
-            <select onChange={this.authorKeyUp} id="Author">{options}</select>
+            <select onChange={this.authorKeyUp} defaultValue="default" id="Author">{options}</select>
             <br></br>
             <label htmlFor="Content">Content     </label>
             <br></br>
