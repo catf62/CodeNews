@@ -121,3 +121,21 @@ height: 20px;
 .Landing-Page-Keyword:hover{
   border-color: #51A3CB;
 }
+
+.Landing-Page-Keyword-Seach-Div{
+  background-color: black;
+  color: white;
+
+}
+
+.Keyword-Input{
+  border-color: #4286f4;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+
+.Searched-Articles{
+  background-color: black;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticleLinkListContainer from './ArticleLinkListContainer';
 import Request from '../components/helpers/Request.js';
+import '../styles/LandingPage.css';
 
 class KeywordSearchContainer extends Component {
   constructor(props) {
@@ -55,10 +56,10 @@ searchKeyUp(event){
 
 render(){
   return(
-    <div>
+    <div className="Landing-Page-Keyword-Seach-Div">
     <form onSubmit={this.handleSubmit}>
     <label htmlFor="Keyword Search">Search By Keyword: </label>
-    <input type="text" id="Keyword Search" value={this.state.search} onChange={this.searchKeyUp}/>
+    <input className="Keyword-Input"  size="30" type="text" id="Keyword Search" value={this.state.search} onChange={this.searchKeyUp}/>
     </form>
     { this.state.results }
     </div>
