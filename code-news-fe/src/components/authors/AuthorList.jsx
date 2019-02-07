@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Author from './Author';
 
-class AuthorList extends Component {
-  constructor(props) {
-    super(props);
-    this.handleAuthorSelect = this.handleAuthorSelect.bind(this);
-  }
+const AuthorList = (props) => {
 
-  handleAuthorSelect(id){
-    this.props.handleAuthorLinkClick(id);
-  }
+  const authors = props.authors.map((author, index) => {
+    return <Author key={index} author={author} />
+  })
 
-  render(){
-    const authors = this.props.authors.map((author, index) => {
-      return <Author handleAuthorLinkClick={this.handleAuthorSelect} key={index} author={author} />
-    })
-
-    return(
-      <div>
-      {authors}
-      </div>
-    )
-  }
+  return(
+    <div>
+    {authors}
+    </div>
+  )
 }
 
 export default AuthorList;

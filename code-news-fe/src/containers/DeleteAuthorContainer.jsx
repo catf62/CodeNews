@@ -6,18 +6,32 @@ class DeleteAuthorContainer extends Component{
   constructor(props) {
     super(props);
     this.state={
-      author: props.author
+      author: {}
     }
     this.handleAuthorDelete = this.handleAuthorDelete.bind(this);
   }
 
-  handleAuthorDelete(){
-    const request = new Request();
-    request.delete('/api/authors/'+this.state.author.id, this.state.author)
-      .then (() => {
-        window.location = 'admin/authors/new'
-      })
-  }
+  componentWillMount(){
+    let request = new Request();
+
+    request.get('/api/authors/'+this.props.id)
+    .then(data => {
+      this.setState(
+        {
+          author: data
+        }
+      )
+    }
+  )
+}
+
+handleAuthorDelete(){
+  const request = new Request();
+  request.delete('/api/authors/'+this.props.id, this.state.author)
+  .then (() => {
+    window.location = 'admin/authors/new'
+  })
+}
 
 render(){
   return(
@@ -26,7 +40,7 @@ render(){
     <Link to={"/"}>
     <button className="Button" onClick={this.handleAuthorDelete}>Confirm</button>
     </Link>
-    <Link to={"/authors/" + this.state.author.id}>
+    <Link to={"/admin/authors/new"}>
     <button className="Button">Cancel</button>
     </Link>
     </div>

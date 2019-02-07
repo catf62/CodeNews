@@ -4,9 +4,9 @@ class Footer extends Component {
 
   render() {
     return (
-    <div className='Darker-Blue-BG Solid-Black-Border Header-Footer'>
-    </div>
-  )
+      <div className='Darker-Blue-BG Solid-Black-Border Header-Footer'>
+      </div>
+    )
   }
 
 }
