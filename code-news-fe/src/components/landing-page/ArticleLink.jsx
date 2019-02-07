@@ -26,8 +26,8 @@ class ArticleLink extends Component {
       <h3 className="Landing-Page-Article-Headline">{this.props.article.headline}</h3>
 
       <div className="Landing-Page-Date-Author-Flex">
-        <h5 className="Landing-Page-Article-Author ">By {this.props.article.author.name}</h5>
-        <p className="Landing-Page-Article-Date ">{day}/{month}/{this.props.article.datePosted.getFullYear()}</p>
+      <h5 className="Landing-Page-Article-Author ">By {this.props.article.author.name}</h5>
+      <p className="Landing-Page-Article-Date ">{day}/{month}/{this.props.article.datePosted.getFullYear()}</p>
       </div>
 
       <p className="Landing-Page-Article-Content">{this.props.article.content.slice(0, 150) + "..."}</p>

@@ -20,8 +20,8 @@ class ArticleContainer extends Component{
     .then(data => {
       this.setState(
         {article: data,
-        author: data._embedded.author
-      }
+          author: data._embedded.author
+        }
       )
     }
   )
@@ -32,8 +32,8 @@ class ArticleContainer extends Component{
         return keyword.word;
       })
     })
-    })
-  }
+  })
+}
 
 render(){
   return(

@@ -18,20 +18,20 @@ class DeleteAuthorContainer extends Component{
     .then(data => {
       this.setState(
         {
-        author: data
-      }
+          author: data
+        }
       )
     }
   )
 }
 
-  handleAuthorDelete(){
-    const request = new Request();
-    request.delete('/api/authors/'+this.props.id, this.state.author)
-      .then (() => {
-        window.location = 'admin/authors/new'
-      })
-  }
+handleAuthorDelete(){
+  const request = new Request();
+  request.delete('/api/authors/'+this.props.id, this.state.author)
+  .then (() => {
+    window.location = 'admin/authors/new'
+  })
+}
 
 render(){
   return(

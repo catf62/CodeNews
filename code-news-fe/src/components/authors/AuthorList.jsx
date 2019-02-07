@@ -3,15 +3,15 @@ import Author from './Author';
 
 const AuthorList = (props) => {
 
-    const authors = props.authors.map((author, index) => {
-      return <Author key={index} author={author} />
-    })
+  const authors = props.authors.map((author, index) => {
+    return <Author key={index} author={author} />
+  })
 
-    return(
-      <div>
-      {authors}
-      </div>
-    )
-  }
+  return(
+    <div>
+    {authors}
+    </div>
+  )
+}
 
 export default AuthorList;
