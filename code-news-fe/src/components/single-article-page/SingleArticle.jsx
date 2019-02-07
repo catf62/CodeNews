@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleArticle = (props) => {
@@ -13,7 +13,7 @@ const SingleArticle = (props) => {
         <h3 className="Single-Article-Page-Article-Headline">{props.article.headline}</h3>
         <h5 className="Single-Article-Page-Article-Author">By {props.author.name}</h5>
         <p className="Single-Article-Page-Article-Content">{props.article.content}</p>
-        <img className="Single-Article-Page-Article-Image" src={props.article.imageUrl}/>
+        <img alt={props.article.headline} className="Single-Article-Page-Article-Image" src={props.article.imageUrl}/>
         <p>{props.article.datePosted}</p>
         <div className="Single-Article-Page-Article-Keywords">
           {displayedKeywords}

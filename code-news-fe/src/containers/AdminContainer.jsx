@@ -1,15 +1,7 @@
-import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class AdminContainer extends Component{
-  constructor(props) {
-super(props);
-  }
-
-  render(){
+const AdminContainer = () => {
     return(
       <div>
       <div>
@@ -23,6 +15,5 @@ super(props);
       </div>
     )
   }
-}
 
 export default AdminContainer;

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
 
 
@@ -38,7 +35,6 @@ class EditArticleContainer extends Component {
     request.get('/api/articles/'+this.props.id)
     .then(data => {
       const dateObject = data.date;
-      console.log(dateObject);
       this.setState(
         { id: this.props.id,
           headline: data.headline,
@@ -88,12 +84,10 @@ class EditArticleContainer extends Component {
     const request = new Request();
     request.get('/api/articles/' + this.state.id + '/keywords')
       .then((data) => {
-        console.log("data from req: ", data);
         const oldKeywords = data._embedded.keywords;
         const oldKeywordIds = oldKeywords.map((keyword) => {
           return keyword._links.self.href.split('keywords/')[1];
         })
-        console.log("links: ", oldKeywordIds);
         oldKeywordIds.forEach((oldId) => {
           request.delete('/api/keywords/' + oldId);
         })
@@ -102,9 +96,6 @@ class EditArticleContainer extends Component {
       .then((data) => {
         this.postKeywords(keyWordsArray, articlePath);
       })
-    // console.log("keyWordsArray from handleSubmit: ", keyWordsArray);
-    // console.log("keyWordsFromProps: ", this.props.article.keywords);
-    // console.log("keyWordIds: ", keywordIds);
   }
 
   postKeywords(keyWordsArray, articlePath) {
@@ -130,7 +121,6 @@ class EditArticleContainer extends Component {
   }
 
   headlineKeyUp(event) {
-    console.log(this.state);
   this.setState({
     headline: event.target.value
   });
@@ -148,28 +138,24 @@ class EditArticleContainer extends Component {
     }
 
   authorKeyUp(event) {
-    console.log(this.state);
   this.setState({
     author: event.target.value
   });
   }
 
   contentKeyUp(event) {
-    console.log(this.state);
   this.setState({
     content: event.target.value
   });
   }
 
   imageurlKeyUp(event) {
-    console.log(this.state);
   this.setState({
     imageurl: event.target.value
   });
   }
 
   keywordsKeyUp (event){
-    console.log(this.state);
     const keywordsArray = event.target.value.split(",");
     this.setState ({
         keywords: keywordsArray
@@ -181,14 +167,7 @@ class EditArticleContainer extends Component {
   render(){
 
     const options = this.props.authors.map((author , index) => {
-      let option = null
-      if (author.id === this.state.author) {
-        option = <option selected="true" key={index} value={author.id} >{author.name}</option>
-      } else if (author.id !== this.state.author)
-      {
-        option = <option key={index}  value={author.id} >{author.name}</option>
-      }
-      return option;
+      return <option key={index}  value={author.id} >{author.name}</option>
     })
 
     return (
@@ -201,7 +180,9 @@ class EditArticleContainer extends Component {
           <input onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
 
           <label htmlFor="Author">Author</label>
-          <select onChange={this.authorKeyUp} id="Author">{options}</select>
+          <select onChange={this.authorKeyUp} value={this.state.author} id="Author">
+          {options}
+          </select>
 
           <label htmlFor="Content">Content</label>
           <input onChange={this.contentKeyUp}  type="text" id="Content"

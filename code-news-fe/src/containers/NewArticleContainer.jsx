@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import Request from '../components/helpers/Request.js'
 
 
@@ -63,7 +60,6 @@ class NewArticleContainer extends Component {
   }
 
   headlineKeyUp(event) {
-    console.log(this.state);
   this.setState({
     headline: event.target.value
   });
@@ -77,33 +73,28 @@ class NewArticleContainer extends Component {
     }
 
   authorKeyUp(event) {
-    console.log(this.state);
   this.setState({
     author: "/api/authors/" + event.target.value
   });
   }
 
   contentKeyUp(event) {
-    console.log(this.state);
   this.setState({
     content: event.target.value
   });
   }
 
   imageurlKeyUp(event) {
-    console.log(this.state);
   this.setState({
     imageurl: event.target.value
   });
   }
 
   keywordsKeyUp (event){
-    console.log(this.state);
     const keywordsArray = event.target.value.split(",");
     this.setState ({
         keywords: keywordsArray
       })
-      console.log(keywordsArray);
     }
 
   render(){
@@ -112,7 +103,7 @@ class NewArticleContainer extends Component {
       return <option key={index} value={author.id} >{author.name}</option>
     })
 
-    options.unshift(<option key="-1" selected="true" disabled="true" >Please select an author...</option>)
+    options.unshift(<option key="-1" value="default" disabled={true} >Please select an author...</option>)
 
     return (
       <div>
@@ -123,7 +114,9 @@ class NewArticleContainer extends Component {
           <input onChange={this.dateOnChange} type="date" id="Date"/>
 
           <label htmlFor="Author">Author</label>
-          <select onChange={this.authorKeyUp} id="Author">{options}</select>
+          <select onChange={this.authorKeyUp} defaultValue="default" id="Author">
+          {options}
+          </select>
 
           <label htmlFor="Content">Content</label>
           <input onKeyUp={this.contentKeyUp}  type="text" id="Content"/>

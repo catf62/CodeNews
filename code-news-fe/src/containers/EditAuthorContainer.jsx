@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
-import AuthorsListContainer from './AuthorsListContainer';
 import Request from '../components/helpers/Request.js';
 
 class EditAuthorContainer extends Component {
@@ -59,28 +55,24 @@ class EditAuthorContainer extends Component {
   }
 
   nameKeyUp(event) {
-    console.log(this.state);
   this.setState({
     name: event.target.value
   });
   }
 
   positionKeyUp(event) {
-    console.log(this.state);
   this.setState({
     position: event.target.value
   });
   }
 
   bioKeyUp(event) {
-    console.log(this.state);
   this.setState({
     bio: event.target.value
   });
   }
 
   imageUrlKeyUp(event) {
-    console.log(this.state);
   this.setState({
     imageUrl: event.target.value
   });

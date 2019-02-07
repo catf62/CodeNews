@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Author from './Author';
 
-class AuthorList extends Component {
-  constructor(props) {
-    super(props);
-  }
+const AuthorList = (props) => {
 
-  render(){
-    const authors = this.props.authors.map((author, index) => {
+    const authors = props.authors.map((author, index) => {
       return <Author key={index} author={author} />
     })
 
@@ -17,6 +13,5 @@ class AuthorList extends Component {
       </div>
     )
   }
-}
 
 export default AuthorList;

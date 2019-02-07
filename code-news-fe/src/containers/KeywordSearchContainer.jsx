@@ -57,7 +57,7 @@ render(){
   return(
     <div>
     <form onSubmit={this.handleSubmit}>
-    <label for="Keyword Search">Search By Keyword: </label>
+    <label htmlFor="Keyword Search">Search By Keyword: </label>
     <input type="text" id="Keyword Search" value={this.state.search} onChange={this.searchKeyUp}/>
     </form>
     { this.state.results }

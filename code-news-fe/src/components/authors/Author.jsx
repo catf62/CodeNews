@@ -8,7 +8,7 @@ const Author = (props) => {
     <p>{props.author.name}</p>
     <p>{props.author.position}</p>
     <p>{props.author.biography}</p>
-    <img src={props.author.imageUrl}></img>
+    <img alt={props.author.name} src={props.author.imageUrl}></img>
     <Link to={'/authors/'+props.author.id+'/edit'}>
     <button>Edit</button>
     </Link>
