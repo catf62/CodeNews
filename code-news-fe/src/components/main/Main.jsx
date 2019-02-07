@@ -14,6 +14,7 @@ import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx'
 import DeleteAuthorContainer from '../../containers/DeleteAuthorContainer.jsx';
 import EditAuthorContainer from '../../containers/EditAuthorContainer.jsx';
 import KeywordSearchContainer from '../../containers/KeywordSearchContainer.jsx';
+import BadRouteContainer from '../../containers/BadRouteContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -94,6 +95,7 @@ class Main extends Component{
         const id = props.match.params.id;
         return <EditAuthorContainer id={id}/>
       }}/>
+      <Route path='*' exact={true} component={BadRouteContainer} />
       </Switch>
       </Fragment>
       <Footer/>
