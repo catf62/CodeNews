@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import SingleArticle from '../components/single-article-page/SingleArticle';
-import Header from '../components/general/Header';
-import NavBar from '../components/general/NavBar';
-import Footer from '../components/general/Footer';
 import '../styles/SingleArticlePage.css';
 import Request from '../components/helpers/Request.js';
 
@@ -23,8 +20,8 @@ class ArticleContainer extends Component{
     .then(data => {
       this.setState(
         {article: data,
-        author: data._embedded.author
-      }
+          author: data._embedded.author
+        }
       )
     }
   )
@@ -35,8 +32,8 @@ class ArticleContainer extends Component{
         return keyword.word;
       })
     })
-    })
-  }
+  })
+}
 
 render(){
   return(

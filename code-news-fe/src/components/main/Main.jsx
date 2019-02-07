@@ -14,6 +14,7 @@ import DeleteArticleContainer from '../../containers/DeleteArticleContainer.jsx'
 import DeleteAuthorContainer from '../../containers/DeleteAuthorContainer.jsx';
 import EditAuthorContainer from '../../containers/EditAuthorContainer.jsx';
 import KeywordSearchContainer from '../../containers/KeywordSearchContainer.jsx';
+import BadRouteContainer from '../../containers/BadRouteContainer.jsx';
 
 class Main extends Component{
   constructor(props) {
@@ -34,71 +35,72 @@ class Main extends Component{
   }
 
   componentDidMount(){
-  let request = new Request()
-  request.get('/api/articles').then(data => {
-    const articleData = data._embedded.articles;
-    for (const art of articleData) {
-      art.datePosted = this.replaceDate(art.datePosted)
-    }
-    this.setState({articles: data._embedded.articles})
+    let request = new Request()
+    request.get('/api/articles').then(data => {
+      const articleData = data._embedded.articles;
+      for (const art of articleData) {
+        art.datePosted = this.replaceDate(art.datePosted)
+      }
+      this.setState({articles: data._embedded.articles})
 
-  })
-  request.get('/api/authors').then(data => {
-    this.setState({authors: data._embedded.authors})
-  })
-}
+    })
+    request.get('/api/authors').then(data => {
+      this.setState({authors: data._embedded.authors})
+    })
+  }
 
   render(){
     return (
-        <Router>
-        <Fragment>
-        <Header/>
-        <NavBar/>
-        <Fragment>
-          <Switch>
-          <Route exact path="/" render={(props) => {
-            const articles = this.state.articles;
-            return (
-              <>
-              <KeywordSearchContainer/>
-              <ArticleLinkListContainer articles={articles}/>
-              </>
-            )
-          }}/>
-          <Route exact path="/articles/:id" render={(props) => {
-            const id = props.match.params.id;
-            return <ArticleContainer id={id}/>
-          }}/>
-          <Route exact path="/admin" render={(props) => {
-            return <AdminContainer />
-          }}/>
-          <Route exact path="/admin/articles/new" render={(props) => {
-            return <NewArticleContainer authors={this.state.authors}/>
-          }}/>
-          <Route exact path="/admin/authors/new" render={(props) => {
-            return <NewAuthorContainer authors={this.state.authors}/>
-          }}/>
-          <Route exact path="/articles/:id/edit" render={(props) => {
-            const id = props.match.params.id;
-            return <EditArticleContainer id={id} authors={this.state.authors}/>
-          }}/>
-          <Route exact path="/articles/:id/delete" render={(props) => {
-            const id = props.match.params.id;
-            return <DeleteArticleContainer id={id}/>
-          }}/>
-          <Route exact path="/authors/:id/delete" render={(props) => {
-            const id = props.match.params.id;
-            return <DeleteAuthorContainer id={id}/>
-          }}/>
-          <Route exact path="/authors/:id/edit" render={(props) => {
-            const id = props.match.params.id;
-            return <EditAuthorContainer id={id}/>
-          }}/>
-          </Switch>
-        </Fragment>
-        <Footer/>
-        </Fragment>
-        </Router>
+      <Router>
+      <Fragment>
+      <Header/>
+      <NavBar/>
+      <Fragment>
+      <Switch>
+      <Route exact path="/" render={(props) => {
+        const articles = this.state.articles;
+        return (
+          <>
+          <KeywordSearchContainer/>
+          <ArticleLinkListContainer articles={articles}/>
+          </>
+        )
+      }}/>
+      <Route exact path="/articles/:id" render={(props) => {
+        const id = props.match.params.id;
+        return <ArticleContainer id={id}/>
+      }}/>
+      <Route exact path="/admin" render={(props) => {
+        return <AdminContainer />
+      }}/>
+      <Route exact path="/admin/articles/new" render={(props) => {
+        return <NewArticleContainer authors={this.state.authors}/>
+      }}/>
+      <Route exact path="/admin/authors/new" render={(props) => {
+        return <NewAuthorContainer authors={this.state.authors}/>
+      }}/>
+      <Route exact path="/articles/:id/edit" render={(props) => {
+        const id = props.match.params.id;
+        return <EditArticleContainer id={id} authors={this.state.authors}/>
+      }}/>
+      <Route exact path="/articles/:id/delete" render={(props) => {
+        const id = props.match.params.id;
+        return <DeleteArticleContainer id={id}/>
+      }}/>
+      <Route exact path="/authors/:id/delete" render={(props) => {
+        const id = props.match.params.id;
+        return <DeleteAuthorContainer id={id}/>
+      }}/>
+      <Route exact path="/authors/:id/edit" render={(props) => {
+        const id = props.match.params.id;
+        return <EditAuthorContainer id={id}/>
+      }}/>
+      <Route path='*' exact={true} component={BadRouteContainer} />
+      </Switch>
+      </Fragment>
+      <Footer/>
+      </Fragment>
+      </Router>
     )
   }
 }

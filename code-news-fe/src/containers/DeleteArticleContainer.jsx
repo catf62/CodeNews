@@ -20,15 +20,15 @@ class DeleteArticleContainer extends Component{
       )
     }
   )
-  }
+}
 
-  handleArticleDelete(){
-    const request = new Request();
-    request.delete('/api/articles/'+this.props.id, this.state.article)
-      .then (() => {
-        window.location = '/'
-      })
-  }
+handleArticleDelete(){
+  const request = new Request();
+  request.delete('/api/articles/'+this.props.id, this.state.article)
+  .then (() => {
+    window.location = '/'
+  })
+}
 
 render(){
   return(

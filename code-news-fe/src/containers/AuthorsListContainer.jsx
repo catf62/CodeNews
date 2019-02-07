@@ -12,7 +12,6 @@ class AuthorsListContainer extends Component {
   }
 
   render(){
-    console.log(this.props.authors);
     return(
       <AuthorList authors={this.props.authors}/>
     )
