@@ -50,7 +50,7 @@ class EditArticleContainer extends Component {
 
   request.get('/api/articles/'+this.props.id+'/keywords').then(data => {
     const keywords = data._embedded.keywords.map((keyword) => {
-      return keyword.word+','
+      return keyword.word
     }).join();
 
     this.setState(

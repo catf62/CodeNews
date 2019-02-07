@@ -5,16 +5,26 @@ const Author = (props) => {
 
   return(
     <div className="Author-Box">
-    <p>{props.author.name}</p>
-    <p>{props.author.position}</p>
-    <p>{props.author.biography}</p>
     <img alt={props.author.name} src={props.author.imageUrl}></img>
-    <Link to={'/authors/'+props.author.id+'/edit'}>
-    <button>Edit</button>
-    </Link>
-    <Link to={'/authors/'+props.author.id+'/delete'}>
-    <button>Delete</button>
-    </Link>
+    <div className="Author-Info">
+      <br></br>
+      <p>Name: {props.author.name}</p>
+      <br></br>
+      <p>Position: {props.author.position}</p>
+      <br></br>
+      <p>Biography: {props.author.biography}</p>
+      <br></br>
+      <br></br>
+      <br></br>
+      <Link to={'/authors/'+props.author.id+'/edit'}>
+      <button className="Delete-Page-Button">Edit</button>
+      </Link>
+      <Link to={'/authors/'+props.author.id+'/delete'}>
+      <button className="Delete-Page-Button">Delete</button>
+      </Link>
+    </div>
+
+
     </div>
   )
 }

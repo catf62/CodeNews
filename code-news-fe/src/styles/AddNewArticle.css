@@ -50,13 +50,41 @@
 }
 
 .Author-Box{
+  background-image: url("../styles/blue_green_background_image.png");
   border-radius: 5px;
   border-color: white;
-  background-color: black;
   color: white;
   padding: 2em;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: left;
+  justify-content: center;
 }
 
 .Author-List-And-New_Form{
-  background-image: url("../styles/blue_green_background_image.png");
+  background-color: black;
+}
+
+.Author-List{
+
+}
+
+.Author-Info{
+  background-color: white;
+  color: black;
+  height: 300px;
+  padding: 2em;
+}
+
+.Manage-Authors-Title{
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding: 0.5em;
+}
+
+.Author-Form{
+  text-align: center;
 }

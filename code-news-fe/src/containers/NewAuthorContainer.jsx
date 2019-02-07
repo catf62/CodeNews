@@ -68,12 +68,13 @@ class NewAuthorContainer extends Component {
 
   render(){
     return (
+      <>
+      <h3 className="Manage-Authors-Title">Manage Authors</h3>
       <div className="Author-List-And-New_Form">
-        <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
-
-        <div className="Form-Wrapper" >
+        <div className="Form-Wrapper Author-List" >
           <p className="Edit-Author-Title">Add New Author: </p>
-          <form className="New-Article-Form" onSubmit={this.handleSubmit}>
+          <form className="New-Article-Form Author-Form" onSubmit={this.handleSubmit}>
+
           <label htmlFor="Name">Author Name</label>
           <br></br>
           <input size="70" onKeyUp={this.nameKeyUp} type="text" id="Name"/>
@@ -94,7 +95,10 @@ class NewAuthorContainer extends Component {
           <input type="submit" value="Save"/>
           </form>
         </div>
+          <h3 className="Manage-Authors-Title">Our Authors</h3>
+          <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
       </div>
+      </>
     )
   }
 }
