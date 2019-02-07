@@ -109,6 +109,7 @@ class NewArticleContainer extends Component {
     return (
       <div className="New-Article-Box">
         <div className="Form-Wrapper">
+        <p className="Edit-Author-Title">Add New Article: </p>
           <form className="New-Article-Form" onSubmit={this.handleSubmit}>
             <label htmlFor="Headline">Headline:</label>
             <br></br>
@@ -133,7 +134,6 @@ class NewArticleContainer extends Component {
             <label htmlFor="Keywords">Keywords     </label>
             <br></br>
             <input onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
-            <br></br>
             <br></br>
             <input type="submit" value="Save"/>
           </form>

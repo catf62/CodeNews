@@ -175,14 +175,15 @@ render(){
 
       <div className="New-Article-Box">
         <div className="Form-Wrapper">
+        <p className="Edit-Author-Title">Edit Article: </p>
         <form className="New-Article-Form" onSubmit={this.handleSubmit}>
           <label htmlFor="Headline">Headline</label>
           <br></br>
-          <input onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
+          <input size="70" onChange={this.headlineKeyUp} type="text" id="Headline" value={this.state.headline}/>
           <br></br>
           <label htmlFor="Date">Date</label>
           <br></br>
-          <input onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
+          <input size="70" onChange={this.dateOnChange} type="date" id="Date" value={this.state.date}/>
           <br></br>
           <label htmlFor="Author">Author</label>
           <br></br>
@@ -190,18 +191,17 @@ render(){
           <br></br>
           <label htmlFor="Content">Content</label>
           <br></br>
-          <input onChange={this.contentKeyUp}  type="text" id="Content"
+          <input size="70" onChange={this.contentKeyUp}  type="text" id="Content"
           value={this.state.content}/>
           <br></br>
           <label htmlFor="Image url">Image url</label>
           <br></br>
-          <input onChange={this.imageurlKeyUp} type="text" id="Image url" value={this.state.imageurl}/>
+          <input size="70" onChange={this.imageurlKeyUp} type="text" id="Image url" value={this.state.imageurl}/>
           <br></br>
           <label htmlFor="Keywords">Keywords</label>
           <br></br>
-          <input onChange= {this.keywordsKeyUp} type="text" id="Keywords"
+          <input size="70" onChange= {this.keywordsKeyUp} type="text" id="Keywords"
           value={this.state.keywords}/>
-          <br></br>
           <br></br>
           <input type="submit" value="Save"/>
         </form>

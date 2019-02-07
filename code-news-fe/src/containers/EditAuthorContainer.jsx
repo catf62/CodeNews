@@ -84,20 +84,32 @@ handleAuthorSelect(id){
 
 render(){
   return (
-    <div>
+    <div className="New-Article-Box">
+      <div className="Form-Wrapper">
 
-    <p>Edit Author: </p>
-    <form onSubmit={this.handleSubmit}>
+    <p className="Edit-Author-Title">Edit Author: </p>
+    <form className="New-Article-Form" onSubmit={this.handleSubmit}>
     <label htmlFor="Name">Author Name</label>
-    <input value={this.state.name} onChange={this.nameKeyUp} type="text" id="Name"/>
+    <br></br>
+    <input size="70" value={this.state.name} onChange={this.nameKeyUp} type="text" id="Name"/>
+    <br></br>
     <label htmlFor="Position">Position</label>
-    <input value={this.state.position} onChange={this.positionKeyUp} type="text" id="Position"/>
+    <br></br>
+    <input size="70" value={this.state.position} onChange={this.positionKeyUp} type="text" id="Position"/>
+    <br></br>
     <label htmlFor="Bio">Bio</label>
-    <input value={this.state.bio} onChange={this.bioKeyUp} type="text" id="Bio"/>
+    <br></br>
+    <input size="70" value={this.state.bio} onChange={this.bioKeyUp} type="text" id="Bio"/>
+    <br></br>
     <label htmlFor="ImageUrl">Image url</label>
-    <input value={this.state.imageUrl} onChange={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
-    <input type="submit" value="Save"/>
+    <br></br>
+    <input size="70" value={this.state.imageUrl} onChange={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
+    <br></br>
+    <br></br>
+    <input size="70" type="submit" value="Save"/>
+    <br></br>
     </form>
+    </div>
     </div>
   )
 }

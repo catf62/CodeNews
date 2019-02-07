@@ -41,4 +41,10 @@
   width: 80px;
   height: 20px;
   text-align: center;
+  margin-left: 1.5em;
+}
+
+.Edit-Author-Title{
+  color: navy;
+  font-weight: bold;
 }

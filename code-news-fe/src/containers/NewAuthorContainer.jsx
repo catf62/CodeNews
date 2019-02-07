@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AuthorsListContainer from './AuthorsListContainer';
 import Request from '../components/helpers/Request.js';
 import '../styles/AddNewArticle.css';
+import '../styles/LandingPage.css';
 
 class NewAuthorContainer extends Component {
 
@@ -69,8 +70,8 @@ class NewAuthorContainer extends Component {
     return (
       <div className="New-Article-Box">
       <div className="Form-Wrapper">
-
-      <AuthorsListContainer authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
+      <p className="Edit-Author-Title">Add New Author: </p>
+      <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
       <p>Add New Author: </p>
       <form onSubmit={this.handleSubmit}>
       <label htmlFor="Name">Author Name</label>
