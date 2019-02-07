@@ -69,31 +69,32 @@ class NewAuthorContainer extends Component {
   render(){
     return (
       <div className="New-Article-Box">
-      <div className="Form-Wrapper">
-      <p className="Edit-Author-Title">Add New Author: </p>
-      <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
-      <p>Add New Author: </p>
-      <form onSubmit={this.handleSubmit}>
-      <label htmlFor="Name">Author Name</label>
-      <br></br>
-      <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
-      <br></br>
-      <label htmlFor="Position">Position</label>
-      <br></br>
-      <input onKeyUp={this.positionKeyUp} type="text" id="Position"/>
-      <br></br>
-      <label htmlFor="Bio">Bio</label>
-      <br></br>
-      <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
-      <br></br>
-      <label htmlFor="ImageUrl">Image url</label>
-      <br></br>
-      <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
-      <br></br>
-      <br></br>
-      <input type="submit" value="Save"/>
-      </form>
-      </div>
+
+        <p className="Edit-Author-Title">Add New Author: </p>
+        <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
+        <div className="Form-Wrapper">
+          <p>Add New Author: </p>
+          <form onSubmit={this.handleSubmit}>
+          <label htmlFor="Name">Author Name</label>
+          <br></br>
+          <input onKeyUp={this.nameKeyUp} type="text" id="Name"/>
+          <br></br>
+          <label htmlFor="Position">Position</label>
+          <br></br>
+          <input onKeyUp={this.positionKeyUp} type="text" id="Position"/>
+          <br></br>
+          <label htmlFor="Bio">Bio</label>
+          <br></br>
+          <input onKeyUp={this.bioKeyUp} type="text" id="Bio"/>
+          <br></br>
+          <label htmlFor="ImageUrl">Image url</label>
+          <br></br>
+          <input onKeyUp={this.imageUrlKeyUp} type="text" id="ImageUrl"/>
+          <br></br>
+          <br></br>
+          <input type="submit" value="Save"/>
+          </form>
+        </div>
       </div>
     )
   }
