@@ -49,10 +49,12 @@ public class DataLoader implements ApplicationRunner {
 
         Author rob = new Author("Robert Augustus Wilson", "Head boy", "good at being a champion", robUrl);
         authorRepository.save(rob);
-        Author graeme = new Author("Graeme Topaz Congreve",   "average person", "ace in your face london, mad top champion of winning", graemeUrl );
+        Author graeme = new Author("Graeme Topaz Congreve",  "average person", "ace in your face london, mad top champion of winning", graemeUrl );
         authorRepository.save(graeme);
-        Author cat = new Author("Cat Ford", "Head Girl", "world champion cartographer", placeholderURL);
+        Author cat = new Author("Catriona Ford", "Head Girl", "world champion cartographer", placeholderURL);
         authorRepository.save(cat);
+        Author chris = new Author("Christopher Slamdunk Milligan", "Boss", "world champion cartwheeler", placeholderURL);
+        authorRepository.save(chris);
         Author alex = new Author("Alexander St.John Aloysius Clements", "CodeClan Student", "CodeClan student with a degree in Astrophysics, experience of self-employment and growing a successful business.", alexUrl);
         authorRepository.save(alex);
 
@@ -94,21 +96,23 @@ public class DataLoader implements ApplicationRunner {
                 " giving back to their community. Our instructors created a two-week placement that allows st, Last May, " +
                 "we launched a new initiative to help our students get hands-on work experience while giving back to their " +
                 "community. Our instructors created a two-week placement that allows st, Last May, we launched a new " +
-                "initiative to help our students get hands-on work experience while giving back to their community. Our " +
-                "instructors created a two-week placement that allows st" + "Last May, we launched a new initiative to help our students get hands-on work experience while" +
-                " giving back to their community. Our instructors created a two-week placement that allows st, Last May, " +
-                "we launched a new initiative to help our students get hands-on work experience while giving back to their " +
-                "community. Our instructors created a two-week placement that allows st, Last May, we launched a new " +
-                "initiative to help our students get hands-on work experience while giving back to their community. Our " +
-                "instructors created a two-week placement that allows st";
+                "initiative to help our students get hands-on work experience while giving back to their community." +
+                "Two of our student teams were placed with One Cherry, a startup with a social mission to make shopping from " +
+                "local second-hand shops easy and enjoyable for everyone. Their website and mobile app allow users (these are " +
+                "the humans who actually use the app) to find charity shops within their area and shop for specific items. " +
+                "One Cherry uses a tech stack that includes Redux (a JavaScript library) and React Native (a framework for building " +
+                "mobile apps in JavaScript)." +
+                "CodeClan students are trained in JavaScript and React during their time at CodeClan, and had to quickly pick up React" +
+                " Native and Redux and get confident with it – not to mention stepping into a large, professional code base (all of the code " +
+                "One Cherry has ever written).";
 
         String article4Headline = "CodeClan announces partnership with GitHub";
-        String article4Content = "There were scenes of delight in streets of Edinburgh as CodeClan announced that" +
+        String article4Content = "There were scenes of delight in streets of Edinburgh as CodeClan announced that " +
                 "all of its students would now be guaranteed jobs with GitHub upon graduation. A CodeClan spokesperson " +
                 "said, 'this deal makes neither financial or practical sense, but we've got them to agree to it anyway'. " +
                 "Upon graduation, all students will now be bound and gagged and put into a shipping container and sent off " +
                 "to San Francisco, when asked why the students couldn't travel to their new vocations in a more conventional " +
-                "way, the same spokesman replied that it was 'none' of our business.";
+                "way, the same spokesperson replied that it was 'none of our business.'";
         String article4Url = "https://github.githubassets.com/images/modules/logos_page/Octocat.png";
 
 
@@ -116,26 +120,36 @@ public class DataLoader implements ApplicationRunner {
         String article5Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/CC-team-2018-2-o0r69dw3hz891ahp8ndmavwf4p0e6pbgpiy8p6t6ps.jpg";
         String article5Content = "We had six cohorts of students graduating in Glasgow and nine in Edinburgh, and we’re " +
                 "looking forward to starting with Cohorts E28 and G11 in January 2019. A significant part of growth this year " +
-                "was our rollout of staff sponsorship opportunities for employers." +
-                "We also celebrated the 500th graduate from our Professional Software Development course, Iona Macbeth." +
+                "was our rollout of staff sponsorship opportunities for employers. " +
+                "We also celebrated the 500th graduate from our Professional Software Development course, Iona Macbeth. " +
                 " With a career background in Communications, she has now started her first job in Scotland’s digital technology industry." +
                 "205 more CodeClan graduates are out there, working in tech across Scotland and beyond. Their roles include software development, " +
-                "testing, support engineering, product management and more." +
+                "testing, support engineering, product management and more. " +
                 "We won the award for Best Education/Training provider at the ScotlandIS Digital Tech Awards 2018. The Digital " +
                 "Technologies Awards celebrate Scotland’s digital industry. And the team were over the moon to pick up this " +
                 "award for the second year in a row!" +
                 "We sponsored or hosted 16 coding events, clubs and workshops with the aim of supporting and encouraging young " +
-                "and underrepresented people to get involved in tech and further education in digital. Events included 10 codebar" +
+                "and underrepresented people to get involved in tech and further education in digital. Events included 10 codebar " +
                 " workshops, 5 Coder Dojo clubs and the Girl Guides.";
 
         String article6Headline = "Welcome to our Commercial Director";
         String article6Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Brian-Baglow-740x416-nybwzx690nr4t3frxc2hw3xh3mvcn4v38g195dr7sw.jpg";
-        String article6Content = "In August, CodeClan’s leadership team appointed Brian Baglow as our new Commercial Director. He’ll assist our organisation" +
-                " to fulfil our goal of creating a new digital talent pipeline, to help Scotland’s industry and economy thrive." +
+        String article6Content = "In August, CodeClan’s leadership team appointed Brian Baglow as our new Commercial Director. He’ll assist our organisation " +
+                " to fulfil our goal of creating a new digital talent pipeline, to help Scotland’s industry and economy thrive. " +
                 "Brian’s role will ensure that CodeClan is working with companies across all of the key industrial sectors, throughout Scotland " +
-                "to help address the shortage of digitally skilled staff." +
+                "to help address the shortage of digitally skilled staff. " +
                 "In addition, he’ll support an expanding curriculum, which now offers a growing range of short and bespoke training courses " +
                 "which enables companies to up-skill, re-skill and train staff in a broad range of digital skills.";
+
+        String article7Headline = "Supporting Team Scotland’s skills, on and off the pitch";
+        String article7Url = "https://codeclan.com/wp-content/uploads/elementor/thumbs/Marrayfield-1-nz0gw72fr5b76opovbo27vg8sisb7w5d46l81bim44.jpg ";
+        String article7Content = "Some of us were screaming at the TV last Saturday. Occasionally it was to do with a certain national rugby team who beat Fiji 54-17… " +
+                "Well done Scotland! But there was something new going on at Murrayfield that we were chuffed to bits to be a part of. " +
+                "Did you notice anything familiar during the match? " +
+                "Could it have been the moment when Ben Volavola kicked a penalty in to touch in the 50th minute, or when Stuart Hogg kicked for a conversion in the 62nd minute? " +
+                "Yes, you did see CodeClan at Murrayfield! " +
+                "We’re delighted to announce that we’re continuing to invest in local winners and we’ll be picking up some advertising space along the touch line at Murrayfield. " +
+                "Keep a lookout for us throughout Scotland’s Autumn International season, we we’ll be there again during the Scotland vs. South Africa game this Saturday and at Scotland vs. Argentina on 24th November. ";
 
         String blogHeadline = "CodeClan Week 14";
         String blogContent = "Our final week of teaching has been a veritable whirlwind of new material. On Monday we were " +
@@ -197,6 +211,9 @@ public class DataLoader implements ApplicationRunner {
         Article article6 = new Article(article6Headline, article6Content,article6Url, dateMar, cat);
         articleRepository.save(article6);
 
+        Article article7 = new Article(article7Headline, article7Content, article7Url, "23/11/2018", chris);
+        articleRepository.save(article7);
+
         Article blog1 = new Article(blogHeadline, blogContent, blogUrl, "01/02/2019", alex);
         articleRepository.save(blog1);
 
@@ -217,6 +234,8 @@ public class DataLoader implements ApplicationRunner {
         Keyword keyword10 = new Keyword("Awards", article5);
         Keyword keyword11 = new Keyword("Commercial", article6);
         Keyword keyword12 = new Keyword("Computers", article6);
+        Keyword keyword13 = new Keyword("Development", article7);
+        Keyword keyword14 = new Keyword("2018", article7);
         Keyword blogWord1 = new Keyword("Viking", blog1);
         Keyword blogWord2 = new Keyword("Lush", blog1);
         Keyword blogWord3 = new Keyword("Viking", blog2);
@@ -234,6 +253,9 @@ public class DataLoader implements ApplicationRunner {
         keywordRepository.save(keyword10);
         keywordRepository.save(keyword11);
         keywordRepository.save(keyword12);
+        keywordRepository.save(keyword13);
+        keywordRepository.save(keyword14);
+
         keywordRepository.save(blogWord1);
         keywordRepository.save(blogWord2);
         keywordRepository.save(blogWord3);
