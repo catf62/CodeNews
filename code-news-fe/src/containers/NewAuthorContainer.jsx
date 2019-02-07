@@ -68,7 +68,7 @@ class NewAuthorContainer extends Component {
 
   render(){
     return (
-      <div className="New-Article-Box">
+      <div>
         <AuthorsListContainer className="Landing-Page-Article-List" authors={this.props.authors} handleAuthorLinkClick={this.handleAuthorSelect}/>
 
         <div className="Form-Wrapper">

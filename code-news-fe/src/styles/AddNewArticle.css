@@ -48,3 +48,11 @@
   color: navy;
   font-weight: bold;
 }
+
+.Author-Box{
+  border-radius: 5px;
+  border-color: white;
+  background-color: black;
+  color: white;
+  padding: 2em;
+}
