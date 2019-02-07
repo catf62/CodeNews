@@ -113,27 +113,27 @@ class NewArticleContainer extends Component {
           <form className="New-Article-Form" onSubmit={this.handleSubmit}>
             <label htmlFor="Headline">Headline:</label>
             <br></br>
-            <input onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
+            <input size="70" onKeyUp={this.headlineKeyUp} type="text" id="Headline"/>
             <br></br>
             <label htmlFor="Date">Date:</label>
             <br></br>
-            <input onChange={this.dateOnChange} type="date" id="Date"/>
+            <input size="70" onChange={this.dateOnChange} type="date" id="Date"/>
             <br></br>
             <label htmlFor="Author">Author     </label>
             <br></br>
-            <select onChange={this.authorKeyUp} defaultValue="default" id="Author">{options}</select>
+            <select  onChange={this.authorKeyUp} defaultValue="default" id="Author">{options}</select>
             <br></br>
             <label htmlFor="Content">Content     </label>
             <br></br>
-            <input onKeyUp={this.contentKeyUp}  type="text" id="Content"/>
+            <input size="70" onKeyUp={this.contentKeyUp}  type="text" id="Content"/>
             <br></br>
             <label htmlFor="Image url">Image url     </label>
             <br></br>
-            <input onKeyUp={this.imageurlKeyUp} type="text" id="Image url"/>
+            <input size="70" onKeyUp={this.imageurlKeyUp} type="text" id="Image url"/>
             <br></br>
             <label htmlFor="Keywords">Keywords     </label>
             <br></br>
-            <input onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
+            <input size="70" onKeyUp={this.keywordsKeyUp}type="text" id="Keywords"/>
             <br></br>
             <input type="submit" value="Save"/>
           </form>
